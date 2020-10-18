@@ -272,6 +272,48 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      Tutorials
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Tutorials" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../AiTablesInPostgreSQL/" title="AI Tables in PostgreSQL" class="md-nav__link">
+      AI Tables in PostgreSQL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -339,6 +381,66 @@
   <li class="md-nav__item">
     <a href="../BasicExample/" title="Starter Example" class="md-nav__link">
       Starter Example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../GoogleColab/" title="Running on Google Colab" class="md-nav__link">
+      Running on Google Colab
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../JupyterNotebook/" title="Running on Jupyter Notebook" class="md-nav__link">
+      Running on Jupyter Notebook
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../PredictorInterface/" title="Predictor Interface" class="md-nav__link">
+      Predictor Interface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../FunctionalInterface/" title="Functional Interface" class="md-nav__link">
+      Functional Interface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../AdvancedExamples/" title="Advanced usecases" class="md-nav__link">
+      Advanced usecases
     </a>
   </li>
 
@@ -438,66 +540,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../GoogleColab/" title="Running on Google Colab" class="md-nav__link">
-      Running on Google Colab
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../JupyterNotebook/" title="Running on Jupyter Notebook" class="md-nav__link">
-      Running on Jupyter Notebook
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../PredictorInterface/" title="Predictor Interface" class="md-nav__link">
-      Predictor Interface
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../FunctionalInterface/" title="Functional Interface" class="md-nav__link">
-      Functional Interface
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../AdvancedExamples/" title="Advanced usecases" class="md-nav__link">
-      Advanced usecases
-    </a>
   </li>
 
         
@@ -975,18 +1017,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../scout/Connection/" title="Connection" class="md-nav__link">
-      Connection
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../scout/Datasources/" title="Datasources" class="md-nav__link">
       Datasources
     </a>
@@ -1244,7 +1274,7 @@
 <ul>
 <li>order_by - The columns based on which the data should be ordered</li>
 <li>group_by - The columns based on which to group multiple unrelated entities present in your timeseries data. For example, let's say your data consists of sequential readings from 3x sensors. Treating the problem as a timeseries makes sense for individual sensors, so you would specify: <code>group_by=['sensor_id']</code></li>
-<li>nr_predictions - The number of points in the future that predictions should be made for, defaults to <code>1</code>. [Status: Not Implemented]</li>
+<li>nr_predictions - The number of points in the future that predictions should be made for, defaults to <code>1</code>. Once trained, the model will be able to predict up to this many points into the future.</li>
 <li>use_previous_target - Use the previous values of the target column[s] for making predictions. Defaults to <code>True</code>. [Status: Experimental]</li>
 <li>keep_order_column - Whether or not to use the column[s] based on which the data is ordered for making predictions. This might be relevant if the order columns is, for example, a simple auto-incrementing index. Defaults to <code>True</code>. [Status: Not Implemented]</li>
 <li>window - The number of rows to "look back" into when making a prediction, after the rows are ordered by the order_by column and split into groups.</li>

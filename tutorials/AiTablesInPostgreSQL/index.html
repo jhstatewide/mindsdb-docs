@@ -15,7 +15,7 @@
     
     
       
-        <title>Predictor API - MindsDB Documentation</title>
+        <title>AI Tables in PostgreSQL - MindsDB Documentation</title>
       
     
     
@@ -55,7 +55,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#predictor-api" class="md-skip">
+        <a href="#ai-tables-in-postgresql" class="md-skip">
           Skip to content
         </a>
       
@@ -82,7 +82,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Predictor API
+              AI Tables in PostgreSQL
             
           </span>
         </div>
@@ -191,10 +191,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       AutoML in Databases
@@ -276,10 +278,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6" checked>
     
     <label class="md-nav__link" for="nav-2-6">
       Tutorials
@@ -301,11 +305,80 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../tutorials/AiTablesInPostgreSQL/" title="AI Tables in PostgreSQL" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        AI Tables in PostgreSQL
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="AI Tables in PostgreSQL" class="md-nav__link md-nav__link--active">
       AI Tables in PostgreSQL
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install-postgresql" class="md-nav__link">
+    How to install PostgreSQL?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-configuration" class="md-nav__link">
+    Add Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Add Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automl-with-ai-tables-in-postgresql" class="md-nav__link">
+    AutoML with AI Tables in PostgreSQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#train-new-machine-learning-model" class="md-nav__link">
+    Train new Machine Learning Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -375,7 +448,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/BasicExample/" title="Starter Example" class="md-nav__link">
+    <a href="../BasicExample/" title="Starter Example" class="md-nav__link">
       Starter Example
     </a>
   </li>
@@ -435,7 +508,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/AdvancedExamples/" title="Advanced usecases" class="md-nav__link">
+    <a href="../AdvancedExamples/" title="Advanced usecases" class="md-nav__link">
       Advanced usecases
     </a>
   </li>
@@ -447,7 +520,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/Timeseries/" title="Timeseries Data" class="md-nav__link">
+    <a href="../Timeseries/" title="Timeseries Data" class="md-nav__link">
       Timeseries Data
     </a>
   </li>
@@ -545,7 +618,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/PredictiveMaintenance/" title="Predictive Maintenance" class="md-nav__link">
+    <a href="../PredictiveMaintenance/" title="Predictive Maintenance" class="md-nav__link">
       Predictive Maintenance
     </a>
   </li>
@@ -587,7 +660,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/CreditScoring/" title="Credit Scoring" class="md-nav__link">
+    <a href="../CreditScoring/" title="Credit Scoring" class="md-nav__link">
       Credit Scoring
     </a>
   </li>
@@ -629,7 +702,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/CustomerLifetimeValue/" title="Custiner Lifetime Value Optimization" class="md-nav__link">
+    <a href="../CustomerLifetimeValue/" title="Custiner Lifetime Value Optimization" class="md-nav__link">
       Custiner Lifetime Value Optimization
     </a>
   </li>
@@ -641,7 +714,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/FraudDetection/" title="Fraud Detection" class="md-nav__link">
+    <a href="../FraudDetection/" title="Fraud Detection" class="md-nav__link">
       Fraud Detection
     </a>
   </li>
@@ -683,7 +756,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/PatientHealthOutcomes/" title="Patient Health" class="md-nav__link">
+    <a href="../PatientHealthOutcomes/" title="Patient Health" class="md-nav__link">
       Patient Health
     </a>
   </li>
@@ -695,7 +768,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/MedicalDiagnosis/" title="Medical Diagnosis" class="md-nav__link">
+    <a href="../MedicalDiagnosis/" title="Medical Diagnosis" class="md-nav__link">
       Medical Diagnosis
     </a>
   </li>
@@ -737,7 +810,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/HotelBooking/" title="Hotel Booking Demand" class="md-nav__link">
+    <a href="../HotelBooking/" title="Hotel Booking Demand" class="md-nav__link">
       Hotel Booking Demand
     </a>
   </li>
@@ -779,7 +852,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorials/ChurnReduction/" title="Customer Churn Reduction" class="md-nav__link">
+    <a href="../ChurnReduction/" title="Customer Churn Reduction" class="md-nav__link">
       Customer Churn Reduction
     </a>
   </li>
@@ -809,12 +882,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       AutoML building blocks
@@ -838,7 +909,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../info/" title="Introduction to Lightwood" class="md-nav__link">
+    <a href="../../lightwood/info/" title="Introduction to Lightwood" class="md-nav__link">
       Introduction to Lightwood
     </a>
   </li>
@@ -848,114 +919,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Predictor API
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Predictor API" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../lightwood/API/" title="Predictor API" class="md-nav__link">
       Predictor API
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#constructor-__init__" class="md-nav__link">
-    Constructor, __init__()
-  </a>
-  
-    <nav class="md-nav" aria-label="Constructor, __init__()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#config" class="md-nav__link">
-    config
-  </a>
-  
-    <nav class="md-nav" aria-label="config">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    features
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mixer" class="md-nav__link">
-    mixer
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#learn" class="md-nav__link">
-    learn()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#predict" class="md-nav__link">
-    predict()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#save" class="md-nav__link">
-    save()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#calculate_accuracy" class="md-nav__link">
-    calculate_accuracy()
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1194,70 +1162,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#constructor-__init__" class="md-nav__link">
-    Constructor, __init__()
+  <a href="#how-to-install-postgresql" class="md-nav__link">
+    How to install PostgreSQL?
   </a>
   
-    <nav class="md-nav" aria-label="Constructor, __init__()">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-configuration" class="md-nav__link">
+    Add Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Add Configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#config" class="md-nav__link">
-    config
-  </a>
-  
-    <nav class="md-nav" aria-label="config">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    features
+  <a href="#automl-with-ai-tables-in-postgresql" class="md-nav__link">
+    AutoML with AI Tables in PostgreSQL
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mixer" class="md-nav__link">
-    mixer
+  <a href="#train-new-machine-learning-model" class="md-nav__link">
+    Train new Machine Learning Model
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#learn" class="md-nav__link">
-    learn()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#predict" class="md-nav__link">
-    predict()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#save" class="md-nav__link">
-    save()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#calculate_accuracy" class="md-nav__link">
-    calculate_accuracy()
-  </a>
   
 </li>
       
@@ -1273,7 +1207,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mindsdb/mindsdb/edit/master/docs/lightwood/API.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mindsdb/mindsdb/edit/master/docs/tutorials/AiTablesInPostgreSQL.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                   </a>
                 
@@ -1281,168 +1215,168 @@
                   
                 
                 
-                <h1 id="predictor-api">Predictor API</h1>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">lightwood</span> <span class="kn">import</span> <span class="n">Predictor</span>
+                <h1 id="ai-tables-in-postgresql">AI-Tables in PostgreSQL</h1>
+<h2 id="how-to-install-postgresql">How to install PostgreSQL?</h2>
+<p>If you don’t have PostgreSQL installed you can download the installers for various platforms from the official documentation.
+Example dataset
+In this tutorial, we will use the us_consumption dataset. If you have other datasets in your PostgreSQL database please skip this section. This dataset contains information about the growth rates of personal consumption and personal income in the US from 1960 to 2016. What we will try to do is to predict the consumption based on the other features saved in the database.
+Import dataset to PostgreSQL
+First, let's create a us_consumption table.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">public</span><span class="p">.</span><span class="n">us_consumption</span> <span class="p">(</span>
+    <span class="n">t</span> <span class="nb">varchar</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">consumption</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">income</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">production</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">savings</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">unemployment</span> <span class="nb">numeric</span> <span class="k">NULL</span>
+<span class="p">);</span>
 </code></pre></div>
 
 
-<p>Lightwood has one main class; The <strong>Predictor</strong>, which is a modular construct that you can train and get predictions from. It is made out of 3 main building blocks (<em>features, encoders, mixers</em>) that you can configure, modify and expand as you wish.</p>
-<p><img alt="building_blocks" src="https://docs.google.com/drawings/d/e/2PACX-1vTrzcXyqDeaGWOwG-3BWOV5wj1U2M5v7ojracqv39z2Ljv-oFqxh4bxFiJxjjtd7CgehptMeBlLYx6w/pub?w=1399&amp;h=818&amp;a=1" /></p>
-<div class="admonition info">
-<p class="admonition-title">Building blocks</p>
-<ul>
-<li><strong>Features</strong>:<ul>
-<li><strong>input_features</strong>: These are the columns in your dataset that you want to take as input for your predictor.</li>
-<li><strong>output_features</strong>: These are the columns in your dataset that you want to learn how to predict.</li>
-</ul>
-</li>
-<li><strong>Encoders</strong>: These are tools to turn the data in your input or output features into vector/tensor representations and vice-versa.</li>
-<li><strong>Mixers</strong>: How you mix the output of encoded features and also other mixers</li>
-</ul>
-</div>
-<h2 id="constructor-__init__">Constructor, __init__()</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">my_predictor</span> <span class="o">=</span> <span class="n">Predictor</span><span class="p">(</span> <span class="n">output</span><span class="o">=</span><span class="p">[]</span> <span class="o">|</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="o">...</span><span class="p">}</span> <span class="o">|</span> <span class="n">load_from_path</span><span class="o">=&lt;</span><span class="n">file_path</span><span class="o">&gt;</span><span class="p">)</span>
+<p>After you create the table, you can use the \copy command to import the data from the CSV file to PostgreSQL:</p>
+<div class="codehilite"><pre><span></span><code><span class="err">\copy usconsumption FROM &#39;/path/to/csv/usconsumption.csv&#39; DELIMITER &#39;,&#39; CSV</span>
 </code></pre></div>
 
 
-<div class="admonition note">
-<p>Predictor, can take any of the following <strong>arguments</strong></p>
-<ul>
-<li><strong>load_from_path</strong>: If you have a saved predictor that you want to load, just give the path to the file</li>
-<li><strong>output</strong>: A list with the column names you want to predict. (<em>Note: If you pass this argument, lightwood will simply try to guess the best config possible</em>)</li>
-<li><strong>config</strong>: A dictionary, containing the configuration on how to glue all the building blocks. </li>
-</ul>
-</div>
-<h3 id="config"><strong>config</strong></h3>
-<p>The config argument allows you to pass a dictionary that defines and gives you absolute control over how to build your predictive model.
-A config example goes as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">lightwood</span> <span class="kn">import</span> <span class="n">COLUMN_DATA_TYPES</span><span class="p">,</span> <span class="n">BUILTIN_MIXERS</span><span class="p">,</span> <span class="n">BUILTIN_ENCODERS</span>
-
-<span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
-
-        <span class="c1">## REQUIRED:</span>
-        <span class="s1">&#39;input_features&#39;</span><span class="p">:</span> <span class="p">[</span>
-
-            <span class="c1"># by default each feature has an encoder, so all you have to do is specify the data type</span>
-            <span class="p">{</span>
-                <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;sensor1&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="n">COLUMN_DATA_TYPES</span><span class="o">.</span><span class="n">NUMERIC</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;sensor2&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="n">COLUMN_DATA_TYPES</span><span class="o">.</span><span class="n">NUMERIC</span>
-            <span class="p">},</span>
-
-            <span class="c1"># some encoders have attributes that can be specified on the configuration</span>
-            <span class="c1"># in this particular lets assume we have a photo of the product, we would like to encode this image and optimize for speed</span>
-            <span class="p">{</span>
-                <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;product_photo&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="n">COLUMN_DATA_TYPES</span><span class="o">.</span><span class="n">IMAGE</span><span class="p">,</span>
-                <span class="s1">&#39;encoder_class&#39;</span><span class="p">:</span> <span class="n">BUILTIN_ENCODERS</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">Img2VecEncoder</span><span class="p">,</span> <span class="c1"># note that this is just a class, you can build your own if you wish</span>
-                <span class="s1">&#39;encoder_attrs&#39;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="s1">&#39;aim&#39;</span><span class="p">:</span> <span class="s1">&#39;speed&#39;</span> 
-                    <span class="c1"># you can check the encoder attributes here: </span>
-                    <span class="c1">#  https://github.com/mindsdb/lightwood/blob/master/lightwood/encoders/image/img_2_vec.py</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">],</span>
-
-        <span class="s1">&#39;output_features&#39;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;action_to_take&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="n">COLUMN_DATA_TYPES</span><span class="o">.</span><span class="n">CATEGORICAL</span>
-            <span class="p">}</span>
-        <span class="p">],</span>
-
-        <span class="c1">## OPTIONAL</span>
-        <span class="s1">&#39;mixer&#39;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="n">BUILTIN_MIXERS</span><span class="o">.</span><span class="n">NnMixer</span>
-        <span class="p">}</span>
-
-    <span class="p">}</span>
+<p>Or, if you are using pgAdmin, DBeaver or another SQL client just use the import from CSV file option from the navigation menu. To check if the data was successfully imported execute SELECT query:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">us_consumption</span> <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
 </code></pre></div>
 
 
-<h4 id="features">features</h4>
-<p>Both <strong>input_features</strong> and <strong>output_features</strong> configs are simple dicts that have the following schema</p>
+<p><img alt="SELECT FROM us_consumption" src="/assets/tutorials/aitables-postgresql/select_table.png" /></p>
+<h2 id="add-configuration">Add Configuration</h2>
+<p>We have the data inside PostgreSQL, so the next step is to install PostgreSQL foreign data wrapper for MySQL. Please check the EnterpriseDB documentation on how to do that. The last step is to create the MindsDB’s configuration file. MindsDB will try to use the default configuration options like host, port, username for the PostgreSQL integration. In case you want to extend them or change the default values you need to add a config.json file. Create a new file config.json and include the following information:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
-    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-    <span class="n">Optional</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">):</span> <span class="nb">any</span> <span class="n">of</span> <span class="n">COLUMN_DATA_TYPES</span><span class="p">,</span>
-    <span class="n">Optional</span><span class="p">(</span><span class="s1">&#39;encoder_class&#39;</span><span class="p">):</span> <span class="nb">object</span><span class="p">,</span>
-    <span class="n">Optional</span><span class="p">(</span><span class="s1">&#39;encoder_attrs&#39;</span><span class="p">):</span> <span class="nb">dict</span>
+    <span class="nt">&quot;api&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;http&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="s2">&quot;47334&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;mysql&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="s2">&quot;47335&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;root&quot;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;config_version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.3&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;debug&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;integrations&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;default_postgres&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;database&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">5432</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;log&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;console&quot;</span><span class="p">:</span> <span class="s2">&quot;DEBUG&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;storage_dir&quot;</span><span class="p">:</span> <span class="s2">&quot;storage/&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 
 
-<div class="admonition note">
+<p>The values provided in the configuration file are:</p>
 <ul>
-<li><strong>name</strong>: is the name of the column as it is in the input data frame</li>
-<li><strong>type</strong>: is the type of data contained. Where out of the box, supported COLUMN_DATA_TYPES are <code>NUMERIC, CATEGORICAL, DATETIME, IMAGE, TEXT, TIME_SERIES</code>:</li>
+<li>api['http’] -- This key is used for starting the MindsDB HTTP server by providing:
+host(default 127.0.0.1) - The mindsdb server address.</li>
+<li>port(default 47334) - The mindsdb server port.</li>
+<li>api['mysql'] -- This key is used for database integrations that work through MySQL protocol. The required keys are:<ul>
+<li>user(default root).</li>
+<li>password(default empty).</li>
+<li>host(default 127.0.0.1).</li>
+<li>port(default 47335).</li>
 </ul>
-<div class="admonition info">
-<p class="admonition-title">If you specify the type, lightwood will use the default encoder for that type, however, you can specify/define any encoder that you want to use. </p>
-<ul>
-<li><strong>encoder_class</strong>: This is if you want to replace the default encoder with a different one, so you put the encoder class there</li>
-<li><strong>encoder_attrs</strong>: These are the attributes that you want to setup on the encoder once the class its initialized </li>
+</li>
+<li>integrations['default_postgres'] -- This key specifies the integration type in this case default_postgres. The required keys are:<ul>
+<li>user(default postgres) - The Postgres user name.</li>
+<li>host(default 127.0.0.1) - Connect to the PostgreSQL server on the given host.</li>
+<li>password - The password of the Postgres account.</li>
+<li>type - Integration type(mariadb, postgresql, mysql, clickhouse, mongodb).</li>
+<li>port(default 5432) - The TCP/IP port number to use for the connection.</li>
 </ul>
-</div>
-</div>
-<h4 id="mixer">mixer</h4>
-<p>The <strong>default_mixer</strong> key, provides information as to what mixer to use. The schema for this variable is as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">mixer_schema</span> <span class="o">=</span> <span class="n">Schema</span><span class="p">({</span>
-    <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span>
-    <span class="n">Optional</span><span class="p">(</span><span class="s1">&#39;attrs&#39;</span><span class="p">):</span> <span class="nb">dict</span>
-<span class="p">})</span>
+</li>
+<li>log['level'] -- The logging configuration(not required):
+console - "INFO", "DEBUG", ”WARNING”,  "ERROR".</li>
+<li>file - Log level to save in the log file.</li>
+<li>storage_dir -- The directory where mindsdb will store models and configuration.
+That’s all for setting up the AI Tables in PostgreSQL.</li>
+</ul>
+<h3 id="automl-with-ai-tables-in-postgresql">AutoML with AI Tables in PostgreSQL</h3>
+<p>Let’s start the MindsDB server:</p>
+<div class="codehilite"><pre><span></span><code><span class="err">python3 -m mindsdb --api=mysql --config=config.json</span>
 </code></pre></div>
 
 
-<div class="admonition note">
-<ul>
-<li><strong>class</strong>: Its the actual class, that defines the Mixer, you can use any of the BUILTIN_MIXERS or pass your own.</li>
-<li><strong>attrs</strong>: This is a dictionary containing the attributes you want to replace on the mixer object once its initialized. We do this, so you have maximum flexibility as to what you can customize on your Mixers.</li>
-</ul>
-</div>
-<h2 id="learn">learn()</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">my_predictor</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">from_data</span><span class="o">=</span><span class="n">pandas_dataframe</span><span class="p">)</span>
+<p>The arguments sent to MindsDB are:
+* --api - That tells MindsDB which API should be started (HTTP or MySQL).
+* --config - The path to the configuration file that we have created.
+If everything works as expected you should see the following message:</p>
+<p><img alt="MindsDB Started" src="/assets/tutorials/aitables-postgresql/mindsdb_started.png" /></p>
+<p>Upon successful setup, MindsDB should create a new schema called mindsdb. </p>
+<p><img alt="MindsDB Schema" src="/assets/tutorials/aitables-postgresql/list_schema.png" /></p>
+<p>In the mindsdb schema, two new tables should be created called commands and predictors. The mindsdb.predictors table is the table where MindsDB will keep information about trained and in training models.</p>
+<h3 id="train-new-machine-learning-model">Train new Machine Learning Model</h3>
+<p>Training the machine learning model using MindsDB is quite simple. It can be done by executing the INSERT query inside the mindsdb.predictors table. In our example we want to predict the consumption from the us_consumption table, so let’s run the INSERT query as:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">predict</span><span class="p">,</span> <span class="n">select_data_query</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;us_consumption_model&#39;</span><span class="p">,</span> <span class="s1">&#39;consumption&#39;</span><span class="p">,</span> <span class="s1">&#39;SELECT * FROM us_consumption&#39;</span><span class="p">);</span>
 </code></pre></div>
 
 
-<div class="admonition note">
-<p>This method is used to make the predictor learn from some data, thus the learn method takes the following arguments.</p>
-<ul>
-<li><strong>from_data</strong>: A pandas dataframe, that has some or all the columns in the config. The reason why we decide to only suppor pandas dataframes, its because, its easy to load any data to a pandas draframe, and spark for python dataframe is a format we support.</li>
-<li><strong>test_data</strong>: (Optional) This is if you want to specify what data to test with, if no test_data passed, lightwood will break the from_data into test and train automatically.</li>
-<li><strong>callback_on_iter</strong>: (Optional) This is function callback that is called every 100 epocs the during the learn process.</li>
-</ul>
-</div>
-<h2 id="predict">predict()</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">my_predictor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">when</span><span class="o">=</span><span class="p">{</span><span class="o">..</span><span class="p">}</span> <span class="o">|</span> <span class="n">when_data</span><span class="o">=</span><span class="n">pandas_dataframe</span><span class="p">)</span>
+<p>This query will create a new model called 'us_consumption_model', and a new table 'us_consumption_model' inside mindsdb schema. The required columns(parameters) added in the INSERT for training the predictor are:
+name (string) - the name of the predictor.
+predict (string) -  the feature you want to predict, in this example it will be consumption.
+select_data_query (string) - the SELECT query that will get the data from PostgreSQL.
+training_options (dictionary) - optional value that contains additional training parameters. For a full list of the parameters check the mindsdb.docs.</p>
+<p>To check that the training successfully finished we can SELECT from mindsdb.predictors table and get the status:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span> <span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;us_consumption_model&#39;</span><span class="p">;</span>
 </code></pre></div>
 
 
-<div class="admonition note">
-<p>This method is used to make predictions and it can take one of the following arguments</p>
-<ul>
-<li><strong>when</strong>: this is a dictionary of conditions to predict under.</li>
-<li><strong>when_data</strong>: Sometimes you want to predict more than one row a ta time, so here it is: a pandas dataframe containing the conditional values you want to use to make a prediction.</li>
-</ul>
-</div>
-<h2 id="save">save()</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">my_predictor</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">path_to</span><span class="o">=</span><span class="n">string</span> <span class="n">to</span> <span class="n">path</span><span class="p">)</span>
+<p><img alt="Status" src="/assets/tutorials/aitables-postgresql/select_status.png" /></p>
+<p>The status complete means that training successfully finished. Now, let’s query the model. The trained model behaves like an AI Table and can be queried as it is a standard database table. To get the prediction we need to execute SELECT query and in the WHERE clause include the other features values as unemployment, savings or income rate values as:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="n">consumption</span> <span class="k">AS</span> <span class="n">predicted</span><span class="p">,</span> <span class="n">consumption_confidence</span> <span class="k">AS</span> <span class="n">confidence</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">us_consumption</span> <span class="k">WHERE</span> <span class="n">unemployment</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">2</span> <span class="k">AND</span> <span class="n">income</span><span class="o">=</span><span class="mi">1</span><span class="p">.</span><span class="mi">182497938</span> <span class="k">AND</span> <span class="n">savings</span><span class="o">=</span><span class="mi">3</span><span class="p">.</span><span class="mi">183292657</span><span class="p">;</span>
 </code></pre></div>
 
 
-<div class="admonition note">
-<p>Use this method to save the predictor into a desired path</p>
-</div>
-<h2 id="calculate_accuracy">calculate_accuracy()</h2>
-<div class="codehilite"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">my_predictor</span><span class="o">.</span><span class="n">calculate_accuracy</span><span class="p">(</span><span class="n">from_data</span><span class="o">=</span><span class="n">data_source</span><span class="p">))</span>
+<p><img alt="SELECT FROM model" src="/assets/tutorials/aitables-postgresql/select_model.png" /></p>
+<p>In a second we should get the prediction back from MindsDB. So, MindsDB thinks that the value for consumption rate is around 0.87 with pretty much big confidence 97%. There is additional information that we can get back from MindsDB by selecting the explain column from the model as:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="n">consumption</span> <span class="k">AS</span> <span class="n">predicted</span><span class="p">,</span> <span class="n">consumption_confidence</span> <span class="k">AS</span> <span class="n">confidence</span><span class="p">,</span> <span class="n">consumption_explain</span> <span class="k">AS</span> <span class="n">info</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">us_consumption</span> <span class="k">WHERE</span> <span class="n">unemployment</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">2</span> <span class="k">AND</span> <span class="n">savings</span><span class="o">=</span><span class="mi">3</span><span class="p">.</span><span class="mi">183292657</span>  <span class="k">AND</span> <span class="n">income</span><span class="o">=</span><span class="mi">1</span><span class="p">.</span><span class="mi">182497938</span><span class="p">;</span>
 </code></pre></div>
 
 
-<div class="admonition note">
-<p>Returns the predictors overall accurary. </p>
-</div>
+<p>Now, apart from the predicted and confidence values, MindsDB will return additional 
+Information in JSON format in the explain column:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;predicted_value&quot;</span><span class="p">:</span> <span class="mf">0.8657330042334171</span><span class="p">,</span>
+    <span class="nt">&quot;confidence&quot;</span><span class="p">:</span> <span class="mf">0.97</span><span class="p">,</span>
+    <span class="nt">&quot;prediction_quality &quot;</span><span class="p">:</span> <span class="s2">&quot;very confident &quot;</span><span class="p">,</span>
+    <span class="nt">&quot;confidence_interval &quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2213571243562792</span><span class="p">,</span> <span class="mf">1.5101088841105552</span><span class="p">],</span>
+    <span class="nt">&quot;important_missing_information&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">],</span>
+    <span class="nt">&quot;confidence_composition&quot;</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="nt">&quot;extra_insights&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;if_missing&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                <span class="nt">&quot;income&quot;</span><span class="p">:</span> <span class="mf">0.2810379762719649</span>
+            <span class="p">},</span> <span class="p">{</span>
+                <span class="nt">&quot;savings &quot;</span><span class="p">:</span> <span class="mf">0.7145091277513245</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;unemployment &quot;</span><span class="p">:</span> <span class="mf">1.0092230269722924</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>The confidence_interval shows a possible range of values where consumption lies in. The important_missing_information shows the list of features that MindsDB things are quite important for better prediction, in this case, the “t” timestamp value. The extra_insights contains a list of rows that we have included in the WHERE clause and show the consumption value if some of those were missing.</p>
+<p>Congratulations, you have successfully trained and queried the Machine Learning Model only by using SQL Statements. Note that even if we used PostgreSQL, you can still query the same model from the other databases too.</p>
                 
               
               
