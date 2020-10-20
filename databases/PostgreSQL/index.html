@@ -358,6 +358,48 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      Tutorials
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Tutorials" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/AiTablesInPostgreSQL/" title="AI Tables in PostgreSQL" class="md-nav__link">
+      AI Tables in PostgreSQL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1301,7 +1343,7 @@
 The --config specifies the location of the configuration file. </p>
 <h3 id="train-new-model">Train new model</h3>
 <p>To train a new model, insert a new record inside the mindsdb.predictors table as:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">predict</span><span class="p">,</span> <span class="n">select_data_query</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;us_consumption&#39;</span><span class="p">,</span> <span class="s1">&#39;consumption&#39;</span><span class="p">,</span> <span class="s1">&#39;SELECT * FROM us_consumption&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">predict</span><span class="p">,</span> <span class="n">select_data_query</span><span class="p">,</span> <span class="n">training_options</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;us_consumption&#39;</span><span class="p">,</span> <span class="s1">&#39;consumption&#39;</span><span class="p">,</span> <span class="s1">&#39;SELECT * FROM us_consumption&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;timeseries_settings&quot;:{&quot;order_by&quot;: [&quot;t&quot;], &quot;window&quot;:20}}&#39;</span><span class="p">);</span>
 </code></pre></div>
 
 
@@ -1309,7 +1351,7 @@ The --config specifies the location of the configuration file. </p>
 <li>name (string) -- The name of the predictor.</li>
 <li>predict (string) --  The feature you want to predict, in this example consumption. To predict multiple featurs include a comma separated string e.g 'consumption,income'.</li>
 <li>select_data_query (string) -- The SELECT query that will ingest the data to train the model.</li>
-<li>training_options (JSON as comma separated string) -- optional value that contains additional training parameters. For a full list of the parameters check the <a href="/PredictorInterface/#learn">PredictorInterface</a>.</li>
+<li>training_options (JSON as comma separated string) -- optional value that contains additional training parameters. For a full list of the parameters check the <a href="/PredictorInterface/#learn">PredictorInterface</a>. If you are using timeseries data check the <a href="/tutorials/Timeseries/">Timeseries settings</a>.</li>
 </ul>
 <h3 id="query-the-model">Query the model</h3>
 <p>To query the model and get the predictions SELECT the target variable, confidence and explanation for that prediction.</p>
@@ -1397,6 +1439,7 @@ The --config specifies the location of the configuration file. </p>
 <li>It must be a valid SQL statement</li>
 <li>It must return columns with names the same as predictor fields.</li>
 </ul>
+<p>To get additional information follow the <a href="/databases/tutorials/AiTablesInPostgreSQL/">AiTables in PostgreSQL tutorail</a>.</p>
                 
               
               

@@ -272,6 +272,48 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      Tutorials
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Tutorials" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../databases/tutorials/AiTablesInPostgreSQL/" title="AI Tables in PostgreSQL" class="md-nav__link">
+      AI Tables in PostgreSQL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1054,6 +1096,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#example-dataset" class="md-nav__link">
+    Example dataset
+  </a>
+  
+    <nav class="md-nav" aria-label="Example dataset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-dataset-to-postgresql" class="md-nav__link">
+    Import dataset to PostgreSQL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#add-configuration" class="md-nav__link">
     Add Configuration
   </a>
@@ -1102,18 +1164,37 @@
                 
                 <h1 id="ai-tables-in-postgresql">AI-Tables in PostgreSQL</h1>
 <h2 id="how-to-install-postgresql">How to install PostgreSQL?</h2>
-<p>If you don’t have PostgreSQL installed you can download the installers for various platforms from the official documentation.
-Example dataset
-In this tutorial, we will use the us_consumption dataset. If you have other datasets in your PostgreSQL database please skip this section. This dataset contains information about the growth rates of personal consumption and personal income in the US from 1960 to 2016. What we will try to do is to predict the consumption based on the other features saved in the database.
-Import dataset to PostgreSQL
-First, let's create a us_consumption table.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">public</span><span class="p">.</span><span class="n">us_consumption</span> <span class="p">(</span>
-    <span class="n">t</span> <span class="nb">varchar</span> <span class="k">NULL</span><span class="p">,</span>
-    <span class="n">consumption</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
-    <span class="n">income</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
-    <span class="n">production</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
-    <span class="n">savings</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
-    <span class="n">unemployment</span> <span class="nb">numeric</span> <span class="k">NULL</span>
+<p>If you don’t have PostgreSQL installed you can download the installers for various platforms from the official documentation.</p>
+<h2 id="example-dataset">Example dataset</h2>
+<p>In this tutorial, we will use the <a href="https://www.kaggle.com/teejmahal20/airline-passenger-satisfaction?select=train.csv">Airline Passenger Satisfaction dataset</a>. If you have other datasets in your PostgreSQL database please skip this section. This dataset contains an airline passenger satisfaction survey and we will try yo predict the passenger satisfaction based on the other factors in the data.</p>
+<h4 id="import-dataset-to-postgresql">Import dataset to PostgreSQL</h4>
+<p>First, let's create a us_consumption table.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">-- public.airline_passenger_satisfaction definition</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">public</span><span class="p">.</span><span class="n">airline_passenger_satisfaction</span> <span class="p">(</span>
+    <span class="n">id</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">gender</span> <span class="nb">varchar</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="ss">&quot;Customer Type&quot;</span> <span class="nb">varchar</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">age</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="ss">&quot;Type of Travel&quot;</span> <span class="nb">varchar</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="ss">&quot;Class&quot;</span> <span class="nb">varchar</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="ss">&quot;Flight Distance&quot;</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="ss">&quot;Inflight wifi service&quot;</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="ss">&quot;Departure/Arrival time convenient&quot;</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="ss">&quot;Ease of Online booking&quot;</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="ss">&quot;Gate location&quot;</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="ss">&quot;Food and drink&quot;</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="ss">&quot;Online boarding&quot;</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="ss">&quot;Seat comfort&quot;</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="ss">&quot;Inflight entertainment&quot;</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="ss">&quot;On-board service&quot;</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="ss">&quot;Leg room service&quot;</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="ss">&quot;Baggage handling&quot;</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="ss">&quot;Checkin service&quot;</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="ss">&quot;Inflight service&quot;</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">cleanliness</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="ss">&quot;Departure Delay in Minutes&quot;</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="ss">&quot;Arrival Delay in Minutes&quot;</span> <span class="nb">numeric</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">satisfaction</span> <span class="nb">varchar</span> <span class="k">NULL</span>
 <span class="p">);</span>
 </code></pre></div>
 
@@ -1124,7 +1205,7 @@ First, let's create a us_consumption table.</p>
 
 
 <p>Or, if you are using pgAdmin, DBeaver or another SQL client just use the import from CSV file option from the navigation menu. To check if the data was successfully imported execute SELECT query:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">us_consumption</span> <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">airline_passenger_satisfaction</span> <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
 </code></pre></div>
 
 
@@ -1210,57 +1291,56 @@ If everything works as expected you should see the following message:</p>
 <p>In the mindsdb schema, two new tables should be created called commands and predictors. The mindsdb.predictors table is the table where MindsDB will keep information about trained and in training models.</p>
 <h3 id="train-new-machine-learning-model">Train new Machine Learning Model</h3>
 <p>Training the machine learning model using MindsDB is quite simple. It can be done by executing the INSERT query inside the mindsdb.predictors table. In our example we want to predict the consumption from the us_consumption table, so let’s run the INSERT query as:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">predict</span><span class="p">,</span> <span class="n">select_data_query</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;us_consumption_model&#39;</span><span class="p">,</span> <span class="s1">&#39;consumption&#39;</span><span class="p">,</span> <span class="s1">&#39;SELECT * FROM us_consumption&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">predict</span><span class="p">,</span> <span class="n">select_data_query</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;passenger_satisfaction_model&#39;</span><span class="p">,</span> <span class="s1">&#39;satisfaction&#39;</span><span class="p">,</span> <span class="s1">&#39;SELECT * FROM airline_passenger_satisfaction&#39;</span><span class="p">);</span>
 </code></pre></div>
 
 
-<p>This query will create a new model called 'us_consumption_model', and a new table 'us_consumption_model' inside mindsdb schema. The required columns(parameters) added in the INSERT for training the predictor are:
+<p>This query will create a new model called 'passenger_satisfaction_model', and a new table 'airline_passenger_satisfaction' inside mindsdb schema. The required columns(parameters) added in the INSERT for training the predictor are:
 name (string) - the name of the predictor.
-predict (string) -  the feature you want to predict, in this example it will be consumption.
+predict (string) -  the feature you want to predict, in this example it will be satisfaction.
 select_data_query (string) - the SELECT query that will get the data from PostgreSQL.
-training_options (dictionary) - optional value that contains additional training parameters. For a full list of the parameters check the mindsdb.docs.</p>
+training_options (dictionary) - optional value that contains additional training parameters. For a full list of the parameters check the <a href="/PredictorInterface/#learn">PredictorInterface</a>.</p>
 <p>To check that the training successfully finished we can SELECT from mindsdb.predictors table and get the status:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span> <span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;us_consumption_model&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span> <span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;passenger_satisfaction_model&#39;</span><span class="p">;</span>
 </code></pre></div>
 
 
 <p><img alt="Status" src="/assets/tutorials/aitables-postgresql/select_status.png" /></p>
-<p>The status complete means that training successfully finished. Now, let’s query the model. The trained model behaves like an AI Table and can be queried as it is a standard database table. To get the prediction we need to execute SELECT query and in the WHERE clause include the other features values as unemployment, savings or income rate values as:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="n">consumption</span> <span class="k">AS</span> <span class="n">predicted</span><span class="p">,</span> <span class="n">consumption_confidence</span> <span class="k">AS</span> <span class="n">confidence</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">us_consumption</span> <span class="k">WHERE</span> <span class="n">unemployment</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">2</span> <span class="k">AND</span> <span class="n">income</span><span class="o">=</span><span class="mi">1</span><span class="p">.</span><span class="mi">182497938</span> <span class="k">AND</span> <span class="n">savings</span><span class="o">=</span><span class="mi">3</span><span class="p">.</span><span class="mi">183292657</span><span class="p">;</span>
+<p>The status complete means that training successfully finished. Now, let’s query the model. The trained model behaves like an AI Table and can be queried as it is a standard database table. To get the prediction we need to execute <code>SELECT</code> query and in the <code>WHERE</code> clause include the other features values as Customer Type, Type of Travel, Seat comfort etc. </p>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="n">satisfaction</span> <span class="k">AS</span> <span class="n">predicted</span><span class="p">,</span> <span class="n">satisfaction_confidence</span> <span class="k">AS</span> <span class="n">confidence</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">passenger_satisfaction_model</span> <span class="k">WHERE</span>  <span class="ss">&quot;Customer Type&quot;</span><span class="o">=</span><span class="s1">&#39;Loyal Customer&#39;</span> <span class="k">AND</span> <span class="ss">&quot;Inflight wifi service&quot;</span><span class="o">=</span><span class="mi">5</span> <span class="k">AND</span> <span class="ss">&quot;Type of Travel&quot;</span><span class="o">=</span><span class="s1">&#39;Business travel&#39;</span> <span class="k">AND</span> <span class="ss">&quot;Class&quot;</span><span class="o">=</span><span class="s1">&#39;Eco&#39;</span><span class="p">;</span>
 </code></pre></div>
 
 
 <p><img alt="SELECT FROM model" src="/assets/tutorials/aitables-postgresql/select_model.png" /></p>
 <p>In a second we should get the prediction back from MindsDB. So, MindsDB thinks that the value for consumption rate is around 0.87 with pretty much big confidence 97%. There is additional information that we can get back from MindsDB by selecting the explain column from the model as:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="n">consumption</span> <span class="k">AS</span> <span class="n">predicted</span><span class="p">,</span> <span class="n">consumption_confidence</span> <span class="k">AS</span> <span class="n">confidence</span><span class="p">,</span> <span class="n">consumption_explain</span> <span class="k">AS</span> <span class="n">info</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">us_consumption</span> <span class="k">WHERE</span> <span class="n">unemployment</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">2</span> <span class="k">AND</span> <span class="n">savings</span><span class="o">=</span><span class="mi">3</span><span class="p">.</span><span class="mi">183292657</span>  <span class="k">AND</span> <span class="n">income</span><span class="o">=</span><span class="mi">1</span><span class="p">.</span><span class="mi">182497938</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="n">satisfaction</span> <span class="k">AS</span> <span class="n">predicted</span><span class="p">,</span> <span class="n">satisfaction_confidence</span> <span class="k">AS</span> <span class="n">confidence</span><span class="p">,</span> <span class="n">satisfaction_explain</span> <span class="k">AS</span> <span class="n">info</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">passenger_satisfaction_model</span> <span class="k">WHERE</span>  <span class="ss">&quot;Customer Type&quot;</span><span class="o">=</span><span class="s1">&#39;Loyal Customer&#39;</span> <span class="k">AND</span> <span class="n">age</span><span class="o">=</span><span class="mi">52</span> <span class="k">AND</span> <span class="ss">&quot;Type of Travel&quot;</span><span class="o">=</span><span class="s1">&#39;Business travel&#39;</span> <span class="k">AND</span> <span class="ss">&quot;Class&quot;</span><span class="o">=</span><span class="s1">&#39;Eco&#39;</span><span class="p">;</span>
 </code></pre></div>
 
 
 <p>Now, apart from the predicted and confidence values, MindsDB will return additional 
 Information in JSON format in the explain column:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">&quot;predicted_value&quot;</span><span class="p">:</span> <span class="mf">0.8657330042334171</span><span class="p">,</span>
-    <span class="nt">&quot;confidence&quot;</span><span class="p">:</span> <span class="mf">0.97</span><span class="p">,</span>
-    <span class="nt">&quot;prediction_quality &quot;</span><span class="p">:</span> <span class="s2">&quot;very confident &quot;</span><span class="p">,</span>
-    <span class="nt">&quot;confidence_interval &quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2213571243562792</span><span class="p">,</span> <span class="mf">1.5101088841105552</span><span class="p">],</span>
-    <span class="nt">&quot;important_missing_information&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">],</span>
-    <span class="nt">&quot;confidence_composition&quot;</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="nt">&quot;predicted_value&quot;</span><span class="p">:</span> <span class="s2">&quot;satisfied&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;confidence&quot;</span><span class="p">:</span> <span class="mf">0.94</span><span class="p">,</span>
+    <span class="nt">&quot;prediction_quality&quot;</span><span class="p">:</span> <span class="s2">&quot;very confident&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;important_missing_information&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;Flight Distance&quot;</span><span class="p">,</span> <span class="s2">&quot;Inflight wifi service&quot;</span><span class="p">,</span> <span class="s2">&quot;Online boarding&quot;</span><span class="p">,</span> <span class="s2">&quot;Baggage handling&quot;</span><span class="p">],</span>
+    <span class="nt">&quot;confidence_composition&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;age&quot;</span><span class="p">:</span> <span class="mf">0.935</span>
+    <span class="p">},</span>
     <span class="nt">&quot;extra_insights&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;if_missing&quot;</span><span class="p">:</span> <span class="p">[{</span>
-                <span class="nt">&quot;income&quot;</span><span class="p">:</span> <span class="mf">0.2810379762719649</span>
-            <span class="p">},</span> <span class="p">{</span>
-                <span class="nt">&quot;savings &quot;</span><span class="p">:</span> <span class="mf">0.7145091277513245</span>
-            <span class="p">},</span>
-            <span class="p">{</span>
-                <span class="nt">&quot;unemployment &quot;</span><span class="p">:</span> <span class="mf">1.0092230269722924</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
+            <span class="nt">&quot;Customer Type&quot;</span><span class="p">:</span> <span class="s2">&quot;satisfied&quot;</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;Type of Travel&quot;</span><span class="p">:</span> <span class="s2">&quot;satisfied&quot;</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;Class&quot;</span><span class="p">:</span> <span class="s2">&quot;satisfied&quot;</span>
+        <span class="p">}]</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 
 
-<p>The confidence_interval shows a possible range of values where consumption lies in. The important_missing_information shows the list of features that MindsDB things are quite important for better prediction, in this case, the “t” timestamp value. The extra_insights contains a list of rows that we have included in the WHERE clause and show the consumption value if some of those were missing.</p>
+<p>The confidence_interval shows a possible range of values where consumption lies in. The important_missing_information shows the list of features that MindsDB things are quite important for better prediction, in this case, the “Flight Distance”, "Inflight wifi service", "Online boarding" or "Baggage handling". The extra_insights contains a list of rows that we have included in the WHERE clause and show the consumption value if some of those were missing.</p>
 <p>Congratulations, you have successfully trained and queried the Machine Learning Model only by using SQL Statements. Note that even if we used PostgreSQL, you can still query the same model from the other databases too.</p>
                 
               
