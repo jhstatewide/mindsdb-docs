@@ -342,6 +342,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-is-ai-tables" class="md-nav__link">
+    What is AI Tables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-to-install-postgresql" class="md-nav__link">
     How to install PostgreSQL?
   </a>
@@ -1194,6 +1201,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-is-ai-tables" class="md-nav__link">
+    What is AI Tables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-to-install-postgresql" class="md-nav__link">
     How to install PostgreSQL?
   </a>
@@ -1270,7 +1284,7 @@
                 <h1 id="ai-tables-in-postgresql">AI-Tables in PostgreSQL</h1>
 <p>Anyone that has dealt with Machine Learning understands that data is a fundamental ingredient to it. Given that a great deal of the world’s organized data already exists inside databases, doesn't it make sense to bring machine learning capabilities straight to the database itself? Bringing Machine Learning to those who know their data best can significantly augment the capacity to solve important problems.
 To do so, we have developed a concept called AI-Tables.</p>
-<p>What is AI Tables</p>
+<h2 id="what-is-ai-tables">What is AI Tables</h2>
 <p>AI-Tables differ from normal tables in that they can generate predictions upon being queried and returning such predictions as if it was data that existed in the table. Simply put, an AI-Table allows you to use machine learning models as if they were normal database tables, in something that in plain SQL looks like this:
 SELECT <predicted_variable> FROM <ML_model> WHERE <conditions>
 Now, in this tutorial you will get a step-by-step instructions on how to enable AI-Tables in your database and how to build, train and query a Machine Learning model only by using SQL statements!</p>
@@ -1320,7 +1334,7 @@ Now, in this tutorial you will get a step-by-step instructions on how to enable 
 </code></pre></div>
 
 
-<p><img alt="SELECT FROM us_consumption" src="/assets/tutorials/aitables-postgresql/select_table.png" /></p>
+<p><img alt="SELECT FROM us_consumption" src="../../../assets/tutorials/aitables-postgresql/select_table.png" /></p>
 <h2 id="add-configuration">Add Configuration</h2>
 <p>We have the data inside PostgreSQL, so the next step is to install PostgreSQL foreign data wrapper for MySQL. Please check the EnterpriseDB documentation on how to do that. The last step is to create the MindsDB’s configuration file. MindsDB will try to use the default configuration options like host, port, username for the PostgreSQL integration. In case you want to extend them or change the default values you need to add a config.json file. Create a new file config.json and include the following information:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
@@ -1396,9 +1410,9 @@ That’s all for setting up the AI Tables in PostgreSQL.</li>
 * --api - That tells MindsDB which API should be started (HTTP or MySQL).
 * --config - The path to the configuration file that we have created.
 If everything works as expected you should see the following message:</p>
-<p><img alt="MindsDB Started" src="/assets/tutorials/aitables-postgresql/mindsdb_started.png" /></p>
+<p><img alt="MindsDB Started" src="../../../assets/tutorials/aitables-postgresql/mindsdb_started.png" /></p>
 <p>Upon successful setup, MindsDB should create a new schema called mindsdb. </p>
-<p><img alt="MindsDB Schema" src="/assets/tutorials/aitables-postgresql/list_schema.png" /></p>
+<p><img alt="MindsDB Schema" src="../../../assets/tutorials/aitables-postgresql/list_schema.png" /></p>
 <p>In the mindsdb schema, two new tables should be created called commands and predictors. The mindsdb.predictors table is the table where MindsDB will keep information about trained and in training models.</p>
 <h3 id="train-new-machine-learning-model">Train new Machine Learning Model</h3>
 <p>Training the machine learning model using MindsDB is quite simple. It can be done by executing the INSERT query inside the mindsdb.predictors table. In our example we want to predict the consumption from the us_consumption table, so let’s run the INSERT query as:</p>
@@ -1416,13 +1430,13 @@ training_options (dictionary) - optional value that contains additional training
 </code></pre></div>
 
 
-<p><img alt="Status" src="/assets/tutorials/aitables-postgresql/select_status.png" /></p>
+<p><img alt="Status" src="../../../assets/tutorials/aitables-postgresql/select_status.png" /></p>
 <p>The status complete means that training successfully finished. Now, let’s query the model. The trained model behaves like an AI Table and can be queried as it is a standard database table. To get the prediction we need to execute <code>SELECT</code> query and in the <code>WHERE</code> clause include the other features values as Customer Type, Type of Travel, Seat comfort etc. </p>
 <div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="n">satisfaction</span> <span class="k">AS</span> <span class="n">predicted</span><span class="p">,</span> <span class="n">satisfaction_confidence</span> <span class="k">AS</span> <span class="n">confidence</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">passenger_satisfaction_model</span> <span class="k">WHERE</span>  <span class="ss">&quot;Customer Type&quot;</span><span class="o">=</span><span class="s1">&#39;Loyal Customer&#39;</span> <span class="k">AND</span> <span class="ss">&quot;Inflight wifi service&quot;</span><span class="o">=</span><span class="mi">5</span> <span class="k">AND</span> <span class="ss">&quot;Type of Travel&quot;</span><span class="o">=</span><span class="s1">&#39;Business travel&#39;</span> <span class="k">AND</span> <span class="ss">&quot;Class&quot;</span><span class="o">=</span><span class="s1">&#39;Eco&#39;</span><span class="p">;</span>
 </code></pre></div>
 
 
-<p><img alt="SELECT FROM model" src="/assets/tutorials/aitables-postgresql/select_model.png" /></p>
+<p><img alt="SELECT FROM model" src="../../../assets/tutorials/aitables-postgresql/select_model.png" /></p>
 <p>In a second we should get the prediction back from MindsDB. So, MindsDB thinks that the value for consumption rate is around 0.87 with pretty much big confidence 97%. There is additional information that we can get back from MindsDB by selecting the explain column from the model as:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="n">satisfaction</span> <span class="k">AS</span> <span class="n">predicted</span><span class="p">,</span> <span class="n">satisfaction_confidence</span> <span class="k">AS</span> <span class="n">confidence</span><span class="p">,</span> <span class="n">satisfaction_explain</span> <span class="k">AS</span> <span class="n">info</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">passenger_satisfaction_model</span> <span class="k">WHERE</span>  <span class="ss">&quot;Customer Type&quot;</span><span class="o">=</span><span class="s1">&#39;Loyal Customer&#39;</span> <span class="k">AND</span> <span class="n">age</span><span class="o">=</span><span class="mi">52</span> <span class="k">AND</span> <span class="ss">&quot;Type of Travel&quot;</span><span class="o">=</span><span class="s1">&#39;Business travel&#39;</span> <span class="k">AND</span> <span class="ss">&quot;Class&quot;</span><span class="o">=</span><span class="s1">&#39;Eco&#39;</span><span class="p">;</span>
 </code></pre></div>
