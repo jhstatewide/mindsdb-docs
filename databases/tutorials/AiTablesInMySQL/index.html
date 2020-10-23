@@ -354,6 +354,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-is-ai-tables" class="md-nav__link">
+    What is AI Tables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-to-install-mysql" class="md-nav__link">
     How to install MySQL?
   </a>
@@ -1194,6 +1201,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-is-ai-tables" class="md-nav__link">
+    What is AI Tables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-to-install-mysql" class="md-nav__link">
     How to install MySQL?
   </a>
@@ -1270,10 +1284,13 @@
                 <h1 id="ai-tables-in-mysql">AI-Tables in MySQL</h1>
 <p>Anyone that has dealt with Machine Learning understands that data is a fundamental ingredient to it. Given that a great deal of the world’s organized data already exists inside databases, doesn't it make sense to bring machine learning capabilities straight to the database itself? Bringing Machine Learning to those who know their data best can significantly augment the capacity to solve important problems.
 To do so, we have developed a concept called AI-Tables.</p>
-<p>What is AI Tables</p>
-<p>AI-Tables differ from normal tables in that they can generate predictions upon being queried and returning such predictions as if it was data that existed in the table. Simply put, an AI-Table allows you to use machine learning models as if they were normal database tables, in something that in plain SQL looks like this:
-SELECT <predicted_variable> FROM <ML_model> WHERE <conditions>
-Now, in this tutorial you will get a step-by-step instructions on how to enable AI-Tables in your database and how to build, train and query a Machine Learning model only by using SQL statements!</p>
+<h2 id="what-is-ai-tables">What is AI Tables</h2>
+<p>AI-Tables differ from normal tables in that they can generate predictions upon being queried and returning such predictions as if it was data that existed in the table. Simply put, an AI-Table allows you to use machine learning models as if they were normal database tables, in something that in plain SQL looks like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="o">&lt;</span><span class="n">predicted_variable</span><span class="o">&gt;</span> <span class="k">FROM</span> <span class="o">&lt;</span><span class="n">ML_model</span><span class="o">&gt;</span> <span class="k">WHERE</span> <span class="o">&lt;</span><span class="n">conditions</span><span class="o">&gt;</span>
+</code></pre></div>
+
+
+<p>Now, in this tutorial you will get a step-by-step instructions on how to enable AI-Tables in your database and how to build, train and query a Machine Learning model only by using SQL statements!</p>
 <h2 id="how-to-install-mysql">How to install MySQL?</h2>
 <p>If you don’t have MySQL installed you can download the installers for various platforms from the official documentation.</p>
 <h2 id="example-dataset">Example dataset</h2>
@@ -1316,7 +1333,7 @@ Now, in this tutorial you will get a step-by-step instructions on how to enable 
 </code></pre></div>
 
 
-<p><img alt="SELECT FROM us_consumption" src="/mindsdb-docs/docs/assets/tutorials/aitables-mysql/select_table.png" /></p>
+<p><img alt="SELECT FROM us_consumption" src="/assets/tutorials/aitables-mysql/select_table.png" /></p>
 <h2 id="add-configuration">Add Configuration</h2>
 <p>As a prerequisite for using MySQL we need to enable the Federated Storage engine. Check out official <a href="https://dev.mysql.com/doc/refman/8.0/en/federated-storage-engine.html">MySQL documentation</a> to see how you can do that.
 The last step is to create the MindsDB’s configuration file. MindsDB will try to use the default configuration options like host, port, username for the MySQL. In case you want to extend them or change the default values you need to add a config.json file. Create a new file config.json and include the following information:</p>
@@ -1388,9 +1405,9 @@ Now, we have successfully set up all of the requirements for AI Tables in MySQL.
 * --api - That tells MindsDB which API should be started (HTTP or MySQL).
 * --config - The path to the configuration file that we have created.
 If everything works as expected you should see the following message:</p>
-<p><img alt="MindsDB Started" src="/mindsdb-docs/docs/assets/tutorials/aitables-postgresql/mindsdb_started.png" /></p>
+<p><img alt="MindsDB Started" src="/assets/tutorials/aitables-postgresql/mindsdb_started.png" /></p>
 <p>Upon successful setup, MindsDB should create a new database called mindsdb.</p>
-<p><img alt="MindsDB Schema" src="/mindsdb-docs/docs/assets/tutorials/aitables-mysql/list_tables.png" /></p>
+<p><img alt="MindsDB Schema" src="/assets/tutorials/aitables-mysql/list_tables.png" /></p>
 <p>In the mindsdb database, two new tables should be created called commands and predictors. The mindsdb.predictors table is the table where MindsDB will keep information about trained and in training models.</p>
 <h3 id="train-new-machine-learning-model">Train new Machine Learning Model</h3>
 <p>Training the machine learning model using MindsDB is quite simple. It can be done by executing the INSERT query inside the mindsdb.predictors table. In our example we want to predict the consumption from the us_consumption table, so let’s run the INSERT query as:</p>
@@ -1408,7 +1425,7 @@ If everything works as expected you should see the following message:</p>
 </code></pre></div>
 
 
-<p><img alt="Status" src="/mindsdb-docs/docs/assets/tutorials/aitables-mysql/select_status.png" /></p>
+<p><img alt="Status" src="/assets/tutorials/aitables-mysql/select_status.png" /></p>
 <p>The status complete means that training successfully finished. Now, let’s query the model. The trained model behaves like an AI Table and can be queried as it is a standard database table. To get the prediction we need to execute a <code>SELECT</code> query and in the <code>WHERE</code> clause include the when_data as an JSON string that includes features values such as date_time, weather, temperature, holiday etc.</p>
 <div class="codehilite"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">metro_traffic_model</span> <span class="k">where</span> <span class="n">when_data</span><span class="o">=</span><span class="s1">&#39;{&quot;temp&quot;: &quot;288&quot;,&quot;snow_1h&quot;:0, &quot;date_time&quot;: &quot;2012-10-02&quot;, &quot;holiday&quot;:&quot;Columbus Day&quot;}&#39;</span><span class="p">;</span>
 </code></pre></div>
