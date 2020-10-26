@@ -1250,10 +1250,10 @@ generated values to plot some interesting information about the data (e.g. data 
 <p><strong>Train mode</strong>: When calling <code>learn</code>,the model interface will feed the data to a machine learning framework which does the training in order to build a model.</p>
 </li>
 <li>
-<p><strong>Preidct mode</strong>: When calling <code>predict</code>, the model interface will feed the data to the model built by <code>learn</code> in order to generate a prediction.</p>
+<p><strong>Predict mode</strong>: When calling <code>predict</code>, the model interface will feed the data to the model built by <code>learn</code> in order to generate a prediction.</p>
 </li>
 <li>
-<p><strong>Data adaption</strong>: The <code>ModelInterface</code> phase is simply a lighteight wrapper over the model <a href="https://github.com/mindsdb/mindsdb_native/tree/stable/mindsdb_native/libs/backends">backends</a> which handle adapting the data frame used by mindsdb into a format they can work with. During this process additional metadata for the machine learning libraries/frameworks is generated based on the results of the <strong>Stats Generator</strong> phase.</p>
+<p><strong>Data adaption</strong>: The <code>ModelInterface</code> phase is simply a lightweight wrapper over the model <a href="https://github.com/mindsdb/mindsdb_native/tree/stable/mindsdb_native/libs/backends">backends</a> which handle adapting the data frame used by mindsdb into a format they can work with. During this process additional metadata for the machine learning libraries/frameworks is generated based on the results of the <strong>Stats Generator</strong> phase.</p>
 </li>
 <li>
 <p><strong>Learning backend</strong>: The learning backends as the <a href="https://en.wikipedia.org/wiki/Ensemble_learning">ensemble learning</a> libraries used by mindsdb to train the model that will generate the predictions.
