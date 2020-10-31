@@ -1337,7 +1337,7 @@ To do so, we have developed a concept called AI-Tables.</p>
 
 <p><img alt="SELECT FROM us_consumption" src="/assets/tutorials/aitables-mysql/select_table.png" /></p>
 <h2 id="add-configuration">Add Configuration</h2>
-<p>As a prerequisite for using MySQL we need to enable the Federated Storage engine. Check out official <a href="https://dev.mysql.com/doc/refman/8.0/en/federated-storage-engine.html">MySQL documentation</a> to see how you can do that.
+<p>As a prerequisite for using <a href="https://www.mysql.com/downloads/">MySQL</a> we need to enable the Federated Storage engine. Check out official <a href="https://dev.mysql.com/doc/refman/8.0/en/federated-storage-engine.html">MySQL documentation</a> to see how you can do that.
 The last step is to create the MindsDB’s configuration file. MindsDB will try to use the default configuration options like host, port, username for the MySQL. In case you want to extend them or change the default values you need to add a config.json file. Create a new file config.json and include the following information:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
    <span class="nt">&quot;api&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -1429,7 +1429,7 @@ If everything works as expected you should see the following message:</p>
 
 <p><img alt="Status" src="/assets/tutorials/aitables-mysql/select_status.png" /></p>
 <p>The status complete means that training successfully finished. Now, let’s query the model. The trained model behaves like an AI Table and can be queried as it is a standard database table. To get the prediction we need to execute a <code>SELECT</code> query and in the <code>WHERE</code> clause include the when_data as an JSON string that includes features values such as date_time, weather, temperature, holiday etc.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">metro_traffic_model</span> <span class="k">where</span> <span class="n">when_data</span><span class="o">=</span><span class="s1">&#39;{&quot;temp&quot;: &quot;288&quot;,&quot;snow_1h&quot;:0, &quot;date_time&quot;: &quot;2012-10-02&quot;, &quot;holiday&quot;:&quot;Columbus Day&quot;}&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">metro_traffic_model</span> <span class="k">WHERE</span> <span class="n">when_data</span><span class="o">=</span><span class="s1">&#39;{&quot;temp&quot;: &quot;288&quot;,&quot;snow_1h&quot;:0, &quot;date_time&quot;: &quot;2012-10-02&quot;, &quot;holiday&quot;:&quot;Columbus Day&quot;}&#39;</span><span class="p">;</span>
 </code></pre></div>
 
 
