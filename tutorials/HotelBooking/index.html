@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -10,22 +8,27 @@
       
       
       
+      
       <link rel="shortcut icon" href="../../assets/mdb_logo.png">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.0.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.5">
     
     
       
-        <title>Hotel Booking Demand</title>
+        <title>Hotel Booking Demand - MindsDB Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.c3000690.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.21aed14c.min.css">
       
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
+        
       
     
     
     
       
+        
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
@@ -49,7 +52,13 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
   
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -66,7 +75,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="../.." title="MindsDB Documentation" class="md-header-nav__button md-logo" aria-label="MindsDB Documentation">
       
@@ -74,7 +85,7 @@
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
       
@@ -92,27 +103,27 @@
     </div>
     
       <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
       
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
       <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Type to start searching
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -127,7 +138,7 @@
 <a href="https://github.com/mindsdb/mindsdb/" title="Go to repository" class="md-source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     mindsdb/mindsdb
@@ -140,8 +151,6 @@
     
     <div class="md-container" data-md-component="container">
       
-        
-      
       
         
       
@@ -152,7 +161,9 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="MindsDB Documentation" class="md-nav__button md-logo" aria-label="MindsDB Documentation">
       
@@ -167,7 +178,7 @@
 <a href="https://github.com/mindsdb/mindsdb/" title="Go to repository" class="md-source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     mindsdb/mindsdb
@@ -183,7 +194,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Installing/" title="Installing MindsDB" class="md-nav__link">
+    <a href="../../Installing/" class="md-nav__link">
       Installing MindsDB
     </a>
   </li>
@@ -196,19 +207,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
     <label class="md-nav__link" for="nav-2">
       AutoML in Databases
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="AutoML in Databases" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         AutoML in Databases
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -220,7 +226,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../databases/" title="AI Tables" class="md-nav__link">
+    <a href="../../databases/" class="md-nav__link">
       AI Tables
     </a>
   </li>
@@ -232,7 +238,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../databases/PostgreSQL/" title="AI Tables in PostgreSQL" class="md-nav__link">
+    <a href="../../databases/PostgreSQL/" class="md-nav__link">
       AI Tables in PostgreSQL
     </a>
   </li>
@@ -244,7 +250,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../databases/MariaDB/" title="AI Tables in MariaDB" class="md-nav__link">
+    <a href="../../databases/MariaDB/" class="md-nav__link">
       AI Tables in MariaDB
     </a>
   </li>
@@ -256,7 +262,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../databases/MySQL/" title="AI Tables in MySQL" class="md-nav__link">
+    <a href="../../databases/MySQL/" class="md-nav__link">
       AI Tables in MySQL
     </a>
   </li>
@@ -268,7 +274,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../databases/Clickhouse/" title="AI Tables in ClickHouse" class="md-nav__link">
+    <a href="../../databases/Clickhouse/" class="md-nav__link">
       AI Tables in ClickHouse
     </a>
   </li>
@@ -281,19 +287,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6" >
     <label class="md-nav__link" for="nav-2-6">
       Tutorials
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Tutorials" data-md-level="2">
       <label class="md-nav__title" for="nav-2-6">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Tutorials
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -305,7 +306,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../databases/tutorials/AiTablesInPostgreSQL/" title="AI Tables in PostgreSQL" class="md-nav__link">
+    <a href="../../databases/tutorials/AiTablesInPostgreSQL/" class="md-nav__link">
       AI Tables in PostgreSQL
     </a>
   </li>
@@ -317,7 +318,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../databases/tutorials/AiTablesInMySQL/" title="AI Tables in MySQL" class="md-nav__link">
+    <a href="../../databases/tutorials/AiTablesInMySQL/" class="md-nav__link">
       AI Tables in MySQL
     </a>
   </li>
@@ -342,19 +343,14 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     <label class="md-nav__link" for="nav-3">
       AutoML from code
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="AutoML from code" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         AutoML from code
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -369,19 +365,14 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
     <label class="md-nav__link" for="nav-3-1">
       Python native
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Python native" data-md-level="2">
       <label class="md-nav__title" for="nav-3-1">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Python native
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -393,7 +384,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../BasicExample/" title="Starter Example" class="md-nav__link">
+    <a href="../BasicExample/" class="md-nav__link">
       Starter Example
     </a>
   </li>
@@ -405,7 +396,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../GoogleColab/" title="Running on Google Colab" class="md-nav__link">
+    <a href="../../GoogleColab/" class="md-nav__link">
       Running on Google Colab
     </a>
   </li>
@@ -417,7 +408,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../JupyterNotebook/" title="Running on Jupyter Notebook" class="md-nav__link">
+    <a href="../../JupyterNotebook/" class="md-nav__link">
       Running on Jupyter Notebook
     </a>
   </li>
@@ -429,7 +420,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../PredictorInterface/" title="Predictor Interface" class="md-nav__link">
+    <a href="../../PredictorInterface/" class="md-nav__link">
       Predictor Interface
     </a>
   </li>
@@ -441,7 +432,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../FunctionalInterface/" title="Functional Interface" class="md-nav__link">
+    <a href="../../FunctionalInterface/" class="md-nav__link">
       Functional Interface
     </a>
   </li>
@@ -453,7 +444,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../AdvancedExamples/" title="Advanced usecases" class="md-nav__link">
+    <a href="../AdvancedExamples/" class="md-nav__link">
       Advanced usecases
     </a>
   </li>
@@ -465,7 +456,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Timeseries/" title="Timeseries Data" class="md-nav__link">
+    <a href="../Timeseries/" class="md-nav__link">
       Timeseries Data
     </a>
   </li>
@@ -477,7 +468,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../features/DataSources/" title="Data sources" class="md-nav__link">
+    <a href="../../features/DataSources/" class="md-nav__link">
       Data sources
     </a>
   </li>
@@ -489,7 +480,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Config/" title="Configuration Settings" class="md-nav__link">
+    <a href="../../Config/" class="md-nav__link">
       Configuration Settings
     </a>
   </li>
@@ -501,7 +492,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../server/SDKs/" title="MindsDB SDK" class="md-nav__link">
+    <a href="../../server/SDKs/" class="md-nav__link">
       MindsDB SDK
     </a>
   </li>
@@ -516,19 +507,14 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-11" type="checkbox" id="nav-3-1-11" checked>
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-11" type="checkbox" id="nav-3-1-11" checked>
     <label class="md-nav__link" for="nav-3-1-11">
       Use Cases
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Use Cases" data-md-level="3">
       <label class="md-nav__title" for="nav-3-1-11">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Use Cases
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -541,19 +527,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-11-1" type="checkbox" id="nav-3-1-11-1">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-11-1" type="checkbox" id="nav-3-1-11-1" >
     <label class="md-nav__link" for="nav-3-1-11-1">
       High-Tech & Manufacturing
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="High-Tech & Manufacturing" data-md-level="4">
       <label class="md-nav__title" for="nav-3-1-11-1">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         High-Tech & Manufacturing
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -565,7 +546,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../PredictiveMaintenance/" title="Predictive Maintenance" class="md-nav__link">
+    <a href="../PredictiveMaintenance/" class="md-nav__link">
       Predictive Maintenance
     </a>
   </li>
@@ -583,19 +564,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-11-2" type="checkbox" id="nav-3-1-11-2">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-11-2" type="checkbox" id="nav-3-1-11-2" >
     <label class="md-nav__link" for="nav-3-1-11-2">
       Financial Services
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Financial Services" data-md-level="4">
       <label class="md-nav__title" for="nav-3-1-11-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Financial Services
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -607,7 +583,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../CreditScoring/" title="Credit Scoring" class="md-nav__link">
+    <a href="../CreditScoring/" class="md-nav__link">
       Credit Scoring
     </a>
   </li>
@@ -625,19 +601,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-11-3" type="checkbox" id="nav-3-1-11-3">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-11-3" type="checkbox" id="nav-3-1-11-3" >
     <label class="md-nav__link" for="nav-3-1-11-3">
       Retail & Online
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Retail & Online" data-md-level="4">
       <label class="md-nav__title" for="nav-3-1-11-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Retail & Online
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -649,7 +620,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../CustomerLifetimeValue/" title="Custiner Lifetime Value Optimization" class="md-nav__link">
+    <a href="../CustomerLifetimeValue/" class="md-nav__link">
       Custiner Lifetime Value Optimization
     </a>
   </li>
@@ -661,7 +632,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../FraudDetection/" title="Fraud Detection" class="md-nav__link">
+    <a href="../FraudDetection/" class="md-nav__link">
       Fraud Detection
     </a>
   </li>
@@ -679,19 +650,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-11-4" type="checkbox" id="nav-3-1-11-4">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-11-4" type="checkbox" id="nav-3-1-11-4" >
     <label class="md-nav__link" for="nav-3-1-11-4">
       Health Care
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Health Care" data-md-level="4">
       <label class="md-nav__title" for="nav-3-1-11-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Health Care
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -703,7 +669,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../PatientHealthOutcomes/" title="Patient Health" class="md-nav__link">
+    <a href="../PatientHealthOutcomes/" class="md-nav__link">
       Patient Health
     </a>
   </li>
@@ -715,7 +681,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../MedicalDiagnosis/" title="Medical Diagnosis" class="md-nav__link">
+    <a href="../MedicalDiagnosis/" class="md-nav__link">
       Medical Diagnosis
     </a>
   </li>
@@ -735,19 +701,14 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-11-5" type="checkbox" id="nav-3-1-11-5" checked>
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-11-5" type="checkbox" id="nav-3-1-11-5" checked>
     <label class="md-nav__link" for="nav-3-1-11-5">
       Travel
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Travel" data-md-level="4">
       <label class="md-nav__title" for="nav-3-1-11-5">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Travel
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -767,12 +728,10 @@
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Hotel Booking Demand
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
       </label>
     
-    <a href="./" title="Hotel Booking Demand" class="md-nav__link md-nav__link--active">
+    <a href="./" class="md-nav__link md-nav__link--active">
       Hotel Booking Demand
     </a>
     
@@ -782,9 +741,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -842,19 +799,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-11-6" type="checkbox" id="nav-3-1-11-6">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-11-6" type="checkbox" id="nav-3-1-11-6" >
     <label class="md-nav__link" for="nav-3-1-11-6">
       Telecomunications
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Telecomunications" data-md-level="4">
       <label class="md-nav__title" for="nav-3-1-11-6">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Telecomunications
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -866,7 +818,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../ChurnReduction/" title="Customer Churn Reduction" class="md-nav__link">
+    <a href="../ChurnReduction/" class="md-nav__link">
       Customer Churn Reduction
     </a>
   </li>
@@ -899,19 +851,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
     <label class="md-nav__link" for="nav-4">
       AutoML building blocks
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="AutoML building blocks" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         AutoML building blocks
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -923,7 +870,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../lightwood/info/" title="Introduction to Lightwood" class="md-nav__link">
+    <a href="../../lightwood/info/" class="md-nav__link">
       Introduction to Lightwood
     </a>
   </li>
@@ -935,7 +882,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../lightwood/API/" title="Predictor API" class="md-nav__link">
+    <a href="../../lightwood/API/" class="md-nav__link">
       Predictor API
     </a>
   </li>
@@ -953,19 +900,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
     <label class="md-nav__link" for="nav-5">
       AutoML Explainability
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="AutoML Explainability" data-md-level="1">
       <label class="md-nav__title" for="nav-5">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         AutoML Explainability
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -978,19 +920,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1" >
     <label class="md-nav__link" for="nav-5-1">
       MindsDB Scout
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="MindsDB Scout" data-md-level="2">
       <label class="md-nav__title" for="nav-5-1">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         MindsDB Scout
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1002,7 +939,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../scout/Introduction/" title="Getting Started" class="md-nav__link">
+    <a href="../../scout/Introduction/" class="md-nav__link">
       Getting Started
     </a>
   </li>
@@ -1014,7 +951,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../scout/Datasources/" title="Datasources" class="md-nav__link">
+    <a href="../../scout/Datasources/" class="md-nav__link">
       Datasources
     </a>
   </li>
@@ -1026,7 +963,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../scout/Predictors/" title="Predictors" class="md-nav__link">
+    <a href="../../scout/Predictors/" class="md-nav__link">
       Predictors
     </a>
   </li>
@@ -1038,7 +975,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../scout/Query/" title="Query" class="md-nav__link">
+    <a href="../../scout/Query/" class="md-nav__link">
       Query
     </a>
   </li>
@@ -1061,19 +998,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
     <label class="md-nav__link" for="nav-6">
       Comparisons
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Comparisons" data-md-level="1">
       <label class="md-nav__title" for="nav-6">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Comparisons
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1085,7 +1017,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../comparisons/ComparsionWithOtherLibraries/" title="Comparison with other Libraries" class="md-nav__link">
+    <a href="../../comparisons/ComparsionWithOtherLibraries/" class="md-nav__link">
       Comparison with other Libraries
     </a>
   </li>
@@ -1103,19 +1035,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
     <label class="md-nav__link" for="nav-7">
       Contributing
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Contributing" data-md-level="1">
       <label class="md-nav__title" for="nav-7">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Contributing
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1127,7 +1054,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../FAQ/" title="FAQ" class="md-nav__link">
+    <a href="../../FAQ/" class="md-nav__link">
       FAQ
     </a>
   </li>
@@ -1139,7 +1066,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../InsideMindsDB/" title="Inside MindsDB" class="md-nav__link">
+    <a href="../../InsideMindsDB/" class="md-nav__link">
       Inside MindsDB
     </a>
   </li>
@@ -1166,9 +1093,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -1220,11 +1145,8 @@
               
                 
                   <a href="https://github.com/mindsdb/mindsdb/edit/master/docs/tutorials/HotelBooking.md" title="Edit this page" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
-                
-                
-                  
                 
                 
                   <h1>Hotel Booking Demand</h1>
@@ -1529,41 +1451,42 @@
 <details>
   <summary>Click to expand Features Informations:</summary>
 
-<div class="codehilite"><pre><span></span><code><span class="err">1. hotel Hotel (H1 = Resort Hotel or H2 = City Hotel)</span>
-<span class="err">2. is_canceled Value indicating if the booking was canceled (1) or not (0)</span>
-<span class="err">lead_timeNumber of days that elapsed between the entering date of the booking into the PMS and the arrival date</span>
-<span class="err">3. arrival_date_year Year of arrival date</span>
-<span class="err">4. arrival_date_month Month of arrival date</span>
-<span class="err">5. arrival_date_week_number Week number of year for arrival date</span>
-<span class="err">6. arrival_date_day_of_month Day of arrival date</span>
-<span class="err">7. stays_in_weekend_nights Number of weekend nights (Saturday or Sunday) the guest stayed or booked to stay at the hotel</span>
-<span class="err">8. stays_in_week_nightsNumber of week nights (Monday to Friday) the guest stayed or booked to stay at the hotel</span>
-<span class="err">9. adultsNumber of adults</span>
-<span class="err">10. childrenNumber of children</span>
-<span class="err">11. babiesNumber of babies</span>
-<span class="err">12. mealType of meal booked. Categories are presented in standard hospitality meal packages: Undefined/SC – no meal package; BB – Bed &amp; Breakfast; HB – Half board (breakfast and one other meal – usually dinner); FB – Full board (breakfast, lunch and dinner)</span>
-<span class="err">13. countryCountry of origin. Categories are represented in the ISO 3155–3:2013 format</span>
-<span class="err">14. market_segment Market segment designation. In categories, the term “TA” means “Travel Agents” and “TO” means “Tour Operators”</span>
-<span class="err">15. distribution_channel Booking distribution channel. The term “TA” means “Travel Agents” and “TO” means “Tour Operators”</span>
-<span class="err">16. is_repeated_guestValue indicating if the booking name was from a repeated guest (1) or not (0)</span>
-<span class="err">17. previous_cancellationsNumber of previous bookings that were cancelled by the customer prior to the current booking</span>
-<span class="err">18. previous_bookings_not_canceledNumber of previous bookings not cancelled by the customer prior to the current booking</span>
-<span class="err">19. reserved_room_typeCode of room type reserved. Code is presented instead of designation for anonymity reasons.</span>
-<span class="err">20. assigned_room_type</span>
-<span class="err">Code for the type of room assigned to the booking. Sometimes the assigned room type differs from the reserved room type due to hotel operation reasons (e.g. overbooking) or by customer request. Code is presented instead of designation for anonymity reasons.</span>
-<span class="err">21. booking_changes Number of changes/amendments made to the booking from the moment the booking was entered on the PMS until the moment of check-in or cancellation</span>
-<span class="err">22. deposit_type Indication on if the customer made a deposit to guarantee the booking. This variable can assume three categories: No Deposit – no deposit was made; Non Refund – a deposit was made in the value of the total stay cost; Refundable – a deposit was made with a value under the total cost of stay.</span>
-<span class="err">23. agentID of the travel agency that made the booking</span>
-<span class="err">24. companyID of the company/entity that made the booking or responsible for paying the booking. ID is presented instead of designation for anonymity reasons</span>
-<span class="err">25. days_in_waiting_list Number of days the booking was in the waiting list before it was confirmed to the customer</span>
-<span class="err">26. customer_type Type of booking, assuming one of four categories:</span>
-<span class="err">Contract - when the booking has an allotment or other type of contract associated to it; Group – when the booking is associated to a group; Transient – when the booking is not part of a group or contract, and is not associated to other </span>
-<span class="err">27. transient booking; Transient-party – when the booking is transient, but is associated to at least other transient booking</span>
-<span class="err">adrAverage Daily Rate as defined by dividing the sum of all lodging transactions by the total number of staying nights</span>
-<span class="err">28. required_car_parking_spaces Number of car parking spaces required by the customer</span>
-<span class="err">29. total_of_special_requests Number of special requests made by the customer (e.g. twin bed or high floor)</span>
-<span class="err">30. reservation_status Reservation last status, assuming one of three categories: Canceled – booking was canceled by the customer; Check-Out – customer has checked in but already departed; No-Show – customer did not check-in and did inform the hotel of the reason why</span>
-<span class="err">31. reservation_status_date Date at which the last status was set. This variable can be used in conjunction with the ReservationStatus to understand when was the booking canceled or when did the customer checked-out of the hotel</span>
+
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span> <span class="n">hotel</span> <span class="n">Hotel</span> <span class="p">(</span><span class="n">H1</span> <span class="o">=</span> <span class="n">Resort</span> <span class="n">Hotel</span> <span class="ow">or</span> <span class="n">H2</span> <span class="o">=</span> <span class="n">City</span> <span class="n">Hotel</span><span class="p">)</span>
+<span class="mf">2.</span> <span class="n">is_canceled</span> <span class="n">Value</span> <span class="n">indicating</span> <span class="k">if</span> <span class="n">the</span> <span class="n">booking</span> <span class="n">was</span> <span class="n">canceled</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">lead_timeNumber</span> <span class="n">of</span> <span class="n">days</span> <span class="n">that</span> <span class="n">elapsed</span> <span class="n">between</span> <span class="n">the</span> <span class="n">entering</span> <span class="n">date</span> <span class="n">of</span> <span class="n">the</span> <span class="n">booking</span> <span class="n">into</span> <span class="n">the</span> <span class="n">PMS</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">arrival</span> <span class="n">date</span>
+<span class="mf">3.</span> <span class="n">arrival_date_year</span> <span class="n">Year</span> <span class="n">of</span> <span class="n">arrival</span> <span class="n">date</span>
+<span class="mf">4.</span> <span class="n">arrival_date_month</span> <span class="n">Month</span> <span class="n">of</span> <span class="n">arrival</span> <span class="n">date</span>
+<span class="mf">5.</span> <span class="n">arrival_date_week_number</span> <span class="n">Week</span> <span class="n">number</span> <span class="n">of</span> <span class="n">year</span> <span class="k">for</span> <span class="n">arrival</span> <span class="n">date</span>
+<span class="mf">6.</span> <span class="n">arrival_date_day_of_month</span> <span class="n">Day</span> <span class="n">of</span> <span class="n">arrival</span> <span class="n">date</span>
+<span class="mf">7.</span> <span class="n">stays_in_weekend_nights</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">weekend</span> <span class="n">nights</span> <span class="p">(</span><span class="n">Saturday</span> <span class="ow">or</span> <span class="n">Sunday</span><span class="p">)</span> <span class="n">the</span> <span class="n">guest</span> <span class="n">stayed</span> <span class="ow">or</span> <span class="n">booked</span> <span class="n">to</span> <span class="n">stay</span> <span class="n">at</span> <span class="n">the</span> <span class="n">hotel</span>
+<span class="mf">8.</span> <span class="n">stays_in_week_nightsNumber</span> <span class="n">of</span> <span class="n">week</span> <span class="n">nights</span> <span class="p">(</span><span class="n">Monday</span> <span class="n">to</span> <span class="n">Friday</span><span class="p">)</span> <span class="n">the</span> <span class="n">guest</span> <span class="n">stayed</span> <span class="ow">or</span> <span class="n">booked</span> <span class="n">to</span> <span class="n">stay</span> <span class="n">at</span> <span class="n">the</span> <span class="n">hotel</span>
+<span class="mf">9.</span> <span class="n">adultsNumber</span> <span class="n">of</span> <span class="n">adults</span>
+<span class="mf">10.</span> <span class="n">childrenNumber</span> <span class="n">of</span> <span class="n">children</span>
+<span class="mf">11.</span> <span class="n">babiesNumber</span> <span class="n">of</span> <span class="n">babies</span>
+<span class="mf">12.</span> <span class="n">mealType</span> <span class="n">of</span> <span class="n">meal</span> <span class="n">booked</span><span class="o">.</span> <span class="n">Categories</span> <span class="n">are</span> <span class="n">presented</span> <span class="ow">in</span> <span class="n">standard</span> <span class="n">hospitality</span> <span class="n">meal</span> <span class="n">packages</span><span class="p">:</span> <span class="n">Undefined</span><span class="o">/</span><span class="n">SC</span> <span class="err">–</span> <span class="n">no</span> <span class="n">meal</span> <span class="n">package</span><span class="p">;</span> <span class="n">BB</span> <span class="err">–</span> <span class="n">Bed</span> <span class="o">&amp;</span> <span class="n">Breakfast</span><span class="p">;</span> <span class="n">HB</span> <span class="err">–</span> <span class="n">Half</span> <span class="n">board</span> <span class="p">(</span><span class="n">breakfast</span> <span class="ow">and</span> <span class="n">one</span> <span class="n">other</span> <span class="n">meal</span> <span class="err">–</span> <span class="n">usually</span> <span class="n">dinner</span><span class="p">);</span> <span class="n">FB</span> <span class="err">–</span> <span class="n">Full</span> <span class="n">board</span> <span class="p">(</span><span class="n">breakfast</span><span class="p">,</span> <span class="n">lunch</span> <span class="ow">and</span> <span class="n">dinner</span><span class="p">)</span>
+<span class="mf">13.</span> <span class="n">countryCountry</span> <span class="n">of</span> <span class="n">origin</span><span class="o">.</span> <span class="n">Categories</span> <span class="n">are</span> <span class="n">represented</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">ISO</span> <span class="mi">3155</span><span class="err">–</span><span class="mi">3</span><span class="p">:</span><span class="mi">2013</span> <span class="n">format</span>
+<span class="mf">14.</span> <span class="n">market_segment</span> <span class="n">Market</span> <span class="n">segment</span> <span class="n">designation</span><span class="o">.</span> <span class="n">In</span> <span class="n">categories</span><span class="p">,</span> <span class="n">the</span> <span class="n">term</span> <span class="err">“</span><span class="n">TA</span><span class="err">”</span> <span class="n">means</span> <span class="err">“</span><span class="n">Travel</span> <span class="n">Agents</span><span class="err">”</span> <span class="ow">and</span> <span class="err">“</span><span class="n">TO</span><span class="err">”</span> <span class="n">means</span> <span class="err">“</span><span class="n">Tour</span> <span class="n">Operators</span><span class="err">”</span>
+<span class="mf">15.</span> <span class="n">distribution_channel</span> <span class="n">Booking</span> <span class="n">distribution</span> <span class="n">channel</span><span class="o">.</span> <span class="n">The</span> <span class="n">term</span> <span class="err">“</span><span class="n">TA</span><span class="err">”</span> <span class="n">means</span> <span class="err">“</span><span class="n">Travel</span> <span class="n">Agents</span><span class="err">”</span> <span class="ow">and</span> <span class="err">“</span><span class="n">TO</span><span class="err">”</span> <span class="n">means</span> <span class="err">“</span><span class="n">Tour</span> <span class="n">Operators</span><span class="err">”</span>
+<span class="mf">16.</span> <span class="n">is_repeated_guestValue</span> <span class="n">indicating</span> <span class="k">if</span> <span class="n">the</span> <span class="n">booking</span> <span class="n">name</span> <span class="n">was</span> <span class="n">from</span> <span class="n">a</span> <span class="n">repeated</span> <span class="n">guest</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="mf">17.</span> <span class="n">previous_cancellationsNumber</span> <span class="n">of</span> <span class="n">previous</span> <span class="n">bookings</span> <span class="n">that</span> <span class="n">were</span> <span class="n">cancelled</span> <span class="n">by</span> <span class="n">the</span> <span class="n">customer</span> <span class="n">prior</span> <span class="n">to</span> <span class="n">the</span> <span class="n">current</span> <span class="n">booking</span>
+<span class="mf">18.</span> <span class="n">previous_bookings_not_canceledNumber</span> <span class="n">of</span> <span class="n">previous</span> <span class="n">bookings</span> <span class="ow">not</span> <span class="n">cancelled</span> <span class="n">by</span> <span class="n">the</span> <span class="n">customer</span> <span class="n">prior</span> <span class="n">to</span> <span class="n">the</span> <span class="n">current</span> <span class="n">booking</span>
+<span class="mf">19.</span> <span class="n">reserved_room_typeCode</span> <span class="n">of</span> <span class="n">room</span> <span class="n">type</span> <span class="n">reserved</span><span class="o">.</span> <span class="n">Code</span> <span class="k">is</span> <span class="n">presented</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">designation</span> <span class="k">for</span> <span class="n">anonymity</span> <span class="n">reasons</span><span class="o">.</span>
+<span class="mf">20.</span> <span class="n">assigned_room_type</span>
+<span class="n">Code</span> <span class="k">for</span> <span class="n">the</span> <span class="n">type</span> <span class="n">of</span> <span class="n">room</span> <span class="n">assigned</span> <span class="n">to</span> <span class="n">the</span> <span class="n">booking</span><span class="o">.</span> <span class="n">Sometimes</span> <span class="n">the</span> <span class="n">assigned</span> <span class="n">room</span> <span class="n">type</span> <span class="n">differs</span> <span class="n">from</span> <span class="n">the</span> <span class="n">reserved</span> <span class="n">room</span> <span class="n">type</span> <span class="n">due</span> <span class="n">to</span> <span class="n">hotel</span> <span class="n">operation</span> <span class="n">reasons</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">overbooking</span><span class="p">)</span> <span class="ow">or</span> <span class="n">by</span> <span class="n">customer</span> <span class="n">request</span><span class="o">.</span> <span class="n">Code</span> <span class="k">is</span> <span class="n">presented</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">designation</span> <span class="k">for</span> <span class="n">anonymity</span> <span class="n">reasons</span><span class="o">.</span>
+<span class="mf">21.</span> <span class="n">booking_changes</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">changes</span><span class="o">/</span><span class="n">amendments</span> <span class="n">made</span> <span class="n">to</span> <span class="n">the</span> <span class="n">booking</span> <span class="n">from</span> <span class="n">the</span> <span class="n">moment</span> <span class="n">the</span> <span class="n">booking</span> <span class="n">was</span> <span class="n">entered</span> <span class="n">on</span> <span class="n">the</span> <span class="n">PMS</span> <span class="n">until</span> <span class="n">the</span> <span class="n">moment</span> <span class="n">of</span> <span class="n">check</span><span class="o">-</span><span class="ow">in</span> <span class="ow">or</span> <span class="n">cancellation</span>
+<span class="mf">22.</span> <span class="n">deposit_type</span> <span class="n">Indication</span> <span class="n">on</span> <span class="k">if</span> <span class="n">the</span> <span class="n">customer</span> <span class="n">made</span> <span class="n">a</span> <span class="n">deposit</span> <span class="n">to</span> <span class="n">guarantee</span> <span class="n">the</span> <span class="n">booking</span><span class="o">.</span> <span class="n">This</span> <span class="n">variable</span> <span class="n">can</span> <span class="n">assume</span> <span class="n">three</span> <span class="n">categories</span><span class="p">:</span> <span class="n">No</span> <span class="n">Deposit</span> <span class="err">–</span> <span class="n">no</span> <span class="n">deposit</span> <span class="n">was</span> <span class="n">made</span><span class="p">;</span> <span class="n">Non</span> <span class="n">Refund</span> <span class="err">–</span> <span class="n">a</span> <span class="n">deposit</span> <span class="n">was</span> <span class="n">made</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="n">total</span> <span class="n">stay</span> <span class="n">cost</span><span class="p">;</span> <span class="n">Refundable</span> <span class="err">–</span> <span class="n">a</span> <span class="n">deposit</span> <span class="n">was</span> <span class="n">made</span> <span class="n">with</span> <span class="n">a</span> <span class="n">value</span> <span class="n">under</span> <span class="n">the</span> <span class="n">total</span> <span class="n">cost</span> <span class="n">of</span> <span class="n">stay</span><span class="o">.</span>
+<span class="mf">23.</span> <span class="n">agentID</span> <span class="n">of</span> <span class="n">the</span> <span class="n">travel</span> <span class="n">agency</span> <span class="n">that</span> <span class="n">made</span> <span class="n">the</span> <span class="n">booking</span>
+<span class="mf">24.</span> <span class="n">companyID</span> <span class="n">of</span> <span class="n">the</span> <span class="n">company</span><span class="o">/</span><span class="n">entity</span> <span class="n">that</span> <span class="n">made</span> <span class="n">the</span> <span class="n">booking</span> <span class="ow">or</span> <span class="n">responsible</span> <span class="k">for</span> <span class="n">paying</span> <span class="n">the</span> <span class="n">booking</span><span class="o">.</span> <span class="n">ID</span> <span class="k">is</span> <span class="n">presented</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">designation</span> <span class="k">for</span> <span class="n">anonymity</span> <span class="n">reasons</span>
+<span class="mf">25.</span> <span class="n">days_in_waiting_list</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">days</span> <span class="n">the</span> <span class="n">booking</span> <span class="n">was</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">waiting</span> <span class="n">list</span> <span class="n">before</span> <span class="n">it</span> <span class="n">was</span> <span class="n">confirmed</span> <span class="n">to</span> <span class="n">the</span> <span class="n">customer</span>
+<span class="mf">26.</span> <span class="n">customer_type</span> <span class="n">Type</span> <span class="n">of</span> <span class="n">booking</span><span class="p">,</span> <span class="n">assuming</span> <span class="n">one</span> <span class="n">of</span> <span class="n">four</span> <span class="n">categories</span><span class="p">:</span>
+<span class="n">Contract</span> <span class="o">-</span> <span class="n">when</span> <span class="n">the</span> <span class="n">booking</span> <span class="n">has</span> <span class="n">an</span> <span class="n">allotment</span> <span class="ow">or</span> <span class="n">other</span> <span class="n">type</span> <span class="n">of</span> <span class="n">contract</span> <span class="n">associated</span> <span class="n">to</span> <span class="n">it</span><span class="p">;</span> <span class="n">Group</span> <span class="err">–</span> <span class="n">when</span> <span class="n">the</span> <span class="n">booking</span> <span class="k">is</span> <span class="n">associated</span> <span class="n">to</span> <span class="n">a</span> <span class="n">group</span><span class="p">;</span> <span class="n">Transient</span> <span class="err">–</span> <span class="n">when</span> <span class="n">the</span> <span class="n">booking</span> <span class="k">is</span> <span class="ow">not</span> <span class="n">part</span> <span class="n">of</span> <span class="n">a</span> <span class="n">group</span> <span class="ow">or</span> <span class="n">contract</span><span class="p">,</span> <span class="ow">and</span> <span class="k">is</span> <span class="ow">not</span> <span class="n">associated</span> <span class="n">to</span> <span class="n">other</span> 
+<span class="mf">27.</span> <span class="n">transient</span> <span class="n">booking</span><span class="p">;</span> <span class="n">Transient</span><span class="o">-</span><span class="n">party</span> <span class="err">–</span> <span class="n">when</span> <span class="n">the</span> <span class="n">booking</span> <span class="k">is</span> <span class="n">transient</span><span class="p">,</span> <span class="n">but</span> <span class="k">is</span> <span class="n">associated</span> <span class="n">to</span> <span class="n">at</span> <span class="n">least</span> <span class="n">other</span> <span class="n">transient</span> <span class="n">booking</span>
+<span class="n">adrAverage</span> <span class="n">Daily</span> <span class="n">Rate</span> <span class="k">as</span> <span class="n">defined</span> <span class="n">by</span> <span class="n">dividing</span> <span class="n">the</span> <span class="n">sum</span> <span class="n">of</span> <span class="n">all</span> <span class="n">lodging</span> <span class="n">transactions</span> <span class="n">by</span> <span class="n">the</span> <span class="n">total</span> <span class="n">number</span> <span class="n">of</span> <span class="n">staying</span> <span class="n">nights</span>
+<span class="mf">28.</span> <span class="n">required_car_parking_spaces</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">car</span> <span class="n">parking</span> <span class="n">spaces</span> <span class="n">required</span> <span class="n">by</span> <span class="n">the</span> <span class="n">customer</span>
+<span class="mf">29.</span> <span class="n">total_of_special_requests</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">special</span> <span class="n">requests</span> <span class="n">made</span> <span class="n">by</span> <span class="n">the</span> <span class="n">customer</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">twin</span> <span class="n">bed</span> <span class="ow">or</span> <span class="n">high</span> <span class="nb">floor</span><span class="p">)</span>
+<span class="mf">30.</span> <span class="n">reservation_status</span> <span class="n">Reservation</span> <span class="n">last</span> <span class="n">status</span><span class="p">,</span> <span class="n">assuming</span> <span class="n">one</span> <span class="n">of</span> <span class="n">three</span> <span class="n">categories</span><span class="p">:</span> <span class="n">Canceled</span> <span class="err">–</span> <span class="n">booking</span> <span class="n">was</span> <span class="n">canceled</span> <span class="n">by</span> <span class="n">the</span> <span class="n">customer</span><span class="p">;</span> <span class="n">Check</span><span class="o">-</span><span class="n">Out</span> <span class="err">–</span> <span class="n">customer</span> <span class="n">has</span> <span class="n">checked</span> <span class="ow">in</span> <span class="n">but</span> <span class="n">already</span> <span class="n">departed</span><span class="p">;</span> <span class="n">No</span><span class="o">-</span><span class="n">Show</span> <span class="err">–</span> <span class="n">customer</span> <span class="n">did</span> <span class="ow">not</span> <span class="n">check</span><span class="o">-</span><span class="ow">in</span> <span class="ow">and</span> <span class="n">did</span> <span class="n">inform</span> <span class="n">the</span> <span class="n">hotel</span> <span class="n">of</span> <span class="n">the</span> <span class="n">reason</span> <span class="n">why</span>
+<span class="mf">31.</span> <span class="n">reservation_status_date</span> <span class="n">Date</span> <span class="n">at</span> <span class="n">which</span> <span class="n">the</span> <span class="n">last</span> <span class="n">status</span> <span class="n">was</span> <span class="n">set</span><span class="o">.</span> <span class="n">This</span> <span class="n">variable</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">conjunction</span> <span class="n">with</span> <span class="n">the</span> <span class="n">ReservationStatus</span> <span class="n">to</span> <span class="n">understand</span> <span class="n">when</span> <span class="n">was</span> <span class="n">the</span> <span class="n">booking</span> <span class="n">canceled</span> <span class="ow">or</span> <span class="n">when</span> <span class="n">did</span> <span class="n">the</span> <span class="n">customer</span> <span class="n">checked</span><span class="o">-</span><span class="n">out</span> <span class="n">of</span> <span class="n">the</span> <span class="n">hotel</span>
 </code></pre></div>
 
 
@@ -1607,7 +1530,6 @@
     <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </code></pre></div>
 
-
 <h2 id="mindsdb-accuracy">Mindsdb accuracy</h2>
 <table>
 <thead>
@@ -1647,15 +1569,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.f45d2d8d.min.js"></script>
-      <script src="../../assets/javascripts/bundle.74d0b805.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
