@@ -1322,10 +1322,12 @@ That’s all for setting up the AI Tables in PostgreSQL.</li>
 <div class="codehilite"><pre><span></span><code><span class="err">python3 -m mindsdb --api=http,mysql --config=config.json</span>
 </code></pre></div>
 
-<p>The arguments sent to MindsDB are:
-* --api - That tells MindsDB which API should be started (HTTP, MySQL or both).
-* --config - The path to the configuration file that we have created.
-If everything works as expected you should see the following message:</p>
+<p>The arguments sent to MindsDB are:</p>
+<ul>
+<li>--api - That tells MindsDB which API should be started (HTTP, MySQL or both).</li>
+<li>--config - The path to the configuration file that we have created.
+If everything works as expected you should see the following message:</li>
+</ul>
 <p><img alt="MindsDB Started" src="../../../assets/tutorials/aitables-postgresql/mindsdb_started.png" /></p>
 <p>Upon successful setup, MindsDB should create a new schema called mindsdb. </p>
 <p><img alt="MindsDB Schema" src="../../../assets/tutorials/aitables-postgresql/list_schema.png" /></p>
@@ -1336,11 +1338,13 @@ If everything works as expected you should see the following message:</p>
 <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;passenger_satisfaction_model&#39;</span><span class="p">,</span> <span class="s1">&#39;satisfaction&#39;</span><span class="p">,</span> <span class="s1">&#39;SELECT * FROM airline_passenger_satisfaction&#39;</span><span class="p">);</span>
 </code></pre></div>
 
-<p>This query will create a new model called 'passenger_satisfaction_model', and a new table 'airline_passenger_satisfaction' inside mindsdb schema. The required columns(parameters) added in the INSERT for training the predictor are:
-* name (string) - the name of the predictor.
-* predict (string) -  the feature you want to predict, in this example it will be satisfaction.
-* select_data_query (string) - the SELECT query that will get the data from PostgreSQL.
-* training_options (dictionary) - optional value that contains additional training parameters. For a full list of the parameters check the <a href="/PredictorInterface/#learn">PredictorInterface</a>.</p>
+<p>This query will create a new model called 'passenger_satisfaction_model', and a new table 'airline_passenger_satisfaction' inside mindsdb schema. The required columns(parameters) added in the INSERT for training the predictor are:</p>
+<ul>
+<li>name (string) - the name of the predictor.</li>
+<li>predict (string) -  the feature you want to predict, in this example it will be satisfaction.</li>
+<li>select_data_query (string) - the SELECT query that will get the data from PostgreSQL.</li>
+<li>training_options (dictionary) - optional value that contains additional training parameters. For a full list of the parameters check the <a href="/PredictorInterface/#learn">PredictorInterface</a>.</li>
+</ul>
 <p>To check that the training successfully finished we can SELECT from mindsdb.predictors table and get the status:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span> <span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;passenger_satisfaction_model&#39;</span><span class="p">;</span>
 </code></pre></div>
