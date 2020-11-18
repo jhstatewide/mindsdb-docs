@@ -1209,57 +1209,60 @@
 <p>Anyone that has dealt with Machine Learning understands that data is a fundamental ingredient to it. Given that a great deal of the world’s organized data already exists inside databases, doesn't it make sense to bring machine learning capabilities straight to the database itself? Bringing Machine Learning to those who know their data best can significantly augment the capacity to solve important problems.
 To do so, we have developed a concept called AI-Tables.</p>
 <h2 id="what-is-ai-tables">What is AI Tables</h2>
-<p>AI-Tables differ from normal tables in that they can generate predictions upon being queried and returning such predictions as if it was data that existed in the table. Simply put, an AI-Table allows you to use machine learning models as if they were normal database tables, in something that in plain SQL looks like this:</p>
+<p>AI-Tables differ from normal tables in that they can generate predictions upon being queried and returning such predictions as if it was data that existed in the table. Simply put, an AI-Table allows you to use Machine Learning models as if they were normal database tables, in something that in plain SQL looks like this:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="o">&lt;</span><span class="n">predicted_variable</span><span class="o">&gt;</span> <span class="k">FROM</span> <span class="o">&lt;</span><span class="n">ML_model</span><span class="o">&gt;</span> <span class="k">WHERE</span> <span class="o">&lt;</span><span class="n">conditions</span><span class="o">&gt;</span>
 </code></pre></div>
 
-<p>Now, in this tutorial you will get a step-by-step instructions on how to enable AI-Tables in your database and how to build, train and query a Machine Learning model only by using SQL statements!</p>
+<p>Now, in this tutorial, you will get step-by-step instructions on how to enable AI-Tables in your database and how to build, train and query a Machine Learning model only by using SQL statements!</p>
 <h2 id="how-to-install-mysql">How to install MySQL?</h2>
-<p>If you don’t have MySQL installed you can download the installers for various platforms from the official documentation.</p>
+<p>If you don’t have MySQL installed you can download the installers for various platforms from the <a href="https://www.mysql.com/downloads/">official documentation</a>.</p>
 <h2 id="example-dataset">Example dataset</h2>
-<p>In this tutorial, we will use the <a href="https://archive.ics.uci.edu/ml/datasets/Metro+Interstate+Traffic+Volume#">Metro Interstate Traffic Volume Data Set
-</a>. If you have other datasets in your MySQL database please skip this section. This dataset contains hourly traffic volume for station 301. Hourly weather features and holidays included for impacts on traffic volume.</p>
+<p>In this tutorial, we will use the <a href="https://www.kaggle.com/shrutimechlearn/churn-modelling">Churn Modelling Data Set
+</a>. If you have other datasets in your MySQL database please skip this section. </p>
+<p>This data set contains details of a bank's customers and the target variable is a binary variable reflecting the fact whether the customer left the bank (closed his account) or he continues to be a customer.</p>
 <h4 id="import-dataset-to-mysql">Import dataset to MySQL</h4>
-<p>The first thing we need to do is to import the dataset in MySQL. Create a new table called metro_trafic:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">-- test.metro_trafic definition</span>
-
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">metro_trafic</span><span class="o">`</span> <span class="p">(</span>
-  <span class="o">`</span><span class="n">holiday</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="o">`</span><span class="n">temp</span><span class="o">`</span> <span class="nb">decimal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="o">`</span><span class="n">rain_1h</span><span class="o">`</span> <span class="nb">decimal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="o">`</span><span class="n">snow_1h</span><span class="o">`</span> <span class="nb">decimal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="o">`</span><span class="n">clouds_all</span><span class="o">`</span> <span class="nb">decimal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="o">`</span><span class="n">weather_main</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="o">`</span><span class="n">weather_description</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="o">`</span><span class="n">date_time</span><span class="o">`</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
-  <span class="o">`</span><span class="n">traffic_volume</span><span class="o">`</span> <span class="nb">decimal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span>
-<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> 
-<span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span> 
+<p>The first thing we need to do is to import the dataset in MySQL. Create a new table called bank_churn:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">-- test.bank_churn definition</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test</span><span class="p">.</span><span class="n">bank_churn</span> <span class="p">(</span>
+    <span class="n">CreditScore</span> <span class="nb">NUMERIC</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">Geography</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">Gender</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">Age</span> <span class="nb">NUMERIC</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">Tenure</span> <span class="nb">NUMERIC</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">Balance</span> <span class="nb">NUMERIC</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">NumOfProducts</span> <span class="nb">NUMERIC</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">HasCrCard</span> <span class="nb">NUMERIC</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">IsActiveMember</span> <span class="nb">NUMERIC</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">EstimatedSalary</span> <span class="nb">NUMERIC</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">Exited</span> <span class="nb">NUMERIC</span> <span class="k">NULL</span>
+<span class="p">)</span>
+<span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span>
+<span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span>
 <span class="k">COLLATE</span><span class="o">=</span><span class="n">utf8mb4_0900_ai_ci</span><span class="p">;</span>
 </code></pre></div>
 
-<p>Next, we need the import data inside the table. There are few options to do that:</p>
+<p>Next, we need to import the data inside the table. There are a few options to do that:</p>
 <p>Using the Load Data statement:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">LOAD DATA LOCAL INFILE &#39;data.csv&#39; INTO metro_trafic FIELDS TERMINATED BY &#39;,&#39; LINES TERMINATED BY &#39;\r\n&#39;;</span>
+<div class="codehilite"><pre><span></span><code><span class="err">LOAD DATA LOCAL INFILE &#39;data.csv&#39; INTO bank_churn FIELDS TERMINATED BY &#39;,&#39; LINES TERMINATED BY &#39;\r\n&#39;;</span>
 </code></pre></div>
 
 <p>Using MySQL import:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">mysqlimport</span> <span class="o">--</span><span class="n">local</span> <span class="o">--</span><span class="n">fields</span><span class="o">-</span><span class="n">terminated</span><span class="o">-</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;,&quot;</span> <span class="n">used_cars_data</span> <span class="n">data</span><span class="o">.</span><span class="n">csv</span>
+<div class="codehilite"><pre><span></span><code><span class="n">mysqlimport</span> <span class="o">--</span><span class="n">local</span> <span class="o">--</span><span class="n">fields</span><span class="o">-</span><span class="n">terminated</span><span class="o">-</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;,&quot;</span> <span class="n">bank_churn</span> <span class="n">data</span><span class="o">.</span><span class="n">csv</span>
 </code></pre></div>
 
 <p>Using pgAdmin, DBeaver or another SQL client just use the import from CSV file option from the navigation menu. </p>
-<p>Let’s Select some data from metro_trafic table to check that the data was successfully imported to MySQL:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">metro_trafic</span> <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+<p>Let’s Select some data from bank_churn table to check that the data was successfully imported to MySQL:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">bank_churn</span> <span class="k">LIMIT</span> <span class="mi">1</span><span class="p">;</span>
 </code></pre></div>
 
-<p><img alt="SELECT FROM us_consumption" src="/assets/tutorials/aitables-mysql/select_table.png" /></p>
+<p><img alt="SELECT FROM bank_churn" src="/assets/tutorials/aitables-mysql/select_table.png" /></p>
 <h2 id="add-configuration">Add Configuration</h2>
-<p>As a prerequisite for using <a href="https://www.mysql.com/downloads/">MySQL</a> we need to enable the Federated Storage engine. Check out official <a href="https://dev.mysql.com/doc/refman/8.0/en/federated-storage-engine.html">MySQL documentation</a> to see how you can do that.
-The last step is to create the MindsDB’s configuration file. MindsDB will try to use the default configuration options like host, port, username for the MySQL. In case you want to extend them or change the default values you need to add a config.json file. Create a new file config.json and include the following information:</p>
+<p>As a prerequisite for using <a href="https://www.mysql.com/downloads/">MySQL</a> we need to enable the Federated Storage engine. Check out the official <a href="https://dev.mysql.com/doc/refman/8.0/en/federated-storage-engine.html">MySQL documentation</a> to see how you can do that.</p>
+<p>The last step is to create the MindsDB’s configuration file. MindsDB will try to use the default configuration options like host, port or username for MySQL. In case you want to extend them or change the default values you need to add a config.json file. Create a new file config.json and include the following information:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
    <span class="nt">&quot;api&quot;</span><span class="p">:</span> <span class="p">{</span>
        <span class="nt">&quot;http&quot;</span><span class="p">:</span> <span class="p">{</span>
-           <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
            <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="s2">&quot;47334&quot;</span>
        <span class="p">},</span>
        <span class="nt">&quot;mysql&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -1281,12 +1284,6 @@ The last step is to create the MindsDB’s configuration file. MindsDB will try 
            <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;root&quot;</span>
        <span class="p">}</span>
    <span class="p">},</span>
-   <span class="nt">&quot;log&quot;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="p">{</span>
-           <span class="nt">&quot;console&quot;</span><span class="p">:</span> <span class="s2">&quot;DEBUG&quot;</span><span class="p">,</span>
-           <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span>
-       <span class="p">}</span>
-   <span class="p">},</span>
    <span class="nt">&quot;storage_dir&quot;</span><span class="p">:</span> <span class="s2">&quot;storage/&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -1296,79 +1293,73 @@ The last step is to create the MindsDB’s configuration file. MindsDB will try 
 <li>api['http’] -- This key is used for starting the MindsDB HTTP server by providing:
 host(default 127.0.0.1) - The mindsdb server address.</li>
 <li>port(default 47334) - The mindsdb server port.</li>
-<li>api['mysql'] -- This key is used for database integrations that work through MySQL protocol. The required keys are:</li>
+<li>api['mysql'] -- This key is used for database integrations that work through MySQL protocol. The required keys are:<ul>
 <li>user(default root).</li>
 <li>password(default empty).</li>
 <li>host(default 127.0.0.1).</li>
 <li>port(default 47335).</li>
-<li>integrations[default_mysql] -- This key specifies the integration type in this case default_mysql. The required keys are:</li>
+</ul>
+</li>
+<li>integrations[default_mysql] -- This key specifies the integration type in this case default_mysql. The required keys are:<ul>
 <li>user(default root) - The MySQL user name.</li>
 <li>host(default localhost) - Connect to the MySQL server on the given host.</li>
 <li>password - The password of the MySQL account.</li>
 <li>type - Integration type(mariadb, postgresql, mysql, clickhouse, mongodb).</li>
 <li>port(default 5432) - The TCP/IP port number to use for the connection.</li>
-<li>log['level'] -- The logging configuration(not required):
-console - "INFO", "DEBUG", ”WARNING”,  "ERROR".</li>
-<li>file - Log level to save in the log file.</li>
-<li>storage_dir -- The directory where mindsdb will store models and configuration.
-Now, we have successfully set up all of the requirements for AI Tables in MySQL.</li>
 </ul>
+</li>
+<li>storage_dir -- The directory where mindsdb will store models and configuration files.</li>
+</ul>
+<p>Now, we have successfully set up all of the requirements for AI Tables in MySQL.</p>
 <h3 id="automl-with-ai-tables-in-mysql">AutoML with AI Tables in MySQL</h3>
-<p>Let’s start the MindsDB server:</p>
+<p>If you don't have MindsDB installed, check out our <a href="/Installing">Installation guide</a> and find an option that works for you. After that start the MindsDB server:</p>
 <div class="codehilite"><pre><span></span><code><span class="err">python3 -m mindsdb --api=mysql --config=config.json</span>
 </code></pre></div>
 
-<p>The arguments sent to MindsDB are:
-* --api - That tells MindsDB which API should be started (HTTP or MySQL).
-* --config - The path to the configuration file that we have created.
-If everything works as expected you should see the following message:</p>
+<p>The arguments sent to MindsDB are:</p>
+<ul>
+<li>--api - That tells MindsDB which API should be started (HTTP or MySQL).</li>
+<li>--config - The path to the configuration file that we have created.
+If everything works as expected you should see the following message:</li>
+</ul>
 <p><img alt="MindsDB Started" src="/assets/tutorials/aitables-postgresql/mindsdb_started.png" /></p>
 <p>Upon successful setup, MindsDB should create a new database called mindsdb.</p>
 <p><img alt="MindsDB Schema" src="/assets/tutorials/aitables-mysql/list_tables.png" /></p>
-<p>In the mindsdb database, two new tables should be created called commands and predictors. The mindsdb.predictors table is the table where MindsDB will keep information about trained and in training models.</p>
+<p>In the mindsdb database, two new tables should be created called commands and predictors. The mindsdb.predictors table is the table where MindsDB will keep information about trained models.</p>
 <h3 id="train-new-machine-learning-model">Train new Machine Learning Model</h3>
-<p>Training the machine learning model using MindsDB is quite simple. It can be done by executing the INSERT query inside the mindsdb.predictors table. In our example we want to predict the consumption from the us_consumption table, so let’s run the INSERT query as:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">predict</span><span class="p">,</span> <span class="n">select_data_query</span><span class="p">,</span> <span class="n">training_options</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;metro_traffic_model&#39;</span><span class="p">,</span> <span class="s1">&#39;traffic_volume&#39;</span><span class="p">,</span> <span class="s1">&#39;SELECT * FROM test.metro_trafic&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;timeseries_settings&quot;:{&quot;order_by&quot;: [&quot;date_time&quot;], &quot;window&quot;:20}}&#39;</span><span class="p">);</span>
+<p>Training the machine learning model using MindsDB is quite simple. It can be done by executing the <code>INSERT</code> query inside the mindsdb.predictors table. In our example, we want to predict if the bank's customer left the bank from the bank_churn table, so let’s run the <code>INSERT</code> query as:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">predict</span><span class="p">,</span> <span class="n">select_data_query</span><span class="p">)</span>
+<span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;churn_model&#39;</span><span class="p">,</span> <span class="s1">&#39;Exited&#39;</span><span class="p">,</span> <span class="s1">&#39;SELECT * FROM test.bank_churn&#39;</span><span class="p">);</span>
 </code></pre></div>
 
-<p>This query will create a new model called 'metro_traffic_model', and a new table 'metro_traffic_model' inside mindsdb database. The required columns(parameters) added in the INSERT for training the predictor are:
+<p>This query will create a new model called 'churn_model', and a new table 'churn_model' inside mindsdb database. The required columns(parameters) added in the <code>INSERT</code> for training the predictor are:
 * name (string) - the name of the predictor.
-* predict (string) -  the feature you want to predict, in this example it will be satisfaction.
-* select_data_query (string) - the SELECT query that will get the data from MySQL.
-* training_options (dictionary) - optional value that contains additional training parameters. Because this is a timeseries data we have included order_by to order the data based on that column and window which is the number of columns to loop back.  For a full list of the parameters check the <a href="/PredictorInterface/#learn">PredictorInterface</a>.</p>
-<p>To check that the training successfully finished we can SELECT from mindsdb.predictors table and get the status:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span> <span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;metro_traffic_model&#39;</span><span class="p">;</span>
+* predict (string) -  the feature you want to predict, in this example it will be Exited.
+* select_data_query (string) - the SELECT query that will get the data from MySQL.</p>
+<p>To check that the training successfully finished we can <code>SELECT</code> from mindsdb.predictors table and get the status:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span> <span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;churn_model&#39;</span><span class="p">;</span>
 </code></pre></div>
 
 <p><img alt="Status" src="/assets/tutorials/aitables-mysql/select_status.png" /></p>
-<p>The status complete means that training successfully finished. Now, let’s query the model. The trained model behaves like an AI Table and can be queried as it is a standard database table. To get the prediction we need to execute a <code>SELECT</code> query and in the <code>WHERE</code> clause include the when_data as an JSON string that includes features values such as date_time, weather, temperature, holiday etc.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">metro_traffic_model</span> <span class="k">WHERE</span> <span class="n">when_data</span><span class="o">=</span><span class="s1">&#39;{&quot;temp&quot;: &quot;288&quot;,&quot;snow_1h&quot;:0, &quot;date_time&quot;: &quot;2012-10-02&quot;, &quot;holiday&quot;:&quot;Columbus Day&quot;}&#39;</span><span class="p">;</span>
+<p>The status complete means that training successfully finished. Now, let’s query the model. 
+The trained model behaves like an AI Table and can be queried as it is a standard database table. To get the prediction we need to execute a <code>SELECT</code> query and in the <code>WHERE</code> clause include the when_data as a JSON string that includes features values such as CreditScore, EstimatedSalary, Gender, Balance etc.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">churn_model</span>
+<span class="k">WHERE</span> <span class="n">when_data</span><span class="o">=</span><span class="s1">&#39;{&quot;CreditScore&quot;: &quot;619&quot;,&quot;Geography&quot;: &quot;France&quot;,&quot;Gender&quot;: &quot;Female&quot;, &quot;EstimatedSalary&quot;: 100000, &quot;Balance&quot;: 0.0, &quot;Age&quot;:42, &quot;Tenure&quot;: 2}&#39;</span><span class="p">;</span>
 </code></pre></div>
 
-<p>In a second we should get the prediction back from MindsDB. So, MindsDB thinks that the value for traffic_volume value is 4524 with pretty much big confidence 99%.</p>
+<p>In a second we should get the prediction back from MindsDB. So, MindsDB thinks that the above customer closed the account in the bank (predicted_value 1) with around 98% confidence.</p>
 <p>Information in JSON format in the explain column:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
-   <span class="nt">&quot;predicted_value&quot;</span><span class="p">:</span> <span class="mi">4524</span><span class="p">,</span>
-   <span class="nt">&quot;confidence&quot;</span><span class="p">:</span> <span class="mf">0.987</span><span class="p">,</span>
-   <span class="nt">&quot;prediction_quality&quot;</span><span class="p">:</span> <span class="s2">&quot;very confident&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;important_missing_information&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;weather_main&quot;</span><span class="p">],</span>
-   <span class="nt">&quot;confidence_composition&quot;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="nt">&quot;age&quot;</span><span class="p">:</span> <span class="mf">0.935</span>
-   <span class="p">},</span>
-   <span class="nt">&quot;extra_insights&quot;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="nt">&quot;if_missing&quot;</span><span class="p">:</span> <span class="p">[{</span>
-           <span class="nt">&quot;temp&quot;</span><span class="p">:</span> <span class="s2">&quot;3908&quot;</span>
-       <span class="p">},</span> <span class="p">{</span>
-           <span class="nt">&quot;holiday&quot;</span><span class="p">:</span> <span class="s2">&quot;4324&quot;</span>
-       <span class="p">},</span> <span class="p">{</span>
-           <span class="nt">&quot;snow_1h&quot;</span><span class="p">:</span> <span class="s2">&quot;4420&quot;</span>
-       <span class="p">}]</span>
-   <span class="p">}</span>
+<span class="nt">&quot;predicted_value&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span> 
+<span class="nt">&quot;confidence&quot;</span><span class="p">:</span> <span class="mf">0.98</span><span class="p">,</span> 
+<span class="nt">&quot;prediction_quality&quot;</span><span class="p">:</span> <span class="s2">&quot;very confident&quot;</span><span class="p">,</span> 
+<span class="nt">&quot;important_missing_information&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;NumOfProducts&quot;</span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 
-<p>The confidence_interval shows a possible range of values where consumption lies in. The important_missing_information shows the list of features that MindsDB things are quite important for better prediction, in this case, the “weather_main”. The extra_insights contains a list of rows that we have included in the WHERE clause and show the traffic_volume value if some of those were missing.</p>
-<p>Congratulations, you have successfully trained and queried the Machine Learning Model only by using SQL Statements. Note that even if we used MySQL, you can still query the same model from the other databases too.</p>
+<p>The <code>important_missing_information</code> shows the list of features that MindsDB things are quite important for better prediction, in this case, the "NumOfProducts".
+Congratulations, you have successfully trained and queried the Machine Learning Model only by using SQL Statements. Note that even if we used MySQL, you can still query the same model from the other databases too.</p>
                 
               
               
