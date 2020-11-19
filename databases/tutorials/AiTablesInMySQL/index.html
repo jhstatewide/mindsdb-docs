@@ -1206,8 +1206,16 @@
                 
                 
                 <h1 id="ai-tables-in-mysql">AI-Tables in MySQL</h1>
-<p>Anyone that has dealt with Machine Learning understands that data is a fundamental ingredient to it. Given that a great deal of the world’s organized data already exists inside databases, doesn't it make sense to bring machine learning capabilities straight to the database itself? Bringing Machine Learning to those who know their data best can significantly augment the capacity to solve important problems.
-To do so, we have developed a concept called AI-Tables.</p>
+<p>Database is surely the best place for Machine Learning - because data is the main ingredient of it. And now you can build, train, test &amp; query Machine Learning models using standard SQL queries within MySQL database!
+This doesn't require hardcore data science knowledge - the whole Machine Learning workflow is automated. 
+This solution is called AI-Tables and is available in MySQL thanks to integration with an open-source predictive engine from MindsDB.
+AI-Tables look like normal database tables and return predictions upon being queried as if it is data that exists in the table. In plain SQL it looks like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="o">&lt;</span><span class="n">predicted_variable</span><span class="o">&gt;</span> <span class="k">FROM</span> <span class="o">&lt;</span><span class="n">ML_model</span><span class="o">&gt;</span> <span class="k">WHERE</span> <span class="o">&lt;</span><span class="n">conditions</span><span class="o">&gt;</span>
+</code></pre></div>
+
+<p>This video explains how it works:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uQwhYpQX0m8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 <h2 id="what-is-ai-tables">What is AI Tables</h2>
 <p>AI-Tables differ from normal tables in that they can generate predictions upon being queried and returning such predictions as if it was data that existed in the table. Simply put, an AI-Table allows you to use Machine Learning models as if they were normal database tables, in something that in plain SQL looks like this:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="o">&lt;</span><span class="n">predicted_variable</span><span class="o">&gt;</span> <span class="k">FROM</span> <span class="o">&lt;</span><span class="n">ML_model</span><span class="o">&gt;</span> <span class="k">WHERE</span> <span class="o">&lt;</span><span class="n">conditions</span><span class="o">&gt;</span>
