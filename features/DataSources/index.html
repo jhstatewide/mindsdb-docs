@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1190,7 +1251,7 @@ However, the DataSource class provides a way to implement data loading transform
 <p>You can learn about them in <a href="https://github.com/mindsdb/mindsdb_native/tree/stable/mindsdb_native/libs/data_sources">mindsdb repository</a>.</p>
 <h3 id="fileds">FileDS</h3>
 <p>An important one is the one MindsDB uses to work with files.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb</span> <span class="kn">import</span> <span class="n">FileDS</span>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb</span> <span class="kn">import</span> <span class="n">FileDS</span>
 
 <span class="n">ds</span> <span class="o">=</span> <span class="n">FileDS</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">clean_rows</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">custom_parser</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
 
@@ -1202,8 +1263,7 @@ However, the DataSource class provides a way to implement data loading transform
     <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;&lt;the name you want to give to this model&gt;&#39;</span> <span class="c1"># the name of this model</span>
 <span class="p">)</span>
 </code></pre></div>
-
-<p>FileDS arguments are:</p>
+FileDS arguments are:</p>
 <ul>
 <li><strong><em>file</em></strong> can be a path in the local system, stringio object or a url to a file, supported types are (csv, json, xlsx, xls).</li>
 <li><strong><em>clean_header</em></strong> (default=True) clean column names, so that they don't have special characters or white spaces.</li>
@@ -1212,13 +1272,12 @@ However, the DataSource class provides a way to implement data loading transform
 </ul>
 <h3 id="s3ds">S3DS</h3>
 <p>Use an <a href="https://aws.amazon.com/s3/">s3</a> object as the input.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb</span> <span class="kn">import</span> <span class="n">Predictor</span><span class="p">,</span> <span class="n">S3DS</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb</span> <span class="kn">import</span> <span class="n">Predictor</span><span class="p">,</span> <span class="n">S3DS</span>
 
 <span class="n">s3_ds</span> <span class="o">=</span> <span class="n">S3DS</span><span class="p">(</span><span class="n">bucket_name</span><span class="o">=</span><span class="s1">&#39;mindsdb-example-data&#39;</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s1">&#39;home_rentals.csv&#39;</span><span class="p">)</span><span class="err">`</span>
 
 <span class="n">Predictor</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">from_data</span><span class="o">=</span><span class="n">s3_ds</span><span class="p">,</span> <span class="n">to_predict</span><span class="o">=</span><span class="s1">&#39;target&#39;</span><span class="p">)</span>
 </code></pre></div>
-
 <p>This data source also takes the optional initialization/constructor arguments:</p>
 <ul>
 <li>access_key -- The AWS access key [string]</li>
@@ -1227,13 +1286,12 @@ However, the DataSource class provides a way to implement data loading transform
 </ul>
 <h3 id="mysqlds">MySqlDS</h3>
 <p>Used to select data from <a href="https://www.mysql.com/">MySQL</a> or <a href="https://mariadb.org/">MariaDB</a>.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb</span> <span class="kn">import</span> <span class="n">Predictor</span><span class="p">,</span> <span class="n">MySqlDS</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb</span> <span class="kn">import</span> <span class="n">Predictor</span><span class="p">,</span> <span class="n">MySqlDS</span>
 
 <span class="n">mysql_ds</span> <span class="o">=</span> <span class="n">MySqlDS</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;SELECT COUNT(*), SUM(spend), SUM(is_click), website FROM advertising_data&quot;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;my_user&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;my very secret password&quot;</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s2">&quot;main_db&quot;</span><span class="p">,</span> <span class="n">table</span><span class="o">=</span><span class="s1">&#39;advertising_data&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">3306</span><span class="p">)</span>
 
 <span class="n">Predictor</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">from_data</span><span class="o">=</span><span class="n">mysql_ds</span><span class="p">,</span> <span class="n">to_predict</span><span class="o">=</span><span class="s1">&#39;target&#39;</span><span class="p">)</span>
 </code></pre></div>
-
 <p>This data source also takes the optional initialization/constructor arguments:</p>
 <ul>
 <li>query -- Query which extracts the data, mutually exclusive with <code>table</code> [string]</li>
@@ -1246,13 +1304,12 @@ However, the DataSource class provides a way to implement data loading transform
 </ul>
 <h3 id="postgresds">PostgresDS</h3>
 <p>Used to select data from <a href="https://www.postgresql.org/">PostgreSQL</a>.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb</span> <span class="kn">import</span> <span class="n">Predictor</span><span class="p">,</span> <span class="n">PostgresDS</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb</span> <span class="kn">import</span> <span class="n">Predictor</span><span class="p">,</span> <span class="n">PostgresDS</span>
 
 <span class="n">pg_ds</span> <span class="o">=</span> <span class="n">PostgresDS</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;SELECT COUNT(*), SUM(spend), SUM(is_click), website FROM advertising_data&quot;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;my_user&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;my very secret password&quot;</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s2">&quot;main_db&quot;</span><span class="p">)</span>
 
 <span class="n">Predictor</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">from_data</span><span class="o">=</span><span class="n">pg_ds</span><span class="p">,</span> <span class="n">to_predict</span><span class="o">=</span><span class="s1">&#39;target&#39;</span><span class="p">)</span>
 </code></pre></div>
-
 <p>This data source also takes the optional initialization/constructor arguments:</p>
 <ul>
 <li>query -- Query which extracts the data, mutually exclusive with <code>table</code> [string]</li>
@@ -1265,14 +1322,13 @@ However, the DataSource class provides a way to implement data loading transform
 </ul>
 <h3 id="clickhouseds">ClickhouseDS</h3>
 <p>Used to select data from <a href="https://clickhouse.tech/">ClickHouse</a>.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb</span> <span class="kn">import</span> <span class="n">Predictor</span><span class="p">,</span> <span class="n">ClickhouseDS</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb</span> <span class="kn">import</span> <span class="n">Predictor</span><span class="p">,</span> <span class="n">ClickhouseDS</span>
 
 <span class="n">ch_ds</span> <span class="o">=</span> <span class="n">ClickhouseDS</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;SELECT COUNT(*), SUM(spend), SUM(is_click), website FROM default.advertising_data&quot;</span><span class="p">,</span>
                      <span class="n">user</span><span class="o">=</span><span class="s2">&quot;my_user&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;my very secret password&quot;</span><span class="p">)</span>
 
 <span class="n">Predictor</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">from_data</span><span class="o">=</span><span class="n">ch_ds</span><span class="p">,</span> <span class="n">to_predict</span><span class="o">=</span><span class="s1">&#39;target&#39;</span><span class="p">)</span>
 </code></pre></div>
-
 <p>This data source also take the optional initialization/constructor arguments:</p>
 <ul>
 <li>query -- Query whith which to extract the data, mutually exclusive with <code>table</code> [string]</li>

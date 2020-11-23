@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1102,24 +1163,21 @@
 </ul>
 <h2 id="how-to-set-config-variables">How to set config variables?</h2>
 <p>You can either set it as environment variables or you can do it in your script.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;&lt;varname&gt;&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
 </code></pre></div>
-
-<p>For example, if you want to specify a different storage directory:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+For example, if you want to specify a different storage directory:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;MINDSDB_STORAGE_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;/home/my_wonderful_username/place_where_i_store_big_files/&#39;</span>
 
 <span class="c1"># now we import mindsdb</span>
 <span class="kn">from</span> <span class="nn">mindsdb</span> <span class="kn">import</span> <span class="n">MindsDB</span>
 </code></pre></div>
-
 <p>Alternatively, we can se the variable after importing mindsdb:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">mindsdb</span><span class="o">.</span><span class="n">CONFIG</span><span class="o">.</span><span class="n">MINDSDB_STORAGE_PATH</span> <span class="o">=</span> <span class="s1">&#39;/home/my_wonderful_username/place_where_i_store_big_files/&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="n">mindsdb</span><span class="o">.</span><span class="n">CONFIG</span><span class="o">.</span><span class="n">MINDSDB_STORAGE_PATH</span> <span class="o">=</span> <span class="s1">&#39;/home/my_wonderful_username/place_where_i_store_big_files/&#39;</span>
 </code></pre></div>
-
 <p>You can see all the config variables available <a href="https://github.com/mindsdb/mindsdb/blob/master/mindsdb/config/__init__.py">here</a></p>
                 
                   

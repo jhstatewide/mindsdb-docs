@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1416,47 +1477,44 @@
 <details>
   <summary>Click to expand Features Informations:</summary>
 
-
-<div class="codehilite"><pre><span></span><code><span class="mf">1.</span> <span class="n">id</span> <span class="n">ID</span> <span class="n">number</span>
-<span class="mf">2.</span> <span class="n">diagnosis</span> <span class="n">The</span> <span class="n">diagnosis</span> <span class="n">of</span> <span class="n">breast</span> <span class="n">tissues</span> <span class="p">(</span><span class="n">M</span> <span class="o">=</span> <span class="n">malignant</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="n">benign</span><span class="p">)</span>
-<span class="mf">3.</span> <span class="n">radius_mean</span> <span class="n">mean</span> <span class="n">of</span> <span class="n">distances</span> <span class="n">from</span> <span class="n">center</span> <span class="n">to</span> <span class="n">points</span> <span class="n">on</span> <span class="n">the</span> <span class="n">perimeter</span>
-<span class="mf">4.</span> <span class="n">texture_means</span> <span class="n">tandard</span> <span class="n">deviation</span> <span class="n">of</span> <span class="n">gray</span><span class="o">-</span><span class="n">scale</span> <span class="n">values</span>
-<span class="mf">5.</span> <span class="n">perimeter_mean</span> <span class="n">mean</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">core</span> <span class="n">tumor</span>
-<span class="mf">6.</span> <span class="n">area_mean</span>
-<span class="mf">7.</span> <span class="n">smoothness_mean</span> <span class="n">mean</span> <span class="n">of</span> <span class="n">local</span> <span class="n">variation</span> <span class="ow">in</span> <span class="n">radius</span> <span class="n">lengths</span>
-<span class="mf">8.</span> <span class="n">compactness_mean</span> <span class="n">mean</span> <span class="n">of</span> <span class="n">perimeter</span><span class="o">^</span><span class="mi">2</span> <span class="o">/</span> <span class="n">area</span> <span class="o">-</span> <span class="mf">1.0</span>
-<span class="mf">9.</span> <span class="n">concavity_mean</span> <span class="n">mean</span> <span class="n">of</span> <span class="n">severity</span> <span class="n">of</span> <span class="n">concave</span> <span class="n">portions</span> <span class="n">of</span> <span class="n">the</span> <span class="n">contour</span>
-<span class="mf">10.</span> <span class="n">concave</span> <span class="n">points_mean</span> <span class="n">mean</span> <span class="k">for</span> <span class="n">number</span> <span class="n">of</span> <span class="n">concave</span> <span class="n">portions</span> <span class="n">of</span> <span class="n">the</span> <span class="n">contour</span>
-<span class="mf">11.</span> <span class="n">symmetry_mean</span>
-<span class="mf">12.</span> <span class="n">fractal_dimension_mean</span> <span class="n">mean</span> <span class="k">for</span> <span class="s2">&quot;coastline approximation&quot;</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="mf">13.</span> <span class="n">radius_sestandard</span> <span class="n">error</span> <span class="k">for</span> <span class="n">the</span> <span class="n">mean</span> <span class="n">of</span> <span class="n">distances</span> <span class="n">from</span> <span class="n">center</span> <span class="n">to</span> <span class="n">points</span> <span class="n">on</span> <span class="n">the</span> <span class="n">perimeter</span>
-<span class="mf">14.</span> <span class="n">texture_sestandard</span> <span class="n">error</span> <span class="k">for</span> <span class="n">standard</span> <span class="n">deviation</span> <span class="n">of</span> <span class="n">gray</span><span class="o">-</span><span class="n">scale</span> <span class="n">values</span>
-<span class="mf">15.</span> <span class="n">perimeter_se</span>
-<span class="mf">16.</span> <span class="n">area_se</span>
-<span class="mf">17.</span> <span class="n">smoothness_sestandard</span> <span class="n">error</span> <span class="k">for</span> <span class="n">local</span> <span class="n">variation</span> <span class="ow">in</span> <span class="n">radius</span> <span class="n">lengths</span>
-<span class="mf">18.</span> <span class="n">compactness_sestandard</span> <span class="n">error</span> <span class="k">for</span> <span class="n">perimeter</span><span class="o">^</span><span class="mi">2</span> <span class="o">/</span> <span class="n">area</span> <span class="o">-</span> <span class="mf">1.0</span>
-<span class="mf">19.</span> <span class="n">concavity_sestandard</span> <span class="n">error</span> <span class="k">for</span> <span class="n">severity</span> <span class="n">of</span> <span class="n">concave</span> <span class="n">portions</span> <span class="n">of</span> <span class="n">the</span> <span class="n">contour</span>
-<span class="n">concave</span> <span class="n">points_sestandard</span> <span class="n">error</span> <span class="k">for</span> <span class="n">number</span> <span class="n">of</span> <span class="n">concave</span> <span class="n">portions</span> <span class="n">of</span> <span class="n">the</span> <span class="n">contour</span>
-<span class="mf">20.</span> <span class="n">symmetry_se</span>
-<span class="mf">21.</span> <span class="n">fractal_dimension_sestandard</span> <span class="n">error</span> <span class="k">for</span> <span class="s2">&quot;coastline approximation&quot;</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="mf">22.</span> <span class="n">radius_worst</span><span class="s2">&quot;worst&quot;</span> <span class="ow">or</span> <span class="n">largest</span> <span class="n">mean</span> <span class="n">value</span> <span class="k">for</span> <span class="n">mean</span> <span class="n">of</span> <span class="n">distances</span> <span class="n">from</span> <span class="n">center</span> <span class="n">to</span> <span class="n">points</span> <span class="n">on</span> <span class="n">the</span> <span class="n">perimeter</span>
-<span class="mf">23.</span> <span class="n">texture_worst</span><span class="s2">&quot;worst&quot;</span> <span class="ow">or</span> <span class="n">largest</span> <span class="n">mean</span> <span class="n">value</span> <span class="k">for</span> <span class="n">standard</span> <span class="n">deviation</span> <span class="n">of</span> <span class="n">gray</span><span class="o">-</span><span class="n">scale</span> <span class="n">values</span>
-<span class="mf">24.</span> <span class="n">perimeter_worst</span>
-<span class="mf">25.</span> <span class="n">area_worst</span>
-<span class="mf">26.</span> <span class="n">smoothness_worst</span> <span class="s2">&quot;worst&quot;</span> <span class="ow">or</span> <span class="n">largest</span> <span class="n">mean</span> <span class="n">value</span> <span class="k">for</span> <span class="n">local</span> <span class="n">variation</span> <span class="ow">in</span> <span class="n">radius</span> <span class="n">lengths</span>
-<span class="mf">27.</span> <span class="n">compactness_worst</span> <span class="s2">&quot;worst&quot;</span> <span class="ow">or</span> <span class="n">largest</span> <span class="n">mean</span> <span class="n">value</span> <span class="k">for</span> <span class="n">perimeter</span><span class="o">^</span><span class="mi">2</span> <span class="o">/</span> <span class="n">area</span> <span class="o">-</span> <span class="mf">1.0</span>
-<span class="mf">28.</span> <span class="n">concavity_worst</span> <span class="s2">&quot;worst&quot;</span> <span class="ow">or</span> <span class="n">largest</span> <span class="n">mean</span> <span class="n">value</span> <span class="k">for</span> <span class="n">severity</span> <span class="n">of</span> <span class="mf">29.</span> <span class="mf">29.</span> <span class="n">concave</span> <span class="n">portions</span> <span class="n">of</span> <span class="n">the</span> <span class="n">contour</span>
-<span class="mf">30.</span> <span class="n">concave</span> <span class="n">points_worst</span> <span class="s2">&quot;worst&quot;</span> <span class="ow">or</span> <span class="n">largest</span> <span class="n">mean</span> <span class="n">value</span> <span class="k">for</span> <span class="n">number</span> <span class="n">of</span> <span class="n">concave</span> <span class="n">portions</span> <span class="n">of</span> <span class="n">the</span> <span class="n">contour</span>
-<span class="mf">31.</span> <span class="n">symmetry_worst</span>
-<span class="mf">32.</span> <span class="n">fractal_dimension_worst</span><span class="s2">&quot;worst&quot;</span> <span class="ow">or</span> <span class="n">largest</span> <span class="n">mean</span> <span class="n">value</span> <span class="k">for</span> <span class="s2">&quot;coastline approximation&quot;</span> <span class="o">-</span> <span class="mi">1</span>
+<div class="highlight"><pre><span></span><code>1. id ID number
+2. diagnosis The diagnosis of breast tissues (M = malignant, B = benign)
+3. radius_mean mean of distances from center to points on the perimeter
+4. texture_means tandard deviation of gray-scale values
+5. perimeter_mean mean size of the core tumor
+6. area_mean
+7. smoothness_mean mean of local variation in radius lengths
+8. compactness_mean mean of perimeter^2 / area - 1.0
+9. concavity_mean mean of severity of concave portions of the contour
+10. concave points_mean mean for number of concave portions of the contour
+11. symmetry_mean
+12. fractal_dimension_mean mean for &quot;coastline approximation&quot; - 1
+13. radius_sestandard error for the mean of distances from center to points on the perimeter
+14. texture_sestandard error for standard deviation of gray-scale values
+15. perimeter_se
+16. area_se
+17. smoothness_sestandard error for local variation in radius lengths
+18. compactness_sestandard error for perimeter^2 / area - 1.0
+19. concavity_sestandard error for severity of concave portions of the contour
+concave points_sestandard error for number of concave portions of the contour
+20. symmetry_se
+21. fractal_dimension_sestandard error for &quot;coastline approximation&quot; - 1
+22. radius_worst&quot;worst&quot; or largest mean value for mean of distances from center to points on the perimeter
+23. texture_worst&quot;worst&quot; or largest mean value for standard deviation of gray-scale values
+24. perimeter_worst
+25. area_worst
+26. smoothness_worst &quot;worst&quot; or largest mean value for local variation in radius lengths
+27. compactness_worst &quot;worst&quot; or largest mean value for perimeter^2 / area - 1.0
+28. concavity_worst &quot;worst&quot; or largest mean value for severity of 29. 29. concave portions of the contour
+30. concave points_worst &quot;worst&quot; or largest mean value for number of concave portions of the contour
+31. symmetry_worst
+32. fractal_dimension_worst&quot;worst&quot; or largest mean value for &quot;coastline approximation&quot; - 1
 </code></pre></div>
-
-
 
 </details>
 
 <h2 id="mindsdb-code-example">MindsDB Code example</h2>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">mindsdb</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">mindsdb</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">balanced_accuracy_score</span>
@@ -1486,7 +1544,6 @@
     <span class="n">result</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </code></pre></div>
-
 <h2 id="mindsdb-accuracy">Mindsdb accuracy</h2>
 <table>
 <thead>

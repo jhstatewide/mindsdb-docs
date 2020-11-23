@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1234,48 +1295,42 @@
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Python &gt;=3.6 64bit version</p>
 <h2 id="installing-lightwood">Installing Lightwood</h2>
-<p>You can install Lightwood using <code>pip</code>:</p>
-<div class="codehilite"><pre><span></span><code>pip3 install lightwood
-</code></pre></div>
-
+<p>You can install Lightwood using <code>pip</code>:
+<div class="highlight"><pre><span></span><code>pip3 install lightwood
+</code></pre></div></p>
 <p>If this fails, please report the bug on github and try installing the current master branch:</p>
-<div class="codehilite"><pre><span></span><code>git clone git@github.com:mindsdb/lightwood.git<span class="p">;</span>
+<div class="highlight"><pre><span></span><code>git clone git@github.com:mindsdb/lightwood.git<span class="p">;</span>
 <span class="nb">cd</span> lightwood<span class="p">;</span>
 pip install --no-cache-dir -e .
 </code></pre></div>
-
 <blockquote>
 <p>Please note that, depending on your os and python setup, you might want to use <code>pip</code> instead of <code>pip3</code>.</p>
 </blockquote>
 <p>You need python 3.6 or higher.</p>
 <p>Note on MacOS, you need to install libomp:</p>
-<div class="codehilite"><pre><span></span><code>brew install libomp
+<div class="highlight"><pre><span></span><code>brew install libomp
 </code></pre></div>
-
 <h3 id="install-using-virtual-environment">Install using virtual environment</h3>
 <p>We suggest you to install Lightwood on a virtual environment to avoid dependency issues. Make sure your Python version is &gt;=3.6. To set up a virtual environment:</p>
 <h4 id="install-on-windows">Install on Windows</h4>
 <p>Install the latest version of <code>pip</code>:</p>
-<div class="codehilite"><pre><span></span><code>python -m pip install --upgrade pip
+<div class="highlight"><pre><span></span><code>python -m pip install --upgrade pip
 pip --version
 </code></pre></div>
-
 <p>Activate your virtual environment and install lightwood:</p>
-<div class="codehilite"><pre><span></span><code>py -m pip install --user virtualenv
+<div class="highlight"><pre><span></span><code>py -m pip install --user virtualenv
 .<span class="se">\e</span>nv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
 pip install lightwood
 </code></pre></div>
-
 <blockquote>
 <p>You can also use <code>python</code> instead of <code>py</code></p>
 </blockquote>
 <h4 id="install-on-linux-or-macos">Install on Linux or macOS</h4>
 <p>Before installing Lightwood in a virtual environment you need to first create and activate the <code>venv</code>:</p>
-<div class="codehilite"><pre><span></span><code>python -m venv env
+<div class="highlight"><pre><span></span><code>python -m venv env
 <span class="nb">source</span> env/bin/activate
 pip install lightwood
 </code></pre></div>
-
 <h2 id="quick-example">Quick example</h2>
 <p>Assume that you have a training file (sensor_data.csv) such as this one.</p>
 <table>
@@ -1337,19 +1392,17 @@ pip install lightwood
 <p>And you would like to learn to predict the values of <em>sensor3</em> given the readings in <em>sensor1</em> and <em>sensor2</em>.</p>
 <h3 id="learn">Learn</h3>
 <p>You can train a Predictor as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">lightwood</span> <span class="kn">import</span> <span class="n">Predictor</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">lightwood</span> <span class="kn">import</span> <span class="n">Predictor</span>
 <span class="kn">import</span> <span class="nn">pandas</span>
 
 <span class="n">sensor3_predictor</span> <span class="o">=</span> <span class="n">Predictor</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sensor3&#39;</span><span class="p">])</span>
 <span class="n">sensor3_predictor</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">from_data</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;sensor_data.csv&#39;</span><span class="p">))</span>
 </code></pre></div>
-
 <h3 id="predict">Predict</h3>
 <p>You can now be given new readings from <em>sensor1</em> and <em>sensor2</em> predict what <em>sensor3</em> will be.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">prediction</span> <span class="o">=</span> <span class="n">sensor3_predictor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">when</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;sensor1&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;sensor2&#39;</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">})</span>
+<div class="highlight"><pre><span></span><code><span class="n">prediction</span> <span class="o">=</span> <span class="n">sensor3_predictor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">when</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;sensor1&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;sensor2&#39;</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">})</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
 </code></pre></div>
-
 <p>Of course, that example was just the tip of the iceberg, please read about the main concepts of lightwood, <a href="../API/">the API</a> and then jump into examples.</p>
                 
               

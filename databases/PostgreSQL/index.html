@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1225,8 +1286,7 @@
 </ul>
 <details class="success">
     <summary> Configuration example</summary>  
-
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;api&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;http&quot;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span>
@@ -1261,8 +1321,6 @@
     <span class="nt">&quot;storage_dir&quot;</span><span class="p">:</span> <span class="s2">&quot;/storage&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
-
 </details>
 
 <div class="admonition warning">
@@ -1271,16 +1329,14 @@
 </div>
 <h3 id="start-mindsdb">Start MindsDB</h3>
 <p>To start mindsdb run following command:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">mindsdb</span> <span class="o">--</span><span class="n">api</span><span class="o">=</span><span class="n">mysql</span> <span class="o">--</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">json</span>
+<p><div class="highlight"><pre><span></span><code><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">mindsdb</span> <span class="o">--</span><span class="n">api</span><span class="o">=</span><span class="n">mysql</span> <span class="o">--</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">json</span>
 </code></pre></div>
-
-<p>The --api parameter specifies the type of API to use in this case mysql. 
+The --api parameter specifies the type of API to use in this case mysql. 
 The --config specifies the location of the configuration file. </p>
 <h3 id="train-new-model">Train new model</h3>
 <p>To train a new model, insert a new record inside the mindsdb.predictors table as:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">predict</span><span class="p">,</span> <span class="n">select_data_query</span><span class="p">,</span> <span class="n">training_options</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;us_consumption&#39;</span><span class="p">,</span> <span class="s1">&#39;consumption&#39;</span><span class="p">,</span> <span class="s1">&#39;SELECT * FROM us_consumption&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;timeseries_settings&quot;:{&quot;order_by&quot;: [&quot;t&quot;], &quot;window&quot;:20}}&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">predict</span><span class="p">,</span> <span class="n">select_data_query</span><span class="p">,</span> <span class="n">training_options</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;us_consumption&#39;</span><span class="p">,</span> <span class="s1">&#39;consumption&#39;</span><span class="p">,</span> <span class="s1">&#39;SELECT * FROM us_consumption&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;timeseries_settings&quot;:{&quot;order_by&quot;: [&quot;t&quot;], &quot;window&quot;:20}}&#39;</span><span class="p">);</span>
 </code></pre></div>
-
 <ul>
 <li>name (string) -- The name of the predictor.</li>
 <li>predict (string) --  The feature you want to predict, in this example consumption. To predict multiple featurs include a comma separated string e.g 'consumption,income'.</li>
@@ -1289,7 +1345,7 @@ The --config specifies the location of the configuration file. </p>
 </ul>
 <h3 id="query-the-model">Query the model</h3>
 <p>To query the model and get the predictions SELECT the target variable, confidence and explanation for that prediction.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span>
+<p><div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
    <span class="n">consumption</span> <span class="k">AS</span> <span class="n">predicted</span><span class="p">,</span>
    <span class="n">consumption_confidence</span> <span class="k">AS</span> <span class="n">confidence</span><span class="p">,</span>
    <span class="n">consumption_explain</span> <span class="k">AS</span> <span class="n">info</span> 
@@ -1301,8 +1357,7 @@ The --config specifies the location of the configuration file. </p>
    <span class="k">AND</span> <span class="n">savings</span> <span class="o">=</span> <span class="mi">3</span><span class="p">.</span><span class="mi">183292657</span> 
    <span class="k">AND</span> <span class="n">unemployment</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span> 
 </code></pre></div>
-
-<p>You should get a similar response from MindsDB as:</p>
+You should get a similar response from MindsDB as:</p>
 <table>
 <thead>
 <tr>
@@ -1319,7 +1374,7 @@ The --config specifies the location of the configuration file. </p>
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;predicted_value&quot;</span><span class="p">:</span> <span class="mf">1.4979682087292199</span><span class="p">,</span>
     <span class="nt">&quot;confidence&quot;</span><span class="p">:</span> <span class="mf">0.9475</span><span class="p">,</span>
     <span class="nt">&quot;prediction_quality&quot;</span><span class="p">:</span> <span class="s2">&quot;very confident&quot;</span><span class="p">,</span>
@@ -1340,29 +1395,25 @@ The --config specifies the location of the configuration file. </p>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="delete-the-model">Delete the model</h3>
 <p>To delete the predictor that you have previously created, you need to delete it from <code>mindsdb.predictors</code> table. The name should be equal to name added in the INSERT statment while creating the predictor, e.g:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span> <span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;us_consumption&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span> <span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;us_consumption&#39;</span>
 </code></pre></div>
-
 <h3 id="train-and-predict-multiple-features">Train and predict multiple features</h3>
 <p>You can train a model that will predict multiple features by adding a comma separated features values in the predict column. e.g to predict the <code>consumption</code> and a <code>income</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span>
+<p><div class="highlight"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span>
    <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">predict</span><span class="p">,</span> <span class="n">select_data_query</span><span class="p">,</span> <span class="n">training_options</span><span class="p">)</span> 
 <span class="k">VALUES</span>
    <span class="p">(</span><span class="s1">&#39;us_consumption&#39;</span><span class="p">,</span> <span class="s1">&#39;consumption, income&#39;</span><span class="p">,</span> <span class="s1">&#39;SELECT * FROM us_consumption&#39;</span><span class="p">,</span> <span class="ss">&quot;option,value&quot;</span><span class="err">}</span><span class="p">);</span>
 </code></pre></div>
-
-<p>And query it using the <code>select_data_query</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span>
+And query it using the <code>select_data_query</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
    <span class="n">consumption</span> <span class="k">AS</span> <span class="n">predicted</span><span class="p">,</span>
 <span class="k">FROM</span>
    <span class="n">mindsdb</span><span class="p">.</span><span class="n">used_cars_model</span> 
 <span class="k">WHERE</span>
     <span class="n">select_data_query</span><span class="o">=</span><span class="s1">&#39;SELECT income FROM us_consumption&#39;</span><span class="p">;</span>
 </code></pre></div>
-
 <p>The requirements to query with <code>select_data_query</code> are:</p>
 <ul>
 <li>It must be a valid SQL statement</li>

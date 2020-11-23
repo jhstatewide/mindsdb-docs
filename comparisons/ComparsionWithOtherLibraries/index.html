@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1072,7 +1133,7 @@
 <h3 id="building-the-model">Building the model</h3>
 <p>Now we will build the actual models to train on the training dataset and run some predictions on the testing dataset. For the purpose of this example, we'll build a simple linear regression with both Tensorflow and Sklearn, in order to keep the code to a minimum.</p>
 <h4 id="tensorflow">Tensorflow</h4>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">tensorflow</span> <span class="kn">import</span> <span class="n">keras</span>
@@ -1132,9 +1193,8 @@
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The predicted price is </span><span class="si">%f</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="n">yscaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span>
     <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">xscaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">feat</span><span class="p">))))</span>
 </code></pre></div>
-
 <h4 id="sklearn">Sklearn</h4>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">linear_model</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">linear_model</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
@@ -1179,9 +1239,8 @@
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Coefficient of determination: </span><span class="si">%.2f</span><span class="s1">&#39;</span>
       <span class="o">%</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">prediction</span><span class="p">))</span>
 </code></pre></div>
-
 <h4 id="ludwig">Ludwig</h4>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">ludwig.api</span> <span class="kn">import</span> <span class="n">LudwigModel</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ludwig.api</span> <span class="kn">import</span> <span class="n">LudwigModel</span>
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
@@ -1215,10 +1274,9 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
 <span class="n">model</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
-
 <p><em>Note: If the data is inconsistent or of erroneous, null value it may throw an error. So you may want to  preprocess/clean  the data first.</em></p>
 <h3 id="mindsdb">Mindsdb</h3>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb</span> <span class="kn">import</span> <span class="n">Predictor</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb</span> <span class="kn">import</span> <span class="n">Predictor</span>
 
 <span class="c1"># tell mindsDB what we want to learn and from what data</span>
 <span class="n">Predictor</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;home_rentals_price&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span>
@@ -1231,7 +1289,6 @@
 <span class="c1"># now print the results</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The predicted price is between $</span><span class="si">{price}</span><span class="s1"> with </span><span class="si">{conf}</span><span class="s1"> confidence&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">price</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">explanation</span><span class="p">[</span><span class="s1">&#39;rental_price&#39;</span><span class="p">][</span><span class="s1">&#39;confidence_interval&#39;</span><span class="p">],</span> <span class="n">conf</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">explanation</span><span class="p">[</span><span class="s1">&#39;rental_price&#39;</span><span class="p">][</span><span class="s1">&#39;confidence&#39;</span><span class="p">]))</span>
 </code></pre></div>
-
 <p>Generally speaking, Mindsdb differentiates itself from other libraries by its <strong>simplicity</strong>. Lastly, <a href="https://www.mindsdb.com/product">Mindsdb Scout</a> provides you with an easy way to visiualize more insights about the model. This can also be done by calling <code>mdb.get_model_data('model_name')</code>, but it's easier to use Mindsdb Scout to visualize the data, rather than looking at the raw json.</p>
 <h1 id="comparing-mindsdb-accuracy-with-state-of-the-art-models">Comparing Mindsdb accuracy with state-of-the-art models</h1>
 <p>We have a few example datasets where we try to compare the accuracy obtained by Mindsdb with that of the best models we could find.</p>

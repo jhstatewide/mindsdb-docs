@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1307,41 +1368,38 @@
 <details>
   <summary>Click to expand Features Informations:</summary>
 
-
-<div class="codehilite"><pre><span></span><code><span class="err">1. age: age in years</span>
-<span class="err">2. sex: sex (1 = male; 0 = female)</span>
-<span class="err">3.  cp: chest pain type</span>
-<span class="err">    * Value 1: typical angina</span>
-<span class="err">    * Value 2: atypical angina</span>
-<span class="err">    * Value 3: non-anginal pain</span>
-<span class="err">    * Value 4: asymptomatic</span>
-<span class="err">4. trestbps: resting blood pressure (in mm Hg on admission to the hospital)</span>
-<span class="err">5. chol: serum cholestoral in mg/dl</span>
-<span class="err">6. fbs: (fasting blood sugar &gt; 120 mg/dl) (1 = true; 0 = false)</span>
-<span class="err">7.  restecg: resting electrocardiographic results</span>
-<span class="err">    * Value 0: normal</span>
-<span class="err">    * Value 1: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of &gt; 0.05 mV)</span>
-<span class="err">    * Value 2: showing probable or definite left ventricular hypertrophy by Estes&#39; criteria</span>
-<span class="err">8. thalach: maximum heart rate achieved</span>
-<span class="err">9. exang: exercise induced angina (1 = yes; 0 = no)</span>
-<span class="err">10. oldpeak = ST depression induced by exercise relative to rest</span>
-<span class="err">11. slope: the slope of the peak exercise ST segment</span>
-<span class="err">    * Value 1: upsloping</span>
-<span class="err">    * Value 2: flat</span>
-<span class="err">    * Value 3: downsloping</span>
-<span class="err">12. ca: number of major vessels (0-3) colored by flourosopy</span>
-<span class="err">13. thal: 3 = normal; 6 = fixed defect; 7 = reversable defect</span>
-<span class="err">14. num: diagnosis of heart disease (angiographic disease status)</span>
-<span class="err">    * Value 0: &lt; 50% diameter narrowing</span>
-<span class="err">    * Value 1: &gt; 50% diameter narrowing</span>
+<div class="highlight"><pre><span></span><code>1. age: age in years
+2. sex: sex (1 = male; 0 = female)
+3.  cp: chest pain type
+    * Value 1: typical angina
+    * Value 2: atypical angina
+    * Value 3: non-anginal pain
+    * Value 4: asymptomatic
+4. trestbps: resting blood pressure (in mm Hg on admission to the hospital)
+5. chol: serum cholestoral in mg/dl
+6. fbs: (fasting blood sugar &gt; 120 mg/dl) (1 = true; 0 = false)
+7.  restecg: resting electrocardiographic results
+    * Value 0: normal
+    * Value 1: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of &gt; 0.05 mV)
+    * Value 2: showing probable or definite left ventricular hypertrophy by Estes&#39; criteria
+8. thalach: maximum heart rate achieved
+9. exang: exercise induced angina (1 = yes; 0 = no)
+10. oldpeak = ST depression induced by exercise relative to rest
+11. slope: the slope of the peak exercise ST segment
+    * Value 1: upsloping
+    * Value 2: flat
+    * Value 3: downsloping
+12. ca: number of major vessels (0-3) colored by flourosopy
+13. thal: 3 = normal; 6 = fixed defect; 7 = reversable defect
+14. num: diagnosis of heart disease (angiographic disease status)
+    * Value 0: &lt; 50% diameter narrowing
+    * Value 1: &gt; 50% diameter narrowing
 </code></pre></div>
-
-
 
 </details>
 
 <h2 id="mindsdb-code-example">MindsDB Code example</h2>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">mindsdb</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">mindsdb</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">balanced_accuracy_score</span>
 
@@ -1370,7 +1428,6 @@
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
 </code></pre></div>
-
 <h2 id="mindsdb-accuracy">Mindsdb accuracy</h2>
 <table>
 <thead>

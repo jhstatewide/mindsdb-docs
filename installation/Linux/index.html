@@ -14,7 +14,7 @@
     
     
       
-        <title>Work In Progress - MindsDB Documentation</title>
+        <title>Install on Linux - MindsDB Documentation</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#work-in-progress" class="md-skip">
+        <a href="#install-using-mindsdb-installers" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Work In Progress
+              Install on Linux
             
           </span>
         </div>
@@ -192,10 +192,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
     <label class="md-nav__link" for="nav-1">
       Quick Start
       <span class="md-nav__icon md-icon"></span>
@@ -214,7 +216,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../installation/Installing/" class="md-nav__link">
+    <a href="../Installing/" class="md-nav__link">
       Install MindsDB
     </a>
   </li>
@@ -224,11 +226,59 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../installation/Linux/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Install on Linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Install on Linux
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-using-mindsdb-installers" class="md-nav__link">
+    Install using MindsDB installers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-using-pip" class="md-nav__link">
+    Install using pip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-using-anaconda" class="md-nav__link">
+    Install using Anaconda
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -238,7 +288,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../installation/Windows/" class="md-nav__link">
+    <a href="../Windows/" class="md-nav__link">
       Install on Windows
     </a>
   </li>
@@ -250,7 +300,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../installation/MacOS/" class="md-nav__link">
+    <a href="../MacOS/" class="md-nav__link">
       Install on macOS
     </a>
   </li>
@@ -931,7 +981,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Introduction/" class="md-nav__link">
+    <a href="../../scout/Introduction/" class="md-nav__link">
       Getting Started
     </a>
   </li>
@@ -943,7 +993,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Datasources/" class="md-nav__link">
+    <a href="../../scout/Datasources/" class="md-nav__link">
       Datasources
     </a>
   </li>
@@ -955,7 +1005,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Predictors/" class="md-nav__link">
+    <a href="../../scout/Predictors/" class="md-nav__link">
       Predictors
     </a>
   </li>
@@ -967,7 +1017,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Query/" class="md-nav__link">
+    <a href="../../scout/Query/" class="md-nav__link">
       Query
     </a>
   </li>
@@ -1083,8 +1133,35 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-using-mindsdb-installers" class="md-nav__link">
+    Install using MindsDB installers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-using-pip" class="md-nav__link">
+    Install using pip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-using-anaconda" class="md-nav__link">
+    Install using Anaconda
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1096,13 +1173,85 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mindsdb/mindsdb/edit/master/docs/scout/Databases.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mindsdb/mindsdb/edit/master/docs/installation/Linux.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="work-in-progress">Work In Progress</h1>
-<p>...</p>
+                  <h1>Install on Linux</h1>
+                
+                <h2 id="install-using-mindsdb-installers">Install using MindsDB installers</h2>
+<p>Install MindsDB on your Linux machine using an easy-to-install shell script.</p>
+<div class="admonition tip">
+<p class="admonition-title">Download the script</p>
+<p><a href="https://mindsdb-installer.s3-us-west-2.amazonaws.com/mindsdb-installer/linux/MindsDB-Server-Latest-Setup.sh">MindsDB for Linux</a></p>
+</div>
+<p>This script will install MindsDB and MindsDB's dependencies, and start the MindsDB server.</p>
+<blockquote>
+<p>Note that you need Python 3.6.x, 3.7.x or 3.8.x installed.</p>
+</blockquote>
+<h2 id="install-using-pip">Install using pip</h2>
+<p>We suggest you to install MindsDB in a virtual environment when using <strong>pip</strong> to avoid dependency issues. Make sure your Python version is <strong>&gt;=3.6</strong>.</p>
+<ol>
+<li>
+<p>Create and activate venv:</p>
+<div class="highlight"><pre><span></span><code>python -m venv mindsdb
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>source mindsdb/bin/activate
+</code></pre></div>
+</li>
+<li>
+<p>Install MindsDB:</p>
+<div class="highlight"><pre><span></span><code>pip install mindsdb
+</code></pre></div>
+</li>
+<li>
+<p>To verify that mindsdb was installed run:</p>
+<div class="highlight"><pre><span></span><code>pip freeze
+</code></pre></div>
+</li>
+</ol>
+<h2 id="install-using-anaconda">Install using Anaconda</h2>
+<p>You will need <a href="https://www.anaconda.com/products/individual">Anaconda</a> or <a href="https://conda.io/projects/conda/en/latest/index.html">Conda</a> installed and Python 64bit version. Then open Anaconda Prompt and:</p>
+<ol>
+<li>
+<p>Create new virtual environment and install mindsdb:</p>
+<div class="highlight"><pre><span></span><code>conda create -n mindsdb
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>conda activate mindsdb
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>pip install mindsdb
+</code></pre></div>
+</li>
+<li>
+<p>To verify that mindsdb was installed run:</p>
+<div class="highlight"><pre><span></span><code>conda list
+</code></pre></div>
+</li>
+</ol>
+<div class="admonition failure">
+<p class="admonition-title">Installation fail</p>
+<p>Don't worry, simply follow the below bellow instruction which should fix most issues.</p>
+</div>
+<ol>
+<li>
+<p><strong>Python 64</strong> bit version is required. </p>
+</li>
+<li>
+<p>If you are using <strong>Python 3.9</strong> you may get installation errors. Some of the MindsDB's dependencies are not working with <strong>Python 3.9</strong>, so please downgrade to older versions for now. We are working on this and <strong>Python 3.9</strong> will be supported soon.</p>
+</li>
+<li>
+<p>If you are using Linux install <code>tkinter</code> from your package manager in certain situations.</p>
+<ul>
+<li>Ubuntu/Debian: <code>sudo apt-get install python3-tk tk</code></li>
+<li>Fedora: <code>sudo dnf -y install python3-tkinter</code></li>
+<li>Arch: <code>sudo pacman -S tk</code></li>
+</ul>
+</li>
+<li>
+<p>If none of this works, try installing mindsdb using the <a href="">docker container</a> and create an issue with the installation errors you got on our  <a href="https://github.com/mindsdb/mindsdb/issues">Github repository</a> and we'll try to review it within a few hours.</p>
+</li>
+</ol>
                 
               
               

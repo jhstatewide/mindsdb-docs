@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1253,24 +1314,21 @@
 <details>
   <summary>Click to expand Features Informations:</summary>
 
+<div class="highlight"><pre><span></span><code>id
+time
+F_x
+F_y
+F_z
+T_x
+T_y
+T_z
+target
 
-<div class="codehilite"><pre><span></span><code><span class="n">id</span>
-<span class="k">time</span>
-<span class="n">F_x</span>
-<span class="n">F_y</span>
-<span class="n">F_z</span>
-<span class="n">T_x</span>
-<span class="n">T_y</span>
-<span class="n">T_z</span>
-<span class="n">target</span>
-
-<span class="n">Fx1</span> <span class="p">...</span> <span class="n">Fx15</span> <span class="k">is</span> <span class="n">the</span> <span class="n">evolution</span> <span class="k">of</span> <span class="k">force</span> <span class="n">Fx</span> <span class="k">in</span> <span class="n">the</span> <span class="n">observation</span> <span class="n">window</span>
+Fx1 ... Fx15 is the evolution of force Fx in the observation window
 </code></pre></div>
-
-
 </details>
 
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">mindsdb</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">mindsdb</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
 
@@ -1303,7 +1361,6 @@
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
 </code></pre></div>
-
 <h2 id="mindsdb-accuracy">Mindsdb accuracy</h2>
 <table>
 <thead>

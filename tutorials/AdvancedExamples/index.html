@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1167,7 +1228,7 @@
 <p>In order for mindsdb to predict multiple columns, you simply need to change the <code>to_predict</code> argument from a string (denoting the name of the column) to an array containing the names of the columns you want to predict.</p>
 <p>In the following example, we've altered the real estate model to predict the <code>location</code> and <code>neighborhood</code> both, instead of the <code>rental_price</code>.</p>
 <h3 id="code-example">Code example</h3>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">mindsdb</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">mindsdb</span>
 
 <span class="n">mdb</span> <span class="o">=</span> <span class="n">mindsdb</span><span class="o">.</span><span class="n">Predictor</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;multilabel_real_estate_model&#39;</span><span class="p">)</span>
 <span class="n">mdb</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span>
@@ -1175,13 +1236,12 @@
     <span class="n">to_predict</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">,</span><span class="s1">&#39;neighborhood&#39;</span><span class="p">]</span> <span class="c1"># Array with the names of the columns we want to predict</span>
 <span class="p">)</span>
 </code></pre></div>
-
 <h2 id="multimedia-inputs-images-audio-and-video">Multimedia inputs (images, audio and video)</h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2S-x6KfgJwE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <p>Currently, we only support images as inputs into models. We are working on support audio, you can check <a href="https://github.com/mindsdb/mindsdb/issues/124">this issue</a> to track the progress. Video input support is not yet planned.</p>
 <p>For any sort of media files, simply provide the full path to the file in the column. For example:</p>
-<div class="codehilite"><pre><span></span><code><span class="p">[</span>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
   <span class="p">{</span><span class="s1">&#39;img&#39;</span><span class="p">:</span><span class="s1">&#39;/mnt/data/img_1.jpg&#39;</span>
     <span class="s1">&#39;is_bicycle&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
   <span class="p">,{</span><span class="s1">&#39;img&#39;</span><span class="p">:</span><span class="s1">&#39;/mnt/data/img_2.jpg&#39;</span>
@@ -1190,12 +1250,11 @@
     <span class="s1">&#39;is_bicycle&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
-
 <p>Please provide the full path to a file on your local machine, not a url or the binary data from an image loaded up in a dataframe.</p>
 <p>Currently, the timeline on supporting multimedia output is still undecided, if you need that feature or want to implement, feel free to contact us. That being said, image outputs might actually work, we just haven't tested anything yet.</p>
 <h2 id="unbalanced-dataset">Unbalanced dataset</h2>
 <p>Given a dataset that is "imbalanced", the model being trained might not give the results you expect. For example, let's say you have the following dataset:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">data</span><span class="o">.</span><span class="n">csv</span>
+<div class="highlight"><pre><span></span><code><span class="n">data</span><span class="o">.</span><span class="n">csv</span>
 <span class="n">x</span><span class="p">,</span>  <span class="n">is_power_of_9</span>
 <span class="mi">1</span><span class="p">,</span>  <span class="kc">False</span>
 <span class="mi">2</span><span class="p">,</span>  <span class="kc">False</span>
@@ -1220,7 +1279,6 @@
 <span class="o">.</span>
 <span class="mi">100</span><span class="p">,</span> <span class="kc">False</span>
 </code></pre></div>
-
 <p>On which we want to predicted the aptly-named column <code>is_power_of_9</code>.</p>
 <p>We have 2 occurrences of the output <code>True</code> and 98 occurrences of the <code>False</code> output. So a model could always predict <code>False</code> and it would have an accuracy of 98%, which is pretty decent, so unless there's a way for the model to learn those 2 instance of <code>True</code> without losing on accuracy, it might just decided <code>98%</code> is the best possible model.</p>
 <p>However, let's say we really care about those <code>True</code> predictions being correct, or at least we want the model to consider them equally important, in that case we would call the <code>learn</code> function using the <code>equal_accuracy_for_all_output_categories</code> argument set to true.</p>

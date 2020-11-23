@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1129,46 +1190,41 @@
 <p><a href="https://colab.research.google.com">Google Colab</a> is a free cloud service that supports free GPU!
 You can use MindsDB there.</p>
 <p>Fortunately, this is really easy.
-Inside Google Colab, start a new python 3 notebook and in a cell, insert the following:</p>
-<div class="codehilite"><pre><span></span><code><span class="sx">!pip install mindsdb</span>
-</code></pre></div>
-
+Inside Google Colab, start a new python 3 notebook and in a cell, insert the following:
+<div class="highlight"><pre><span></span><code>!pip install mindsdb
+</code></pre></div></p>
 <h2 id="lets-build-an-example">Let's Build an Example</h2>
-<p>First we'll import mindsdb</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb</span> <span class="kn">import</span> <span class="n">Predictor</span>
+<p>First we'll import mindsdb
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb</span> <span class="kn">import</span> <span class="n">Predictor</span>
 </code></pre></div>
-
-<p>This is where it gets interesting. It's now up to you to install any dataset you want, so long as its a Excel or CSV file (or some other from of separator, doesn't necessarily have to be a ","). We'll be linking it to colab next.
+This is where it gets interesting. It's now up to you to install any dataset you want, so long as its a Excel or CSV file (or some other from of separator, doesn't necessarily have to be a ","). We'll be linking it to colab next.
 In this example we'll be using a students dataset from kaggle. You can get it <a href="https://www.kaggle.com/spscientist/students-performance-in-exams">here</a> if you want to follow along.</p>
 <p>Once you have your CSV dataset, download it and put it in a new folder on your Google Drive. We'll call ours <code>Datasets</code>.
-We'll import it into colab using the following lines</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+We'll import it into colab using the following lines
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
 <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
 </code></pre></div>
-
-<p>Now just follow the instructions and enter your authorization code.</p>
+Now just follow the instructions and enter your authorization code.</p>
 <p>Here, we'll create a file variable that stores the path of our dataset.</p>
-<div class="codehilite"><pre><span></span><code><span class="err">file = &quot;./drive/My Drive/Datasets/StudentsPerformance.csv&quot;</span>
+<div class="highlight"><pre><span></span><code>file = &quot;./drive/My Drive/Datasets/StudentsPerformance.csv&quot;
 </code></pre></div>
-
 <h2 id="training">Training</h2>
 <p>Now let's create a MindsDB object and initialize it with our data from the file. We'll be prediciting the reading_score and we'll call our model 'reading_predictor'.
-Remember that depending on your dataset, these variables might change. Just remember that <code>predict</code> is the column you want to make your prediction on and that mindsdb will automatically rename all your columns to snake case.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">mdb</span> <span class="o">=</span> <span class="n">Predictor</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;reading_score_predictor&#39;</span><span class="p">)</span>
+Remember that depending on your dataset, these variables might change. Just remember that <code>predict</code> is the column you want to make your prediction on and that mindsdb will automatically rename all your columns to snake case.
+<div class="highlight"><pre><span></span><code><span class="n">mdb</span> <span class="o">=</span> <span class="n">Predictor</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;reading_score_predictor&#39;</span><span class="p">)</span>
 
 <span class="n">mdb</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span>
   <span class="n">from_data</span><span class="o">=</span><span class="n">file</span><span class="p">,</span> <span class="c1"># call file from google drive</span>
   <span class="n">to_predict</span><span class="o">=</span><span class="s1">&#39;reading_score&#39;</span>
 <span class="p">)</span>
-</code></pre></div>
-
+</code></pre></div></p>
 <h2 id="testing">Testing</h2>
 <p><code>mdb.predict</code> needs 1 of 2 arguments to run a prediction:</p>
 <ul>
 <li><code>when_data</code> is a file with one or more values or a dictionary of values for the columns we want to use for the prediction.</li>
 </ul>
 <p>The following example uses a dictionary via the <code>when_data</code> argument:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Load the `Predictor` we just trained via calling `learn`</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Load the `Predictor` we just trained via calling `learn`</span>
 <span class="n">mdb</span> <span class="o">=</span> <span class="n">Predictor</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;reading_score_predictor&#39;</span><span class="p">)</span>
 
 <span class="c1"># Make a prediction using a dictionary of input values</span>
@@ -1180,9 +1236,8 @@ Remember that depending on your dataset, these variables might change. Just reme
   <span class="p">}</span>
 <span class="p">)</span>
 </code></pre></div>
-
 <p>Finally we print out the result:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># The dictionary containing the prediction</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># The dictionary containing the prediction</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
 <span class="c1"># The confidence we have in the prediction (`0` being the lowest confidence and `1` being 100% confident)</span>
 <span class="c1"># Note, the confidence is not equal to the model&#39;s overall accuracy</span>
@@ -1190,7 +1245,6 @@ Remember that depending on your dataset, these variables might change. Just reme
 <span class="c1"># The actual value predicted for `reading_score`</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">predictions</span><span class="p">[</span><span class="s1">&#39;reading_score&#39;</span><span class="p">])</span>
 </code></pre></div>
-
 <p>You can find our <a href="https://colab.research.google.com/drive/1qnH4bhTKvm6mEyV8nAoK9uMZm8HV_gwE?usp=sharing">Google Colab Example</a> here.</p>
                 
                   

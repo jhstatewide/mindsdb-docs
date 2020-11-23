@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1064,7 +1125,7 @@
                 
                 <p>To call the SageMaker endpint you can create Jupyter Notebook or use call.py script.</p>
 <h2 id="jupyter-notebook">Jupyter Notebook</h2>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">boto3</span>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">boto3</span>
 
 <span class="n">endpointName</span> <span class="o">=</span> <span class="s1">&#39;mindsdb-impl&#39;</span>
 
@@ -1083,14 +1144,12 @@
 
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="s1">&#39;Body&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">))</span>
 </code></pre></div>
-
-<p>Run the code and you should see the prediction response from the endpoint:</p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+Run the code and you should see the prediction response from the endpoint:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
  <span class="nt">&quot;prediction&quot;</span><span class="p">:</span> <span class="s2">&quot;* We are 96% confident the value of &quot;</span><span class="err">Class</span><span class="s2">&quot; is positive.&quot;</span><span class="p">,</span> 
  <span class="nt">&quot;class_confidence&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.964147493532568</span><span class="p">]</span>
 <span class="p">}</span>
-</code></pre></div>
-
+</code></pre></div></p>
 <h2 id="callpy-script"><a href="https://github.com/mindsdb/mindsdb-sagemaker-container/blob/master/local_test/call.py">call.py</a> Script</h2>
 <p>The required arguments are:</p>
 <ul>
@@ -1098,7 +1157,7 @@
 <li>dataset - The location of test dataset.</li>
 <li>content type - The mime type of the data.</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="n">python3</span> <span class="n">call</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">endpoint</span> <span class="n">mindsdb</span><span class="o">-</span><span class="n">impl</span> <span class="o">--</span><span class="n">dataset</span> <span class="n">test_data</span><span class="o">/</span><span class="n">diabetes</span><span class="o">-</span><span class="n">test</span><span class="o">.</span><span class="n">json</span> <span class="o">--</span><span class="n">content</span><span class="o">-</span><span class="nb">type</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
+<div class="highlight"><pre><span></span><code><span class="n">python3</span> <span class="n">call</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">endpoint</span> <span class="n">mindsdb</span><span class="o">-</span><span class="n">impl</span> <span class="o">--</span><span class="n">dataset</span> <span class="n">test_data</span><span class="o">/</span><span class="n">diabetes</span><span class="o">-</span><span class="n">test</span><span class="o">.</span><span class="n">json</span> <span class="o">--</span><span class="n">content</span><span class="o">-</span><span class="nb">type</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
 </code></pre></div>
                 
                   

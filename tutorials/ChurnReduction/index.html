@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1283,36 +1344,33 @@
 <details>
   <summary>Click to expand Features Informations:</summary>
 
-
-<div class="codehilite"><pre><span></span><code><span class="err">1. customerIDCustomer ID</span>
-<span class="err">2. gender Whether the customer is a male or a female</span>
-<span class="err">3. SeniorCitizen Whether the customer is a senior citizen or not (1, 0)</span>
-<span class="err">4. Partner Whether the customer has a partner or not (Yes, No)</span>
-<span class="err">5. Dependents Whether the customer has dependents or not (Yes, No)</span>
-<span class="err">tenureNumber of months the customer has stayed with the company</span>
-<span class="err">6. PhoneService Whether the customer has a phone service or not (Yes, No)</span>
-<span class="err">7. MultipleLines Whether the customer has multiple lines or not (Yes, No, No phone service)</span>
-<span class="err">8. InternetServiceCustomer’s internet service provider (DSL, Fiber optic, No)</span>
-<span class="err">9. OnlineSecurity Whether the customer has online security or not (Yes, No, No internet service)</span>
-<span class="err">10. OnlineBackup Whether the customer has online backup or not (Yes, No, No internet service)</span>
-<span class="err">11. DeviceProtection Whether the customer has device protection or not (Yes, No, No internet service)</span>
-<span class="err">12. TechSupport Whether the customer has tech support or not (Yes, No, No internet service)</span>
-<span class="err">13. StreamingTV Whether the customer has streaming TV or not (Yes, No, No internet service)</span>
-<span class="err">14. StreamingMovies Whether the customer has streaming movies or not (Yes, No, No internet service)</span>
-<span class="err">15. ContractThe contract term of the customer (Month-to-month, One year, Two year)</span>
-<span class="err">16. PaperlessBilling Whether the customer has paperless billing or not (Yes, No)</span>
-<span class="err">17. PaymentMethodThe customer’s payment method (Electronic check, Mailed check, Bank transfer (automatic), Credit card (automatic))</span>
-<span class="err">18. MonthlyChargesThe amount charged to the customer monthly</span>
-<span class="err">19. TotalChargesThe total amount charged to the customer</span>
-<span class="err">20 Churn Whether the customer churned or not (Yes or No)</span>
+<div class="highlight"><pre><span></span><code>1. customerIDCustomer ID
+2. gender Whether the customer is a male or a female
+3. SeniorCitizen Whether the customer is a senior citizen or not (1, 0)
+4. Partner Whether the customer has a partner or not (Yes, No)
+5. Dependents Whether the customer has dependents or not (Yes, No)
+tenureNumber of months the customer has stayed with the company
+6. PhoneService Whether the customer has a phone service or not (Yes, No)
+7. MultipleLines Whether the customer has multiple lines or not (Yes, No, No phone service)
+8. InternetServiceCustomer’s internet service provider (DSL, Fiber optic, No)
+9. OnlineSecurity Whether the customer has online security or not (Yes, No, No internet service)
+10. OnlineBackup Whether the customer has online backup or not (Yes, No, No internet service)
+11. DeviceProtection Whether the customer has device protection or not (Yes, No, No internet service)
+12. TechSupport Whether the customer has tech support or not (Yes, No, No internet service)
+13. StreamingTV Whether the customer has streaming TV or not (Yes, No, No internet service)
+14. StreamingMovies Whether the customer has streaming movies or not (Yes, No, No internet service)
+15. ContractThe contract term of the customer (Month-to-month, One year, Two year)
+16. PaperlessBilling Whether the customer has paperless billing or not (Yes, No)
+17. PaymentMethodThe customer’s payment method (Electronic check, Mailed check, Bank transfer (automatic), Credit card (automatic))
+18. MonthlyChargesThe amount charged to the customer monthly
+19. TotalChargesThe total amount charged to the customer
+20 Churn Whether the customer churned or not (Yes or No)
 </code></pre></div>
-
-
 
 </details>
 
 <h2 id="mindsdb-code-example">MindsDB Code example</h2>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">mindsdb</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">mindsdb</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
 
@@ -1347,7 +1405,6 @@
     <span class="n">result</span> <span class="o">=</span> <span class="n">run</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </code></pre></div>
-
 <h2 id="mindsdb-accuracy">Mindsdb accuracy</h2>
 <table>
 <thead>

@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1127,7 +1188,7 @@
 <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 <p>Now we can run one of our mindsdb examples, first by training a model:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">mindsdb</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">mindsdb</span>
 
 <span class="c1"># Instantiate a mindsdb Predictor</span>
 <span class="n">mdb</span> <span class="o">=</span> <span class="n">mindsdb</span><span class="o">.</span><span class="n">Predictor</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;real_estate_model&#39;</span><span class="p">)</span>
@@ -1138,9 +1199,8 @@
     <span class="n">to_predict</span><span class="o">=</span><span class="s1">&#39;rental_price&#39;</span><span class="p">,</span> <span class="c1"># the column we want to learn to predict given all the data in the file</span>
 <span class="p">)</span>
 </code></pre></div>
-
 <p>Then generating some predictions:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">mdb</span> <span class="o">=</span> <span class="n">mindsdb</span><span class="o">.</span><span class="n">Predictor</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;real_estate_model&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">mdb</span> <span class="o">=</span> <span class="n">mindsdb</span><span class="o">.</span><span class="n">Predictor</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;real_estate_model&#39;</span><span class="p">)</span>
 
 <span class="c1"># use the model to make predictions</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">mdb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">when_data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;number_of_rooms&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span><span class="s1">&#39;number_of_bathrooms&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;sqft&#39;</span><span class="p">:</span> <span class="mi">1190</span><span class="p">})</span>

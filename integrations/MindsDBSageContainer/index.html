@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1078,18 +1139,17 @@
                 
                 <p>The general flow is to train and deploy models within SageMaker, create endpoints and take advantage of automated machine learning with MindsDB.</p>
 <h2 id="the-mindsdb_impl-code-structure">The mindsdb_impl Code Structure</h2>
-<p>All of the components we need to package MindsDB for Amazon SageMager are located inside the mindsdb_impl directory:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">|-- Dockerfile</span>
-<span class="err">|-- build_and_push.sh</span>
-<span class="err">`-- mindsdb_impl</span>
-<span class="err">    |-- nginx.conf</span>
-<span class="err">    |-- predictor.py</span>
-<span class="err">    |-- serve</span>
-<span class="err">    |-- train</span>
-<span class="err">    `-- wsgi.py</span>
+<p>All of the components we need to package MindsDB for Amazon SageMager are located inside the mindsdb_impl directory:
+<div class="highlight"><pre><span></span><code>|-- Dockerfile
+|-- build_and_push.sh
+`-- mindsdb_impl
+    |-- nginx.conf
+    |-- predictor.py
+    |-- serve
+    |-- train
+    `-- wsgi.py
 </code></pre></div>
-
-<p>All of the files that will be packaged in the container working directory are inside mindsdb_impl:
+All of the files that will be packaged in the container working directory are inside mindsdb_impl:
 * nginx.conf - is the configuration file for the nginx .
 * predictor.py is the program that actually implements the Flask web server and the MindsDB predictions for this app. We have modified this to use the MindsDB Predictor and to accept different types of tabular data for predictions.
 * serve is the program that is started when the container is started for hosting.
@@ -1097,13 +1157,11 @@
 * wsgi.py is a small wrapper used to invoke the Flask app. </p>
 <h2 id="build-docker-image">Build Docker Image</h2>
 <p>The docker command for building the image is build and -t parameter provides the name of the image:</p>
-<div class="codehilite"><pre><span></span><code>docker build -t mindsdb-impl .
+<div class="highlight"><pre><span></span><code>docker build -t mindsdb-impl .
 </code></pre></div>
-
 <p>After getting the <code>Successfully built</code> message, we should be able to list the image by running the list command:</p>
-<div class="codehilite"><pre><span></span><code>docker image list
+<div class="highlight"><pre><span></span><code>docker image list
 </code></pre></div>
-
 <h2 id="test-the-container-locally">Test the Container Locally</h2>
 <p>The local_test directory contains all of the scripts and data samples for testing the built container on the local machine.</p>
 <ul>
@@ -1116,24 +1174,20 @@
 <li>model: The directory where MindsDB writes the model files.</li>
 <li>call.py: This cli script can be used for testing the deployed model on the SageMaker endpoint</li>
 </ul>
-<p>To train the model execute:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">./train_local.sh mindsdb-impl</span>
+<p>To train the model execute:
+<div class="highlight"><pre><span></span><code>./train_local.sh mindsdb-impl
 </code></pre></div>
-
-<p>Next, start the inference server that will provide an endpoint for getting the predictions. Inside the local_test directory execute serve_local.sh script:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">./serve_local.sh mindsdb-impl</span>
+Next, start the inference server that will provide an endpoint for getting the predictions. Inside the local_test directory execute serve_local.sh script:
+<div class="highlight"><pre><span></span><code>./serve_local.sh mindsdb-impl
 </code></pre></div>
-
-<p>To run predictions against the invocations endpoint, use predict.sh script:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">./predict.sh test_data/diabetest-test.csv text/csv</span>
+To run predictions against the invocations endpoint, use predict.sh script:
+<div class="highlight"><pre><span></span><code>./predict.sh test_data/diabetest-test.csv text/csv
 </code></pre></div>
-
-<p>The arguments sent to the script are the test data and content type of the data.</p>
+The arguments sent to the script are the test data and content type of the data.</p>
 <h2 id="deploy-the-image-on-amazon-ecr-elastic-container-repository">Deploy the Image on Amazon ECR (Elastic Container Repository)</h2>
 <p>To push the image use build-and-push.sh script. Note that the script will look for an AWS EC Repository in the default region that you are using, and create a new one if that doesn't exist.</p>
-<div class="codehilite"><pre><span></span><code><span class="err">./build-and-push.sh mindsdb-impl</span>
+<div class="highlight"><pre><span></span><code>./build-and-push.sh mindsdb-impl
 </code></pre></div>
-
 <p>After the mindsdb-impl image is deployed to Amazon ECR, you can use it inside SageMaker.</p>
                 
                   

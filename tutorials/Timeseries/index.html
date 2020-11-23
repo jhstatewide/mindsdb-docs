@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1193,16 +1254,15 @@
 <h3 id="timeseries-interface">Timeseries interface</h3>
 <p>A timeseries is a problem where rows are related to each other in a sequential way, such that the prediction of the value in the present row should take into account a number of previous rows.</p>
 <p>To build a timeseries model you need to pass <code>timeseries_settings</code> dictionary to <code>learn</code></p>
-<div class="codehilite"><pre><span></span><code><span class="err">timeseries_settings = {</span>
-<span class="err">  order_by: List&lt;String&gt;              | Mandatory</span>
-<span class="err">  group_by: List&lt;String&gt;              | Optional (default: [])</span>
-<span class="err">  nr_predictions: Int                 | Optional (default: 1)</span>
-<span class="err">  use_previous_target: Bool           | Optional (default: True)</span>
-<span class="err">  window: Int                         | Mandatory</span>
-<span class="err">  historical_columns: List&lt;String&gt;    | Optional (default: [])</span>
-<span class="err">}</span>
+<div class="highlight"><pre><span></span><code>timeseries_settings = {
+  order_by: List&lt;String&gt;              | Mandatory
+  group_by: List&lt;String&gt;              | Optional (default: [])
+  nr_predictions: Int                 | Optional (default: 1)
+  use_previous_target: Bool           | Optional (default: True)
+  window: Int                         | Mandatory
+  historical_columns: List&lt;String&gt;    | Optional (default: [])
+}
 </code></pre></div>
-
 <p>Let's go through these settings one by one:</p>
 <ul>
 <li>order_by - The columns based on which the data should be ordered</li>
@@ -1212,7 +1272,7 @@
 <li>window - The number of rows to "look back" into when making a prediction, after the rows are ordered by the order_by column and split into groups.</li>
 </ul>
 <h3 id="code-example">Code example</h3>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">mindsdb</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">mindsdb</span>
 
 <span class="n">mdb</span> <span class="o">=</span> <span class="n">mindsdb</span><span class="o">.</span><span class="n">Predictor</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;assembly_machines_model&#39;</span><span class="p">)</span>
 <span class="n">mdb</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span>
@@ -1229,32 +1289,28 @@
 
 <span class="n">results</span> <span class="o">=</span> <span class="n">mdb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">when_data</span><span class="o">=</span><span class="s1">&#39;new_assembly_machines_data.tsv&#39;</span><span class="p">)</span>
 </code></pre></div>
-
 <h3 id="historical-data">Historical data</h3>
 <p>When making timeseries predictions, it's important to provide mindsdb with the context for those predictions, i.e. with the previous rows that came before the one you are trying to predict for.</p>
 <p>Say your columns are: <code>date, nr_customers, store</code>.
 You order by <code>date</code>, group by <code>store</code> and need to predict <code>nr_customers</code>. You set <code>window=3</code>.</p>
-<p>You train your model and then want to make a prediction using a csv with the following content:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">date,       nr_customers, store</span>
-<span class="err">2020-10-06, unknown     , A1</span>
-</code></pre></div>
-
+<p>You train your model and then want to make a prediction using a csv with the following content:
+<div class="highlight"><pre><span></span><code>date,       nr_customers, store
+2020-10-06, unknown     , A1
+</code></pre></div></p>
 <p>This prediction will be less than ideal, since mindsdb doesn't know how many customers came to the store on <code>2020-10-05</code> or <code>2020-10-04</code>, which is probably the main insight the trained model is using to make predictions. So instead you need to pass a file with the following content:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">date,       nr_customers, store</span>
-<span class="err">2020-10-04, 55          , A1</span>
-<span class="err">2020-10-05, 123         , A1</span>
-<span class="err">2020-10-06, None        , A1</span>
+<div class="highlight"><pre><span></span><code>date,       nr_customers, store
+2020-10-04, 55          , A1
+2020-10-05, 123         , A1
+2020-10-06, None        , A1
 </code></pre></div>
-
 <p>Note that mindsdb will generate a prediction for every row here (even if the target value <code>nr_customers</code> already exists), but you only care about the prediction for the last row, the previous 2 are there to provide historical context.</p>
 <p>Also note that, if you window was, say, equal to <code>5</code>, you would have had to provide 4 more rows instead of 2 more.
 Also note that, if you were to give the file:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">date,       nr_customers, store</span>
-<span class="err">2020-10-04, 55          , B11</span>
-<span class="err">2020-10-05, 123         , A2</span>
-<span class="err">2020-10-06, None        , A1</span>
+<div class="highlight"><pre><span></span><code>date,       nr_customers, store
+2020-10-04, 55          , B11
+2020-10-05, 123         , A2
+2020-10-06, None        , A1
 </code></pre></div>
-
 <p>This wouldn't count as historical context, since you are grouping by the <code>store</code> column, so only rows where <code>store</code> is <code>A1</code> will be relevant historical context for predicting a row where the <code>store == A1</code></p>
 <h3 id="database-integration">Database integration</h3>
 <p>There is an experimental feature, when you train mindsdb from a database, that auto-generates a query to select historical context, based on the query you used to source your training data.</p>

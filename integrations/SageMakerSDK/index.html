@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1085,23 +1146,20 @@
                 
                 <p>The following section explaines how to train and host models using <a href="https://sagemaker.readthedocs.io/en/stable/">Amazon SageMaker SDK</a>.</p>
 <h3 id="add-dependencies">Add dependencies</h3>
-<p>Install SageMaker SDK :</p>
-<div class="codehilite"><pre><span></span><code><span class="err">pip install sagemaker</span>
+<p>Install SageMaker SDK :
+<div class="highlight"><pre><span></span><code>pip install sagemaker
 </code></pre></div>
-
-<p>First, add IAM Role that have AmazonSageMakerFullAccess Policy.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">sagemaker</span> <span class="k">as</span> <span class="nn">sage</span>
+First, add IAM Role that have AmazonSageMakerFullAccess Policy.
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sagemaker</span> <span class="k">as</span> <span class="nn">sage</span>
 <span class="n">role</span> <span class="o">=</span> <span class="s2">&quot;arn:aws:iam::123213143532:role/service-role/AmazonSageMaker-ExecutionRole-20199&quot;</span>
 <span class="n">sess</span> <span class="o">=</span> <span class="n">sage</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
 <span class="n">account</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">boto_session</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;sts&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_caller_identity</span><span class="p">()[</span><span class="s1">&#39;Account&#39;</span><span class="p">]</span>
 </code></pre></div>
-
-<p>Next, provide s3 bucket where the models will be saved, get aws region from session and add URI to MindsDB image in AWS ECR:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">bucket_path</span> <span class="o">=</span> <span class="s2">&quot;s3://mdb-sagemaker/models/&quot;</span>
+Next, provide s3 bucket where the models will be saved, get aws region from session and add URI to MindsDB image in AWS ECR:
+<div class="highlight"><pre><span></span><code><span class="n">bucket_path</span> <span class="o">=</span> <span class="s2">&quot;s3://mdb-sagemaker/models/&quot;</span>
 <span class="n">region</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">boto_session</span><span class="o">.</span><span class="n">region_name</span>
 <span class="n">image</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">.dkr.ecr.</span><span class="si">{}</span><span class="s1">.amazonaws.com/mindsdb_lts:latest&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">account</span><span class="p">,</span> <span class="n">region</span><span class="p">)</span>
-</code></pre></div>
-
+</code></pre></div></p>
 <h3 id="start-training">Start training</h3>
 <p>The required properties for invoking SageMaker training using Estimator are:</p>
 <ul>
@@ -1114,14 +1172,13 @@
 <li>The base job name(str) -- The name of the training job.</li>
 <li>The hyperparameters(dict) -- The MindsDB container requires to_predict value so it knows which column to predict.</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="n">mindsdb_impl</span> <span class="o">=</span> <span class="n">sage</span><span class="o">.</span><span class="n">estimator</span><span class="o">.</span><span class="n">Estimator</span><span class="p">(</span><span class="n">image</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><span class="n">mindsdb_impl</span> <span class="o">=</span> <span class="n">sage</span><span class="o">.</span><span class="n">estimator</span><span class="o">.</span><span class="n">Estimator</span><span class="p">(</span><span class="n">image</span><span class="p">,</span>
                        <span class="n">role</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;ml.m4.xlarge&#39;</span><span class="p">,</span>
                        <span class="n">output_path</span><span class="o">=</span><span class="n">bucket_path</span><span class="p">,</span>
                        <span class="n">sagemaker_session</span><span class="o">=</span><span class="n">sess</span><span class="p">,</span>
                        <span class="n">base_job_name</span><span class="o">=</span><span class="s2">&quot;mindsdb-lts-sdk&quot;</span><span class="p">,</span>
                        <span class="n">hyperparameters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;to_predict&quot;</span><span class="p">:</span> <span class="s2">&quot;Class&quot;</span><span class="p">})</span>
 </code></pre></div>
-
 <h3 id="deploy-the-model">Deploy the model</h3>
 <p>The required configuration for deploying model:</p>
 <ul>
@@ -1129,7 +1186,7 @@
 <li>instance_type (str) -- The EC2 instance type to deploy this Model to. For example, ‘ml.p2.xlarge’, or ‘local’ for local mode.</li>
 <li>endpoint_name (str) -- The name of the endpoint on SageMaker.</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="n">dataset_location</span> <span class="o">=</span> <span class="s1">&#39;s3://mdb-sagemaker/diabetes.csv&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="n">dataset_location</span> <span class="o">=</span> <span class="s1">&#39;s3://mdb-sagemaker/diabetes.csv&#39;</span>
 <span class="n">mindsdb_impl</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">dataset_location</span><span class="p">)</span>
 <span class="n">predictor</span> <span class="o">=</span> <span class="n">mindsdb_impl</span><span class="o">.</span><span class="n">deploy</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;ml.m4.xlarge&#39;</span><span class="p">,</span> <span class="n">endpoint_name</span><span class="o">=</span><span class="s1">&#39;mindsdb-impl&#39;</span><span class="p">)</span>
  <span class="err">```</span>
@@ -1142,14 +1199,12 @@
         <span class="n">when_data</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">predictor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">when_data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
 </code></pre></div>
-
 <h3 id="delete-the-endpoint">Delete the endpoint</h3>
-<p>Don't forget to delete the endpoint after using it.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">sess</span><span class="o">.</span><span class="n">delete_endpoint</span><span class="p">(</span><span class="s1">&#39;mindsdb-impl&#39;</span><span class="p">)</span>
-</code></pre></div>
-
+<p>Don't forget to delete the endpoint after using it.
+<div class="highlight"><pre><span></span><code><span class="n">sess</span><span class="o">.</span><span class="n">delete_endpoint</span><span class="p">(</span><span class="s1">&#39;mindsdb-impl&#39;</span><span class="p">)</span>
+</code></pre></div></p>
 <h3 id="full-code-example">Full code example</h3>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">sagemaker</span> <span class="k">as</span> <span class="nn">sage</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sagemaker</span> <span class="k">as</span> <span class="nn">sage</span>
 
 <span class="c1"># Add AmazonSageMaker Execution role here</span>
 <span class="n">role</span> <span class="o">=</span> <span class="s2">&quot;arn:aws:iam:&quot;</span>

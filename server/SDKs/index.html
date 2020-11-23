@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1138,22 +1199,19 @@
                 <p>The MindsDB SDK's are providing all of the MindsDB's native functionalities through MindsDB HTTP Interface. Currently, MindsDB provides SDK's for JavaScript and Python.</p>
 <h2 id="installing-javascript-sdk">Installing JavaScript SDK</h2>
 <p>The JavaScript SDK can be installed with npm or yarn:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">npm install mindsdb-js-sdk</span>
+<p><div class="highlight"><pre><span></span><code>npm install mindsdb-js-sdk
 </code></pre></div>
-
-<p>or</p>
-<div class="codehilite"><pre><span></span><code><span class="err">yarn add mindsdb-js-sdk</span>
+or</p>
+<div class="highlight"><pre><span></span><code>yarn add mindsdb-js-sdk
 </code></pre></div>
-
 <p>Also, you can install it from source:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">git clone git@github.com:mindsdb/mindsdb_js_sdk.git</span>
-<span class="err">cd mindsdb_js_sdk</span>
-<span class="err">npm install</span>
+<div class="highlight"><pre><span></span><code>git clone git@github.com:mindsdb/mindsdb_js_sdk.git
+cd mindsdb_js_sdk
+npm install
 </code></pre></div>
-
 <h2 id="usage-example">Usage example</h2>
 <p>The following example covers the basic flow: connect to MindsDB Server, train new model, make predictions.</p>
-<div class="codehilite"><pre><span></span><code><span class="kr">import</span> <span class="nx">MindsDB</span> <span class="nx">from</span> <span class="s1">&#39;mindsdb-js-sdk&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="nx">MindsDB</span> <span class="nx">from</span> <span class="s1">&#39;mindsdb-js-sdk&#39;</span><span class="p">;</span>
 
 <span class="c1">//connection</span>
 <span class="nx">MindsDB</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
@@ -1176,22 +1234,19 @@
 
 <span class="nx">MindsDB</span><span class="p">.</span><span class="nx">disconnect</span><span class="p">();</span>
 </code></pre></div>
-
 <h2 id="installing-python-sdk">Installing Python SDK</h2>
 <p>The Python SDK can be installed from PyPI:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">pip install mindsdb-client</span>
+<div class="highlight"><pre><span></span><code>pip install mindsdb-client
 </code></pre></div>
-
 <p>Or you can install it from source:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">git clone git@github.com:mindsdb/mindsdb_python_sdk.git</span>
-<span class="err">cd mindsdb_python_sdk</span>
-<span class="err">python setup.py develop</span>
-<span class="err">pip install -r requirements.txt</span>
+<div class="highlight"><pre><span></span><code>git clone git@github.com:mindsdb/mindsdb_python_sdk.git
+cd mindsdb_python_sdk
+python setup.py develop
+pip install -r requirements.txt
 </code></pre></div>
-
 <h2 id="usage-example_1">Usage example</h2>
 <p>The following example covers the basic flow: connect to MindsDB Server, train new model, make predictions.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb_client</span> <span class="kn">import</span> <span class="n">MindsDB</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb_client</span> <span class="kn">import</span> <span class="n">MindsDB</span>
 
 <span class="c1"># connect</span>
 <span class="n">mdb</span> <span class="o">=</span> <span class="n">MindsDB</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="s1">&#39;http://mindsdb.server:47334&#39;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="s1">&#39;login@email.com&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;loginpass&#39;</span><span class="p">})</span>

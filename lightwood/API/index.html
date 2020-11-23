@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1218,9 +1279,8 @@
                 
                 
                 <h1 id="predictor-api">Predictor API</h1>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">lightwood</span> <span class="kn">import</span> <span class="n">Predictor</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">lightwood</span> <span class="kn">import</span> <span class="n">Predictor</span>
 </code></pre></div>
-
 <p>Lightwood has one main class; The <strong>Predictor</strong>, which is a modular construct that you can train and get predictions from. It is made out of 3 main building blocks (<em>features, encoders, mixers</em>) that you can configure, modify and expand as you wish.</p>
 <p><img alt="building_blocks" src="https://docs.google.com/drawings/d/e/2PACX-1vTrzcXyqDeaGWOwG-3BWOV5wj1U2M5v7ojracqv39z2Ljv-oFqxh4bxFiJxjjtd7CgehptMeBlLYx6w/pub?w=1399&amp;h=818&amp;a=1" /></p>
 <div class="admonition info">
@@ -1236,9 +1296,8 @@
 </ul>
 </div>
 <h2 id="constructor-__init__">Constructor, __init__()</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">my_predictor</span> <span class="o">=</span> <span class="n">Predictor</span><span class="p">(</span> <span class="n">output</span><span class="o">=</span><span class="p">[]</span> <span class="o">|</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="o">...</span><span class="p">}</span> <span class="o">|</span> <span class="n">load_from_path</span><span class="o">=&lt;</span><span class="n">file_path</span><span class="o">&gt;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">my_predictor</span> <span class="o">=</span> <span class="n">Predictor</span><span class="p">(</span> <span class="n">output</span><span class="o">=</span><span class="p">[]</span> <span class="o">|</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="o">...</span><span class="p">}</span> <span class="o">|</span> <span class="n">load_from_path</span><span class="o">=&lt;</span><span class="n">file_path</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre></div>
-
 <div class="admonition note">
 <p>Predictor, can take any of the following <strong>arguments</strong></p>
 <ul>
@@ -1249,8 +1308,8 @@
 </div>
 <h3 id="config"><strong>config</strong></h3>
 <p>The config argument allows you to pass a dictionary that defines and gives you absolute control over how to build your predictive model.
-A config example goes as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">lightwood</span> <span class="kn">import</span> <span class="n">COLUMN_DATA_TYPES</span><span class="p">,</span> <span class="n">BUILTIN_MIXERS</span><span class="p">,</span> <span class="n">BUILTIN_ENCODERS</span>
+A config example goes as follows:
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">lightwood</span> <span class="kn">import</span> <span class="n">COLUMN_DATA_TYPES</span><span class="p">,</span> <span class="n">BUILTIN_MIXERS</span><span class="p">,</span> <span class="n">BUILTIN_ENCODERS</span>
 
 <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
 
@@ -1294,18 +1353,9 @@ A config example goes as follows:</p>
         <span class="p">}</span>
 
     <span class="p">}</span>
-</code></pre></div>
-
+</code></pre></div></p>
 <h4 id="features">features</h4>
 <p>Both <strong>input_features</strong> and <strong>output_features</strong> configs are simple dicts that have the following schema</p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-    <span class="n">Optional</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">):</span> <span class="nb">any</span> <span class="n">of</span> <span class="n">COLUMN_DATA_TYPES</span><span class="p">,</span>
-    <span class="n">Optional</span><span class="p">(</span><span class="s1">&#39;encoder_class&#39;</span><span class="p">):</span> <span class="nb">object</span><span class="p">,</span>
-    <span class="n">Optional</span><span class="p">(</span><span class="s1">&#39;encoder_attrs&#39;</span><span class="p">):</span> <span class="nb">dict</span>
-<span class="p">}</span>
-</code></pre></div>
-
 <div class="admonition note">
 <ul>
 <li><strong>name</strong>: is the name of the column as it is in the input data frame</li>
@@ -1321,12 +1371,11 @@ A config example goes as follows:</p>
 </div>
 <h4 id="mixer">mixer</h4>
 <p>The <strong>default_mixer</strong> key, provides information as to what mixer to use. The schema for this variable is as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">mixer_schema</span> <span class="o">=</span> <span class="n">Schema</span><span class="p">({</span>
+<div class="highlight"><pre><span></span><code><span class="n">mixer_schema</span> <span class="o">=</span> <span class="n">Schema</span><span class="p">({</span>
     <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span>
     <span class="n">Optional</span><span class="p">(</span><span class="s1">&#39;attrs&#39;</span><span class="p">):</span> <span class="nb">dict</span>
 <span class="p">})</span>
 </code></pre></div>
-
 <div class="admonition note">
 <ul>
 <li><strong>class</strong>: Its the actual class, that defines the Mixer, you can use any of the BUILTIN_MIXERS or pass your own.</li>
@@ -1334,9 +1383,6 @@ A config example goes as follows:</p>
 </ul>
 </div>
 <h2 id="learn">learn()</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">my_predictor</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">from_data</span><span class="o">=</span><span class="n">pandas_dataframe</span><span class="p">)</span>
-</code></pre></div>
-
 <div class="admonition note">
 <p>This method is used to make the predictor learn from some data, thus the learn method takes the following arguments.</p>
 <ul>
@@ -1346,9 +1392,6 @@ A config example goes as follows:</p>
 </ul>
 </div>
 <h2 id="predict">predict()</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">my_predictor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">when</span><span class="o">=</span><span class="p">{</span><span class="o">..</span><span class="p">}</span> <span class="o">|</span> <span class="n">when_data</span><span class="o">=</span><span class="n">pandas_dataframe</span><span class="p">)</span>
-</code></pre></div>
-
 <div class="admonition note">
 <p>This method is used to make predictions and it can take one of the following arguments</p>
 <ul>
@@ -1357,16 +1400,10 @@ A config example goes as follows:</p>
 </ul>
 </div>
 <h2 id="save">save()</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">my_predictor</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">path_to</span><span class="o">=</span><span class="n">string</span> <span class="n">to</span> <span class="n">path</span><span class="p">)</span>
-</code></pre></div>
-
 <div class="admonition note">
 <p>Use this method to save the predictor into a desired path</p>
 </div>
 <h2 id="calculate_accuracy">calculate_accuracy()</h2>
-<div class="codehilite"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">my_predictor</span><span class="o">.</span><span class="n">calculate_accuracy</span><span class="p">(</span><span class="n">from_data</span><span class="o">=</span><span class="n">data_source</span><span class="p">))</span>
-</code></pre></div>
-
 <div class="admonition note">
 <p>Returns the predictors overall accuracy. </p>
 </div>

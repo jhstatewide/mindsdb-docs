@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1363,130 +1424,127 @@
 <details>
   <summary>Click to expand Features Informations:</summary>
 
+<div class="highlight"><pre><span></span><code>* Attribute 1: (qualitative)
+    * Status of existing checking account
+    *  A11 : ... &lt; 0 DM
+    *  A12 : 0 &lt;= ... &lt; 200 DM
+    *  A13 : ... &gt;= 200 DM / salary assignments for at least 1 year
+    *  A14 : no checking account
+* Attribute 2: (numerical)
+    * Duration in month
 
-<div class="codehilite"><pre><span></span><code><span class="o">*</span> <span class="n">Attribute</span> <span class="mh">1</span><span class="o">:</span> <span class="p">(</span><span class="n">qualitative</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">Status</span> <span class="n">of</span> <span class="n">existing</span> <span class="n">checking</span> <span class="n">account</span>
-    <span class="o">*</span>  <span class="n">A11</span> <span class="o">:</span> <span class="p">...</span> <span class="o">&lt;</span> <span class="mh">0</span> <span class="n">DM</span>
-    <span class="o">*</span>  <span class="n">A12</span> <span class="o">:</span> <span class="mh">0</span> <span class="o">&lt;=</span> <span class="p">...</span> <span class="o">&lt;</span> <span class="mh">200</span> <span class="n">DM</span>
-    <span class="o">*</span>  <span class="n">A13</span> <span class="o">:</span> <span class="p">...</span> <span class="o">&gt;=</span> <span class="mh">200</span> <span class="n">DM</span> <span class="o">/</span> <span class="n">salary</span> <span class="n">assignments</span> <span class="k">for</span> <span class="n">at</span> <span class="n">least</span> <span class="mh">1</span> <span class="n">year</span>
-    <span class="o">*</span>  <span class="n">A14</span> <span class="o">:</span> <span class="n">no</span> <span class="n">checking</span> <span class="n">account</span>
-<span class="o">*</span> <span class="n">Attribute</span> <span class="mh">2</span><span class="o">:</span> <span class="p">(</span><span class="n">numerical</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">Duration</span> <span class="n">in</span> <span class="n">month</span>
+* Attribute 3: (qualitative)
+    * Credit history
+    * A30 : no credits taken/ all credits paid back duly
+    * A31 : all credits at this bank paid back duly
+    * A32 : existing credits paid back duly till now
+    * A33 : delay in paying off in the past
+    * A34 : critical account/ other credits existing (not at this bank)
 
-<span class="o">*</span> <span class="n">Attribute</span> <span class="mh">3</span><span class="o">:</span> <span class="p">(</span><span class="n">qualitative</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">Credit</span> <span class="n">history</span>
-    <span class="o">*</span> <span class="n">A30</span> <span class="o">:</span> <span class="n">no</span> <span class="n">credits</span> <span class="n">taken</span><span class="o">/</span> <span class="n">all</span> <span class="n">credits</span> <span class="n">paid</span> <span class="n">back</span> <span class="n">duly</span>
-    <span class="o">*</span> <span class="n">A31</span> <span class="o">:</span> <span class="n">all</span> <span class="n">credits</span> <span class="n">at</span> <span class="n">this</span> <span class="n">bank</span> <span class="n">paid</span> <span class="n">back</span> <span class="n">duly</span>
-    <span class="o">*</span> <span class="n">A32</span> <span class="o">:</span> <span class="n">existing</span> <span class="n">credits</span> <span class="n">paid</span> <span class="n">back</span> <span class="n">duly</span> <span class="n">till</span> <span class="n">now</span>
-    <span class="o">*</span> <span class="n">A33</span> <span class="o">:</span> <span class="n">delay</span> <span class="n">in</span> <span class="n">paying</span> <span class="n">off</span> <span class="n">in</span> <span class="n">the</span> <span class="n">past</span>
-    <span class="o">*</span> <span class="n">A34</span> <span class="o">:</span> <span class="n">critical</span> <span class="n">account</span><span class="o">/</span> <span class="n">other</span> <span class="n">credits</span> <span class="n">existing</span> <span class="p">(</span><span class="k">not</span> <span class="n">at</span> <span class="n">this</span> <span class="n">bank</span><span class="p">)</span>
+* Attribute 4: (qualitative)
+    * Purpose
+    * A40 : car (new)
+    * A41 : car (used)
+    * A42 : furniture/equipment
+    * A43 : radio/television
+    * A44 : domestic appliances
+    * A45 : repairs
+    * A46 : education
+    * A47 : (vacation - does not exist?)
+    * A48 : retraining
+    * A49 : business
+    * A410 : others
 
-<span class="o">*</span> <span class="n">Attribute</span> <span class="mh">4</span><span class="o">:</span> <span class="p">(</span><span class="n">qualitative</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">Purpose</span>
-    <span class="o">*</span> <span class="n">A40</span> <span class="o">:</span> <span class="n">car</span> <span class="p">(</span><span class="n">new</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">A41</span> <span class="o">:</span> <span class="n">car</span> <span class="p">(</span><span class="n">used</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">A42</span> <span class="o">:</span> <span class="n">furniture</span><span class="o">/</span><span class="n">equipment</span>
-    <span class="o">*</span> <span class="n">A43</span> <span class="o">:</span> <span class="n">radio</span><span class="o">/</span><span class="n">television</span>
-    <span class="o">*</span> <span class="n">A44</span> <span class="o">:</span> <span class="n">domestic</span> <span class="n">appliances</span>
-    <span class="o">*</span> <span class="n">A45</span> <span class="o">:</span> <span class="n">repairs</span>
-    <span class="o">*</span> <span class="n">A46</span> <span class="o">:</span> <span class="n">education</span>
-    <span class="o">*</span> <span class="n">A47</span> <span class="o">:</span> <span class="p">(</span><span class="n">vacation</span> <span class="o">-</span> <span class="n">does</span> <span class="k">not</span> <span class="n">exist</span><span class="o">?</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">A48</span> <span class="o">:</span> <span class="n">retraining</span>
-    <span class="o">*</span> <span class="n">A49</span> <span class="o">:</span> <span class="n">business</span>
-    <span class="o">*</span> <span class="n">A410</span> <span class="o">:</span> <span class="n">others</span>
+* Attribute 5: (numerical)
+    * Credit amount
 
-<span class="o">*</span> <span class="n">Attribute</span> <span class="mh">5</span><span class="o">:</span> <span class="p">(</span><span class="n">numerical</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">Credit</span> <span class="n">amount</span>
+* Attibute 6: (qualitative)
+    * Savings account/bonds
+    * A61 : ... &lt; 100 DM
+    * A62 : 100 &lt;= ... &lt; 500 DM
+    * A63 : 500 &lt;= ... &lt; 1000 DM
+    * A64 : .. &gt;= 1000 DM
+    * A65 : unknown/ no savings account
 
-<span class="o">*</span> <span class="n">Attibute</span> <span class="mh">6</span><span class="o">:</span> <span class="p">(</span><span class="n">qualitative</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">Savings</span> <span class="n">account</span><span class="o">/</span><span class="n">bonds</span>
-    <span class="o">*</span> <span class="n">A61</span> <span class="o">:</span> <span class="p">...</span> <span class="o">&lt;</span> <span class="mh">100</span> <span class="n">DM</span>
-    <span class="o">*</span> <span class="n">A62</span> <span class="o">:</span> <span class="mh">100</span> <span class="o">&lt;=</span> <span class="p">...</span> <span class="o">&lt;</span> <span class="mh">500</span> <span class="n">DM</span>
-    <span class="o">*</span> <span class="n">A63</span> <span class="o">:</span> <span class="mh">500</span> <span class="o">&lt;=</span> <span class="p">...</span> <span class="o">&lt;</span> <span class="mh">1000</span> <span class="n">DM</span>
-    <span class="o">*</span> <span class="n">A64</span> <span class="o">:</span> <span class="p">..</span> <span class="o">&gt;=</span> <span class="mh">1000</span> <span class="n">DM</span>
-    <span class="o">*</span> <span class="n">A65</span> <span class="o">:</span> <span class="n">unknown</span><span class="o">/</span> <span class="n">no</span> <span class="n">savings</span> <span class="n">account</span>
+* Attribute 7: (qualitative)
+    * Present employment since
+    * A71 : unemployed
+    * A72 : ... &lt; 1 year
+    * A73 : 1 &lt;= ... &lt; 4 years
+    * A74 : 4 &lt;= ... &lt; 7 years
+    * A75 : .. &gt;= 7 years
 
-<span class="o">*</span> <span class="n">Attribute</span> <span class="mh">7</span><span class="o">:</span> <span class="p">(</span><span class="n">qualitative</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">Present</span> <span class="n">employment</span> <span class="n">since</span>
-    <span class="o">*</span> <span class="n">A71</span> <span class="o">:</span> <span class="n">unemployed</span>
-    <span class="o">*</span> <span class="n">A72</span> <span class="o">:</span> <span class="p">...</span> <span class="o">&lt;</span> <span class="mh">1</span> <span class="n">year</span>
-    <span class="o">*</span> <span class="n">A73</span> <span class="o">:</span> <span class="mh">1</span> <span class="o">&lt;=</span> <span class="p">...</span> <span class="o">&lt;</span> <span class="mh">4</span> <span class="n">years</span>
-    <span class="o">*</span> <span class="n">A74</span> <span class="o">:</span> <span class="mh">4</span> <span class="o">&lt;=</span> <span class="p">...</span> <span class="o">&lt;</span> <span class="mh">7</span> <span class="n">years</span>
-    <span class="o">*</span> <span class="n">A75</span> <span class="o">:</span> <span class="p">..</span> <span class="o">&gt;=</span> <span class="mh">7</span> <span class="n">years</span>
+* Attribute 8: (numerical)
+    * Installment rate in percentage of disposable income
 
-<span class="o">*</span> <span class="n">Attribute</span> <span class="mh">8</span><span class="o">:</span> <span class="p">(</span><span class="n">numerical</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">Installment</span> <span class="n">rate</span> <span class="n">in</span> <span class="n">percentage</span> <span class="n">of</span> <span class="n">disposable</span> <span class="n">income</span>
+* Attribute 9: (qualitative)
+    * Personal status and sex
+    * A91 : male : divorced/separated
+    * A92 : female : divorced/separated/married
+    * A93 : male : single
+    * A94 : male : married/widowed
+    * A95 : female : single
 
-<span class="o">*</span> <span class="n">Attribute</span> <span class="mh">9</span><span class="o">:</span> <span class="p">(</span><span class="n">qualitative</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">Personal</span> <span class="n">status</span> <span class="k">and</span> <span class="n">sex</span>
-    <span class="o">*</span> <span class="n">A91</span> <span class="o">:</span> <span class="n">male</span> <span class="o">:</span> <span class="n">divorced</span><span class="o">/</span><span class="n">separated</span>
-    <span class="o">*</span> <span class="n">A92</span> <span class="o">:</span> <span class="n">female</span> <span class="o">:</span> <span class="n">divorced</span><span class="o">/</span><span class="n">separated</span><span class="o">/</span><span class="n">married</span>
-    <span class="o">*</span> <span class="n">A93</span> <span class="o">:</span> <span class="n">male</span> <span class="o">:</span> <span class="n">single</span>
-    <span class="o">*</span> <span class="n">A94</span> <span class="o">:</span> <span class="n">male</span> <span class="o">:</span> <span class="n">married</span><span class="o">/</span><span class="n">widowed</span>
-    <span class="o">*</span> <span class="n">A95</span> <span class="o">:</span> <span class="n">female</span> <span class="o">:</span> <span class="n">single</span>
+* Attribute 10: (qualitative)
+    * Other debtors / guarantors
+    * A101 : none
+    * A102 : co-applicant
+    * A103 : guarantor
 
-<span class="o">*</span> <span class="n">Attribute</span> <span class="mh">10</span><span class="o">:</span> <span class="p">(</span><span class="n">qualitative</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">Other</span> <span class="n">debtors</span> <span class="o">/</span> <span class="n">guarantors</span>
-    <span class="o">*</span> <span class="n">A101</span> <span class="o">:</span> <span class="n">none</span>
-    <span class="o">*</span> <span class="n">A102</span> <span class="o">:</span> <span class="n">co</span><span class="o">-</span><span class="n">applicant</span>
-    <span class="o">*</span> <span class="n">A103</span> <span class="o">:</span> <span class="n">guarantor</span>
+* Attribute 11: (numerical)
+    * Present residence since
 
-<span class="o">*</span> <span class="n">Attribute</span> <span class="mh">11</span><span class="o">:</span> <span class="p">(</span><span class="n">numerical</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">Present</span> <span class="n">residence</span> <span class="n">since</span>
+* Attribute 12: (qualitative)
+    * Property
+    * A121 : real estate
+    * A122 : if not A121 : building society savings agreement/ life insurance
+    * A123 : if not A121/A122 : car or other, not in attribute 6
+    * A124 : unknown / no property
 
-<span class="o">*</span> <span class="n">Attribute</span> <span class="mh">12</span><span class="o">:</span> <span class="p">(</span><span class="n">qualitative</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">Property</span>
-    <span class="o">*</span> <span class="n">A121</span> <span class="o">:</span> <span class="kt">real</span> <span class="n">estate</span>
-    <span class="o">*</span> <span class="n">A122</span> <span class="o">:</span> <span class="k">if</span> <span class="k">not</span> <span class="n">A121</span> <span class="o">:</span> <span class="n">building</span> <span class="n">society</span> <span class="n">savings</span> <span class="n">agreement</span><span class="o">/</span> <span class="n">life</span> <span class="n">insurance</span>
-    <span class="o">*</span> <span class="n">A123</span> <span class="o">:</span> <span class="k">if</span> <span class="k">not</span> <span class="n">A121</span><span class="o">/</span><span class="n">A122</span> <span class="o">:</span> <span class="n">car</span> <span class="k">or</span> <span class="n">other</span><span class="p">,</span> <span class="k">not</span> <span class="n">in</span> <span class="n">attribute</span> <span class="mh">6</span>
-    <span class="o">*</span> <span class="n">A124</span> <span class="o">:</span> <span class="n">unknown</span> <span class="o">/</span> <span class="n">no</span> <span class="n">property</span>
+* Attribute 13: (numerical)
+    * Age in years
 
-<span class="o">*</span> <span class="n">Attribute</span> <span class="mh">13</span><span class="o">:</span> <span class="p">(</span><span class="n">numerical</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">Age</span> <span class="n">in</span> <span class="n">years</span>
+* Attribute 14: (qualitative)
+    * Other installment plans
+    * A141 : bank
+    * A142 : stores
+    * A143 : none
 
-<span class="o">*</span> <span class="n">Attribute</span> <span class="mh">14</span><span class="o">:</span> <span class="p">(</span><span class="n">qualitative</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">Other</span> <span class="n">installment</span> <span class="n">plans</span>
-    <span class="o">*</span> <span class="n">A141</span> <span class="o">:</span> <span class="n">bank</span>
-    <span class="o">*</span> <span class="n">A142</span> <span class="o">:</span> <span class="n">stores</span>
-    <span class="o">*</span> <span class="n">A143</span> <span class="o">:</span> <span class="n">none</span>
+* Attribute 15: (qualitative)
+    * Housing
+    * A151 : rent
+    * A152 : own
+    * A153 : for free
 
-<span class="o">*</span> <span class="n">Attribute</span> <span class="mh">15</span><span class="o">:</span> <span class="p">(</span><span class="n">qualitative</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">Housing</span>
-    <span class="o">*</span> <span class="n">A151</span> <span class="o">:</span> <span class="n">rent</span>
-    <span class="o">*</span> <span class="n">A152</span> <span class="o">:</span> <span class="n">own</span>
-    <span class="o">*</span> <span class="n">A153</span> <span class="o">:</span> <span class="k">for</span> <span class="n">free</span>
+* Attribute 16: (numerical)
+    * Number of existing credits at this bank
 
-<span class="o">*</span> <span class="n">Attribute</span> <span class="mh">16</span><span class="o">:</span> <span class="p">(</span><span class="n">numerical</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">existing</span> <span class="n">credits</span> <span class="n">at</span> <span class="n">this</span> <span class="n">bank</span>
+* Attribute 17: (qualitative)
+    * Job
+    * A171 : unemployed/ unskilled - non-resident
+    * A172 : unskilled - resident
+    * A173 : skilled employee / official
+    * A174 : management/ self-employed/
+    * highly qualified employee/ officer
 
-<span class="o">*</span> <span class="n">Attribute</span> <span class="mh">17</span><span class="o">:</span> <span class="p">(</span><span class="n">qualitative</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">Job</span>
-    <span class="o">*</span> <span class="n">A171</span> <span class="o">:</span> <span class="n">unemployed</span><span class="o">/</span> <span class="n">unskilled</span> <span class="o">-</span> <span class="n">non</span><span class="o">-</span><span class="n">resident</span>
-    <span class="o">*</span> <span class="n">A172</span> <span class="o">:</span> <span class="n">unskilled</span> <span class="o">-</span> <span class="n">resident</span>
-    <span class="o">*</span> <span class="n">A173</span> <span class="o">:</span> <span class="n">skilled</span> <span class="n">employee</span> <span class="o">/</span> <span class="n">official</span>
-    <span class="o">*</span> <span class="n">A174</span> <span class="o">:</span> <span class="n">management</span><span class="o">/</span> <span class="n">self</span><span class="o">-</span><span class="n">employed</span><span class="o">/</span>
-    <span class="o">*</span> <span class="n">highly</span> <span class="n">qualified</span> <span class="n">employee</span><span class="o">/</span> <span class="n">officer</span>
+* Attribute 18: (numerical)
+    * Number of people being liable to provide maintenance for
 
-<span class="o">*</span> <span class="n">Attribute</span> <span class="mh">18</span><span class="o">:</span> <span class="p">(</span><span class="n">numerical</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">people</span> <span class="n">being</span> <span class="n">liable</span> <span class="n">to</span> <span class="n">provide</span> <span class="n">maintenance</span> <span class="k">for</span>
+* Attribute 19: (qualitative)
+    * Telephone
+    * A191 : none
+    * A192 : yes, registered under the customers name
 
-<span class="o">*</span> <span class="n">Attribute</span> <span class="mh">19</span><span class="o">:</span> <span class="p">(</span><span class="n">qualitative</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">Telephone</span>
-    <span class="o">*</span> <span class="n">A191</span> <span class="o">:</span> <span class="n">none</span>
-    <span class="o">*</span> <span class="n">A192</span> <span class="o">:</span> <span class="n">yes</span><span class="p">,</span> <span class="n">registered</span> <span class="n">under</span> <span class="n">the</span> <span class="n">customers</span> <span class="n">name</span>
-
-<span class="o">*</span> <span class="n">Attribute</span> <span class="mh">20</span><span class="o">:</span> <span class="p">(</span><span class="n">qualitative</span><span class="p">)</span>
-    <span class="o">*</span> <span class="n">foreign</span> <span class="n">worker</span>
-    <span class="o">*</span> <span class="n">A201</span> <span class="o">:</span> <span class="n">yes</span>
-    <span class="o">*</span> <span class="n">A202</span> <span class="o">:</span> <span class="n">no</span>
+* Attribute 20: (qualitative)
+    * foreign worker
+    * A201 : yes
+    * A202 : no
 </code></pre></div>
-
-
 
 </details>
 
 <h2 id="mindsdb-code-example">MindsDB Code example</h2>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb</span> <span class="kn">import</span> <span class="n">Predictor</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb</span> <span class="kn">import</span> <span class="n">Predictor</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">balanced_accuracy_score</span><span class="p">,</span> <span class="n">confusion_matrix</span>
 
@@ -1519,7 +1577,6 @@
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">run</span><span class="p">())</span>
 </code></pre></div>
-
 <h2 id="mindsdb-accuracy">Mindsdb accuracy</h2>
 <table>
 <thead>

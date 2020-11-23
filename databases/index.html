@@ -193,10 +193,71 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Quick Start
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Quick Start" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Quick Start
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../Installing/" class="md-nav__link">
-      Installing MindsDB
+    <a href="../installation/Installing/" class="md-nav__link">
+      Install MindsDB
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation/Linux/" class="md-nav__link">
+      Install on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation/Windows/" class="md-nav__link">
+      Install on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation/MacOS/" class="md-nav__link">
+      Install on macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1126,9 +1187,8 @@
 <p><img alt="MindsDB-Databases" src="/assets/databases/ex-dbs.png" /></p>
 <h2 id="aitables-example">AITables example</h2>
 <p>AITables differ from normal tables in that they can generate predictions upon being queried and returning such predictions like if it was data that existed on the table. Simply put, an AI-Table allows you to use machine learning models as if they were normal  database tables, in something that in plain SQL looks like this; </p>
-<div class="codehilite"><pre><span></span><code> <span class="k">SELECT</span> <span class="o">&lt;</span><span class="n">predicted_variable</span><span class="o">&gt;</span> <span class="k">FROM</span> <span class="o">&lt;</span><span class="n">ML_model</span><span class="o">&gt;</span> <span class="k">WHERE</span> <span class="o">&lt;</span><span class="n">conditions</span><span class="o">&gt;</span> 
+<div class="highlight"><pre><span></span><code> <span class="k">SELECT</span> <span class="o">&lt;</span><span class="n">predicted_variable</span><span class="o">&gt;</span> <span class="k">FROM</span> <span class="o">&lt;</span><span class="n">ML_model</span><span class="o">&gt;</span> <span class="k">WHERE</span> <span class="o">&lt;</span><span class="n">conditions</span><span class="o">&gt;</span> 
 </code></pre></div>
-
 <p>To really sink in this idea, let us expand the concept through an example. </p>
 <h3 id="the-used-car-price-example">The used car price example</h3>
 <p>Imagine that you want to solve the problem of estimating the right price for a car on your website that has been selling used cars over the past 2 years. </p>
@@ -1136,14 +1196,13 @@
 <p>Since you have historical data, you know that you could use Machine Learning to solve this problem. Wouldn't it be nice if you could simply tell your database server to do and manage the Machine Learning parts for you?</p>
 <p>At MindsDB we think so too! And AI-Tables baked directly to your database are here to do exactly that.</p>
 <p>You can for instance with a single INSERT statement, create a machine learning model/predictor trained to predict ‘price’ using the data that lives in the table <code>sold_cars</code> and publish it as an AI-Table called 'used_cars_model'.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span>
    <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">predict</span><span class="p">,</span> <span class="n">select_data_query</span><span class="p">)</span> 
 <span class="k">VALUES</span>
    <span class="p">(</span><span class="s1">&#39;used_cars_model&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">used_cars_data</span><span class="p">);</span>
 </code></pre></div>
-
 <p>After that you can get price predictions by querying the generated 'used_cars_model' AI-Table, as follows: </p>
-<div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="n">price</span><span class="p">,</span> 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">price</span><span class="p">,</span> 
        <span class="n">confidence</span> 
 <span class="k">FROM</span>   <span class="n">mindsdb</span><span class="p">.</span><span class="n">used_cars_model</span> 
 <span class="k">WHERE</span>  <span class="n">model</span> <span class="o">=</span> <span class="ss">&quot;a6&quot;</span> 
@@ -1155,7 +1214,6 @@
        <span class="k">AND</span> <span class="k">year</span> <span class="o">=</span> <span class="mi">2016</span> 
        <span class="k">AND</span> <span class="n">tax</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span> 
 </code></pre></div>
-
 <p>As you can see with AI-Tables, we are aiming to simplify Machine Learning mechanics to simple SQL queries, so that you can focus on the important part; which is to think about what predictions you need and what data you want your ML to learn from to make such predictions. </p>
 <p><img alt="MindsDB-AutoML in Databases" src="/assets/databases/db-automl.png" /></p>
 <p>Currently, we are supporting the integration with:</p>
