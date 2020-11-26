@@ -39,6 +39,16 @@
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     
+
+<!--iubenda privacy policy-->
+<script type="text/javascript">
+    var _iub = _iub || [];
+    _iub.csConfiguration = {"lang":"en","ccpaAcknowledgeOnDisplay":true,"siteId":1832244,"countryDetection":true,"enableCcpa":true,"whitelabel":false,"cookiePolicyId":63309853, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"position":"float-bottom-left","textColor":"#656565","backgroundColor":"#ffffff","rejectButtonDisplay":true,"acceptButtonColor":"#00af6c","acceptButtonCaptionColor":"white","customizeButtonColor":"#818181","customizeButtonCaptionColor":"white","rejectButtonColor":"#f77476","rejectButtonCaptionColor":"white" }};
+</script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/ccpa/stub.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+<!--end privacy policy-->
+
 <!-- Google Tag Manager -->
 <!--TODO: Read gtm value from mkdocs.yml-->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -1277,13 +1287,13 @@
 <span class="n">mdb</span> <span class="o">=</span> <span class="n">mindsdb</span><span class="o">.</span><span class="n">Predictor</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;assembly_machines_model&#39;</span><span class="p">)</span>
 <span class="n">mdb</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span>
     <span class="n">from_data</span><span class="o">=</span><span class="s1">&#39;assembly_machines_historical_data.tsv&#39;</span><span class="p">,</span>
-    <span class="n">to_predict</span><span class="o">=</span><span class="s1">&#39;failure&#39;</span>
-    <span class="p">,</span><span class="n">timeseries_settings</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">order_by</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">]</span> <span class="c1"># Order the observations by timestamp</span>
-      <span class="n">group_by</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;machine_id&#39;</span><span class="p">]</span> <span class="c1"># The ordering should be done on a per-machine basis, rather than for every single row</span>
-      <span class="n">nr_predictions</span><span class="p">:</span> <span class="mi">3</span> <span class="c1"># Predict failures for the timestamp given and for 2 more timesteps in the future</span>
-      <span class="n">use_previous_target</span><span class="p">:</span> <span class="kc">True</span> <span class="c1"># Us the previous values in the target column (`failure`), since when the last failure happened could be a relevant data-point for our prediction.</span>
-      <span class="n">window</span><span class="p">:</span> <span class="mi">20</span> <span class="c1"># Consider the previous 20 rows for every single row our model is trying to predict o</span>
+    <span class="n">to_predict</span><span class="o">=</span><span class="s1">&#39;failure&#39;</span><span class="p">,</span>
+    <span class="n">timeseries_settings</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s1">&#39;order_by&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">],</span> <span class="c1"># Order the observations by timestamp</span>
+      <span class="s1">&#39;group_by&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;machine_id&#39;</span><span class="p">],</span> <span class="c1"># The ordering should be done on a per-machine basis, rather than for every single row</span>
+      <span class="s1">&#39;nr_predictions&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="c1"># Predict failures for the timestamp given and for 2 more timesteps in the future</span>
+      <span class="s1">&#39;use_previous_target&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="c1"># Us the previous values in the target column (`failure`), since when the last failure happened could be a relevant data-point for our prediction.</span>
+      <span class="s1">&#39;window&#39;</span><span class="p">:</span> <span class="mi">20</span> <span class="c1"># Consider the previous 20 rows for every single row our model is trying to predict o</span>
     <span class="p">}</span>
 <span class="p">)</span>
 
