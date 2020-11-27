@@ -1239,11 +1239,7 @@
 </div>
 </div>
 <h2 id="install-with-docker">Install with Docker</h2>
-<p>If none of the above specific OS installation options doesn't work for you, alternatively, you can also run MindsDB in a docker container assuming that you have <a href="https://docs.docker.com/install/">docker</a> installed in your computer.
-Open your terminal and run:</p>
-<div class="highlight"><pre><span></span><code>sh -c &quot;$(curl -sSL https://raw.githubusercontent.com/mindsdb/mindsdb/stable/distributions/docker/build-docker.sh)&quot;
-</code></pre></div>
-<p>This script download and run latest mindsdb version. If you don't want to use this script you can pull and run our latest image:</p>
+<p>If none of the above specific OS installation options doesn't work for you, alternatively, you can also run MindsDB in a docker container assuming that you have <a href="https://docs.docker.com/install/">docker</a> installed in your computer. Run following commands to pull and run our latest image:</p>
 <div class="highlight"><pre><span></span><code>docker pull mindsdb/mindsdb
 docker run -p 47334:47334 -p 47335:47335 -p 47336:47336 mindsdb/mindsdb
 </code></pre></div>
