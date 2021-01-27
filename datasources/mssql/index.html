@@ -14,7 +14,7 @@
     
     
       
-        <title>ColumnMetrics - MindsDB Documentation</title>
+        <title>Microsoft SQL Server - MindsDB Documentation</title>
       
     
     
@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#connect-to-microsoft-sql-server" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -101,7 +106,7 @@
             </span>
             <span class="md-header-nav__topic md-ellipsis">
               
-                ColumnMetrics
+                Microsoft SQL Server
               
             </span>
           </div>
@@ -319,12 +324,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
       
       <label class="md-nav__link" for="nav-2">
         Connect your data
@@ -343,7 +350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../datasources/mysql/" class="md-nav__link">
+      <a href="../mysql/" class="md-nav__link">
         MySQL
       </a>
     </li>
@@ -355,7 +362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../datasources/postgresql/" class="md-nav__link">
+      <a href="../postgresql/" class="md-nav__link">
         PostgreSQL
       </a>
     </li>
@@ -367,7 +374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../datasources/mariadb/" class="md-nav__link">
+      <a href="../mariadb/" class="md-nav__link">
         MariaDB
       </a>
     </li>
@@ -379,7 +386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../datasources/clickhouse/" class="md-nav__link">
+      <a href="../clickhouse/" class="md-nav__link">
         ClickHouse
       </a>
     </li>
@@ -389,11 +396,76 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../datasources/mssql/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Microsoft SQL Server
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Microsoft SQL Server
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisite" class="md-nav__link">
+    Prerequisite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mindsdb-studio" class="md-nav__link">
+    MindsDB Studio
+  </a>
+  
+    <nav class="md-nav" aria-label="MindsDB Studio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect-to-database" class="md-nav__link">
+    Connect to database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-new-datasource" class="md-nav__link">
+    Create new Datasource
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -403,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../datasources/remote/" class="md-nav__link">
+      <a href="../remote/" class="md-nav__link">
         Remote URL
       </a>
     </li>
@@ -415,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../datasources/local/" class="md-nav__link">
+      <a href="../local/" class="md-nav__link">
         Local dataset
       </a>
     </li>
@@ -427,7 +499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../datasources/snowflake/" class="md-nav__link">
+      <a href="../snowflake/" class="md-nav__link">
         Snowflake
       </a>
     </li>
@@ -941,7 +1013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DataSources/" class="md-nav__link">
+      <a href="../../features/DataSources/" class="md-nav__link">
         Data sources
       </a>
     </li>
@@ -1399,19 +1471,124 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisite" class="md-nav__link">
+    Prerequisite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mindsdb-studio" class="md-nav__link">
+    MindsDB Studio
+  </a>
+  
+    <nav class="md-nav" aria-label="MindsDB Studio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect-to-database" class="md-nav__link">
+    Connect to database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-new-datasource" class="md-nav__link">
+    Create new Datasource
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mindsdb/mindsdb/edit/master/docs/features/ColumnMetrics.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mindsdb/mindsdb/edit/master/docs/datasources/mssql.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>ColumnMetrics</h1>
-                
-                <p>@TODO: Outdated, pending refacotr</p>
+                <h1 id="connect-to-microsoft-sql-server">Connect to Microsoft SQL Server</h1>
+<p>Connecting MindsDB to your Microsoft SQL Server can be done in two ways:</p>
+<ul>
+<li>Using <a href="#mindsdb-studio">MindsDB Studio</a>.</li>
+<li>Using <a href="#mysql-client">MySQL client</a>.</li>
+</ul>
+<h2 id="prerequisite">Prerequisite</h2>
+<p>To connect to your Microsoft SQL Server from MindsDB, you will need to install Microsoft OLEDB Provider driver.</p>
+<div class="admonition tip">
+<p class="admonition-title">How to install </p>
+</div>
+<ul>
+<li>Please check that your MSSQL instance have <a href="https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/open-the-odbc-data-source-administrator?view=sql-server-ver15">MSDASQL installed</a>.</li>
+<li>If not, download  driver from <a href="https://dev.mysql.com/downloads/connector/odbc/">here</a>.</li>
+<li><a href="https://docs.microsoft.com/en-us/sql/ado/guide/appendixes/microsoft-ole-db-provider-for-odbc?view=sql-server-ver15">Microsoft OLE DB Provider for ODBC Overview</a>.</li>
+</ul>
+<h2 id="mindsdb-studio">MindsDB Studio</h2>
+<p>Using MindsDB Studio, you can connect to the Microsoft SQL Server with a few clicks.</p>
+<h4 id="connect-to-database">Connect to database</h4>
+<ol>
+<li>From the left navigation menu, select Database Integration.</li>
+<li>Click on the <code>ADD DATABASE</code> button.</li>
+<li>In the <code>Connect to Database</code> modal window:<ol>
+<li>Select <code>Microsoft SQL Server</code> as the Supported Database.</li>
+<li>Add the Database name.</li>
+<li>Add the Hostname.</li>
+<li>Add Port.</li>
+<li>Add SQL Server user.</li>
+<li>Add Password for SQL Server user.</li>
+<li>Click on <code>CONNECT</code>.</li>
+</ol>
+</li>
+</ol>
+<p><img alt="Connect to MSSQL" src="/assets/data/mssql.gif" /></p>
+<h4 id="create-new-datasource">Create new Datasource</h4>
+<ol>
+<li>Click on the <code>NEW DATASOURCE</code> button.</li>
+<li>In the <code>Datasource from DB integration</code> modal window:<ol>
+<li>Add Datasource Name.</li>
+<li>Add Database name.</li>
+<li>Add SELECT Query (e.g. SELECT * FROM my_database)</li>
+<li>Click on <code>CREATE</code>.</li>
+</ol>
+</li>
+</ol>
+<p><img alt="Create MSSQL Datasource" src="/assets/data/mssql-ds.gif" /></p>
+<div class="admonition success">
+<p class="admonition-title">That's it <img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/72x72/1f389.png" title=":tada:" /> <img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/72x72/1f3c6.png" title=":trophy:" />  <img alt="💻" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/72x72/1f4bb.png" title=":computer:" /></p>
+<p>You have successfully connected to Microsoft SQL Server from MindsDB Studio. The next step is to train the <a href="/model/train">Machine Learning model</a>.</p>
+</div>
                 
               
               
