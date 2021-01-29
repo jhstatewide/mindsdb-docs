@@ -14,7 +14,7 @@
     
     
       
-        <title>Train a model from Microsoft SQL Server - MindsDB Documentation</title>
+        <title>Microsoft SQL Server - MindsDB Documentation</title>
       
     
     
@@ -106,7 +106,7 @@
             </span>
             <span class="md-header-nav__topic md-ellipsis">
               
-                Train a model from Microsoft SQL Server
+                Microsoft SQL Server
               
             </span>
           </div>
@@ -452,12 +452,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
       
       <label class="md-nav__link" for="nav-3">
         Train a model
@@ -486,12 +488,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
       
       <label class="md-nav__link" for="nav-3-2">
         Train from the Database
@@ -549,6 +553,76 @@
       <a href="../clickhouse/" class="md-nav__link">
         ClickHouse
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Microsoft SQL Server
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Microsoft SQL Server
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#train-new-model" class="md-nav__link">
+    Train new model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#train-new-model-example" class="md-nav__link">
+    Train new model example
+  </a>
+  
+    <nav class="md-nav" aria-label="Train new model example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-training-status" class="md-nav__link">
+    Model training status
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -700,6 +774,18 @@
     <li class="md-nav__item">
       <a href="../query/clickhouse/" class="md-nav__link">
         ClickHouse
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../query/mssql/" class="md-nav__link">
+        Microsoft SQL Server
       </a>
     </li>
   
@@ -1466,12 +1552,11 @@
                 
                 
                 <h1 id="train-a-model-from-microsoft-sql-server">Train a model from Microsoft SQL Server</h1>
-<p><img alt="MindsDB-Mssql" src="/assets/databases/mdb-mysql.png" /></p>
 <h3 id="train-new-model">Train new model</h3>
 <p>To train a new model, you will need to <code>INSERT</code> a new record inside the mindsdb.predictors table.</p>
 <div class="admonition question">
 <p class="admonition-title">How to create the mindsb.predictors table</p>
-<p>Note that after connecting the <a href="/datasources/mysql/#mysql-client">MindsDB and Microsoft SQL server</a>, on
+<p>Note that after connecting the <a href="/datasources/mssql/#mssql-client">MindsDB and Microsoft SQL server</a>, on
 start, the MindsDB server will automatically create the mindsdb database and add the predictors table.</p>
 </div>
 <p>There are both options for training the model by using the <code>openquery</code> or <code>exec</code> statement. The <code>INSERT</code> query for training new model using <code>exec</code> statement:</p>
@@ -1487,20 +1572,25 @@ Or, <code>openquery</code>:</p>
 <li>select_data_query (string) -- The SELECT query that will ingest the data to train the model.</li>
 <li>training_options (JSON as comma separated string) -- optional value that contains additional training parameters. For a full list of parameters, check the <a href="/PredictorInterface/#learn">PredictorInterface</a>.</li>
 </ul>
-<p><img alt="Train model from mySQL client" src="/assets/predictors/mssql-insert.gif" /></p>
+<p><img alt="Train model from mssql client" src="/assets/predictors/mssql-insert.gif" /></p>
 <h3 id="train-new-model-example">Train new model example</h3>
-<p>The following example shows you how to train a new model from a mysql client. The table used for training the model is the <a href="https://github.com/robjhyndman/fpp2-package/blob/15916e4fe827d1b3dcf82785a4ace80107af5ddd/data-raw/usconsumption.csv">Us consumption</a> dataset.</p>
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">predict</span><span class="p">,</span> <span class="n">select_data_query</span><span class="p">,</span><span class="n">training_options</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;airq_predictor&#39;</span><span class="p">,</span> <span class="s1">&#39;SO2&#39;</span><span class="p">,</span> <span class="s1">&#39;SELECT * FROM default.pollution_measurement&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;timeseries_settings&quot;:{&quot;order_by&quot;: [&quot;Measurement date&quot;], &quot;window&quot;:20}}&#39;</span><span class="p">);</span>
+<p>The following example shows you how to train a new model from a mssql client. The table used for training the model is the <a href="https://www.kaggle.com/mirichoi0218/insurance">Medical insurance</a> dataset.</p>
+<div class="highlight"><pre><span></span><code><span class="k">exec</span> <span class="p">(</span><span class="s1">&#39;INSERT INTO mindsdb.predictors (name, predict, select_data_query) </span>
+<span class="s1">VALUES (&quot;insurance_model&quot;, &quot;charges&quot;, &quot;SELECT * FROM mindsdb_test.dbo.insurance&quot;)&#39;</span><span class="p">)</span> 
+<span class="k">AT</span> <span class="n">mindsdb</span><span class="p">;</span>
 </code></pre></div>
-<p>This <code>INSERT</code> query will train a new model called <code>airq_predictor</code> that predicts the <code>SO2</code> value. Since this is timeseries data, the <code>timeseries_settings</code> will order the data by the <code>t</code> column and will set the window for rows to "look back" when making a prediction.</p>
+<p>This <code>INSERT</code> query will train a new model called <code>insurance_model</code> that predicts the <code>charges</code> value.</p>
 <h4 id="model-training-status">Model training status</h4>
 <p>To check that the training finished successfully, you can <code>SELECT</code> from the mindsdb.predictors table and get the training status, e.g.:</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span> <span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;&lt;model_name&gt;&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">exec</span> <span class="p">(</span><span class="s1">&#39;SELECT * FROM mindsdb.predictors&#39;</span><span class="p">)</span> <span class="k">AT</span> <span class="n">mindsdb</span><span class="p">;</span>
 </code></pre></div>
+<blockquote>
+<p>Note: <code>mindsdb</code> is the name of the api['mysql]['database'] key from config.json. The default name is <code>mindsdb</code>.</p>
+</blockquote>
 <p><img alt="Training model status" src="/assets/predictors/mssql-status.gif" /></p>
 <div class="admonition success">
 <p class="admonition-title">That's it <img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/72x72/1f389.png" title=":tada:" /> <img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/72x72/1f3c6.png" title=":trophy:" />  <img alt="💻" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/72x72/1f4bb.png" title=":computer:" /></p>
-<p>You have successfully trained a new model from a Microsoft SQL Server. The next step is to get predictions by <a href="/model/query/mysql">querying the model</a>.</p>
+<p>You have successfully trained a new model from a Microsoft SQL Server. The next step is to get predictions by <a href="/model/query/mssql">querying the model</a>.</p>
 </div>
                 
               

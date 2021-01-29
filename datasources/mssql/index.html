@@ -627,6 +627,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model/mssql/" class="md-nav__link">
+        Microsoft SQL Server
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -774,6 +786,18 @@
     <li class="md-nav__item">
       <a href="../../model/query/clickhouse/" class="md-nav__link">
         ClickHouse
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model/query/mssql/" class="md-nav__link">
+        Microsoft SQL Server
       </a>
     </li>
   
@@ -1682,16 +1706,19 @@
 </code></pre></div>
 <p>The <code>--api</code> parameter specifies the type of API to use -- in this case HTTP and MySQL. The <code>--config</code> parameter specifies the location of the configuration file.</p>
 <p><img alt="Start MindsDB with config" src="/assets/data/start-config.gif" /></p>
-<p>After starting the server, you can run a <code>SELECT</code> query from your SQL client to make sure integration has been successful. Please make sure to use <code>openquery</code> as the example bellow.</p>
-<div class="highlight"><pre><span></span><code><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">openquery</span><span class="p">(</span><span class="n">mindsdb</span><span class="p">,</span> <span class="s1">&#39;select * from mindsdb.predictors&#39;</span><span class="p">);</span> 
+<p>After starting the server, you can run a <code>SELECT</code> query from your SQL client to make sure integration has been successful. Please make sure to use <code>exec</code> or <code>openquery</code> as the examples bellow.</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">exec</span> <span class="p">(</span><span class="s1">&#39;SELECT * FROM mindsdb.predictors&#39;</span><span class="p">)</span> <span class="k">AT</span> <span class="n">mindsdb_db</span><span class="p">;</span>
 </code></pre></div>
+Or, <code>openquery</code>:
+<div class="highlight"><pre><span></span><code><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">openquery</span><span class="p">(</span><span class="n">mindsdb</span><span class="p">,</span> <span class="s1">&#39;select * from mindsdb.predictors&#39;</span><span class="p">);</span> 
+</code></pre></div></p>
 <blockquote>
 <p>Note: <code>mindsdb</code> is the name of the api['mysql]['database'] key from config.json. The default name is <code>mindsdb</code>.</p>
 </blockquote>
 <p><img alt="SELECT from MindsDB predictors table" src="/assets/data/mssql-select.gif" /></p>
 <div class="admonition success">
 <p class="admonition-title">That's it <img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/72x72/1f389.png" title=":tada:" /> <img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/72x72/1f3c6.png" title=":trophy:" />  <img alt="💻" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/72x72/1f4bb.png" title=":computer:" /></p>
-<p>You have successfully connected MindsDB Server and Microsoft SQL Server. The next step is to <a href="/model/mariadb">train the Machine Learning model</a>.</p>
+<p>You have successfully connected MindsDB Server and Microsoft SQL Server. The next step is to <a href="/model/mssql">train the Machine Learning model</a>.</p>
 </div>
                 
               
