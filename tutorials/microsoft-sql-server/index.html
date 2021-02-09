@@ -14,7 +14,7 @@
     
     
       
-        <title>AI Tables in PostgreSQL - MindsDB Documentation</title>
+        <title>AI Tables in Microsoft SQL Server - MindsDB Documentation</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ai-tables-in-postgresql" class="md-skip">
+        <a href="#automated-machine-learning-in-microsoft-sql-server" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
             </span>
             <span class="md-header-nav__topic md-ellipsis">
               
-                AI Tables in PostgreSQL
+                AI Tables in Microsoft SQL Server
               
             </span>
           </div>
@@ -760,12 +760,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
       
       <label class="md-nav__link" for="nav-6">
         Tutorials
@@ -784,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/mysql/" class="md-nav__link">
+      <a href="../mysql/" class="md-nav__link">
         AI Tables in MySQL
       </a>
     </li>
@@ -796,7 +798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/mariadb/" class="md-nav__link">
+      <a href="../mariadb/" class="md-nav__link">
         AI Tables in MariaDB
       </a>
     </li>
@@ -808,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/postgresql/" class="md-nav__link">
+      <a href="../postgresql/" class="md-nav__link">
         AI Tables in PostgreSQL
       </a>
     </li>
@@ -820,7 +822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/clickhouse/" class="md-nav__link">
+      <a href="../clickhouse/" class="md-nav__link">
         AI Tables in ClickHouse
       </a>
     </li>
@@ -830,11 +832,111 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../tutorials/microsoft-sql-server/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          AI Tables in Microsoft SQL Server
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         AI Tables in Microsoft SQL Server
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install-mindsdb" class="md-nav__link">
+    How to install MindsDB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install-microsoft-sql-server" class="md-nav__link">
+    How to install Microsoft SQL Server
+  </a>
+  
+    <nav class="md-nav" aria-label="How to install Microsoft SQL Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisite" class="md-nav__link">
+    Prerequisite
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-dataset" class="md-nav__link">
+    Example dataset
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-dataset-to-microsoft-sql-server" class="md-nav__link">
+    Import dataset to Microsoft SQL Server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-mindsdb-and-microsoft-sql-server" class="md-nav__link">
+    Connect MindsDB and Microsoft SQL Server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#train-new-model" class="md-nav__link">
+    Train new model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-predictions-query-the-model" class="md-nav__link">
+    Make predictions (Query the model)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -898,7 +1000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/BasicExample/" class="md-nav__link">
+      <a href="../BasicExample/" class="md-nav__link">
         Starter Example
       </a>
     </li>
@@ -958,7 +1060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/AdvancedExamples/" class="md-nav__link">
+      <a href="../AdvancedExamples/" class="md-nav__link">
         Advanced usecases
       </a>
     </li>
@@ -970,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/Timeseries/" class="md-nav__link">
+      <a href="../Timeseries/" class="md-nav__link">
         Timeseries Data
       </a>
     </li>
@@ -1098,7 +1200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/PredictiveMaintenance/" class="md-nav__link">
+      <a href="../PredictiveMaintenance/" class="md-nav__link">
         Predictive Maintenance
       </a>
     </li>
@@ -1138,7 +1240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/CreditScoring/" class="md-nav__link">
+      <a href="../CreditScoring/" class="md-nav__link">
         Credit Scoring
       </a>
     </li>
@@ -1178,7 +1280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/CustomerLifetimeValue/" class="md-nav__link">
+      <a href="../CustomerLifetimeValue/" class="md-nav__link">
         Custiner Lifetime Value Optimization
       </a>
     </li>
@@ -1190,7 +1292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/FraudDetection/" class="md-nav__link">
+      <a href="../FraudDetection/" class="md-nav__link">
         Fraud Detection
       </a>
     </li>
@@ -1230,7 +1332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/PatientHealthOutcomes/" class="md-nav__link">
+      <a href="../PatientHealthOutcomes/" class="md-nav__link">
         Patient Health
       </a>
     </li>
@@ -1242,7 +1344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/MedicalDiagnosis/" class="md-nav__link">
+      <a href="../MedicalDiagnosis/" class="md-nav__link">
         Medical Diagnosis
       </a>
     </li>
@@ -1282,7 +1384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/HotelBooking/" class="md-nav__link">
+      <a href="../HotelBooking/" class="md-nav__link">
         Hotel Booking Demand
       </a>
     </li>
@@ -1322,7 +1424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/ChurnReduction/" class="md-nav__link">
+      <a href="../ChurnReduction/" class="md-nav__link">
         Customer Churn Reduction
       </a>
     </li>
@@ -1458,22 +1560,49 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#how-to-install-mindsdb" class="md-nav__link">
+    How to install MindsDB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install-microsoft-sql-server" class="md-nav__link">
+    How to install Microsoft SQL Server
+  </a>
+  
+    <nav class="md-nav" aria-label="How to install Microsoft SQL Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#prerequisite" class="md-nav__link">
     Prerequisite
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    Configuration
+  <a href="#example-dataset" class="md-nav__link">
+    Example dataset
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#start-mindsdb" class="md-nav__link">
-    Start MindsDB
+  <a href="#import-dataset-to-microsoft-sql-server" class="md-nav__link">
+    Import dataset to Microsoft SQL Server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-mindsdb-and-microsoft-sql-server" class="md-nav__link">
+    Connect MindsDB and Microsoft SQL Server
   </a>
   
 </li>
@@ -1486,22 +1615,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#query-the-model" class="md-nav__link">
-    Query the model
+  <a href="#make-predictions-query-the-model" class="md-nav__link">
+    Make predictions (Query the model)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#delete-the-model" class="md-nav__link">
-    Delete the model
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#train-and-predict-multiple-features" class="md-nav__link">
-    Train and predict multiple features
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
   </a>
   
 </li>
@@ -1518,191 +1640,158 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mindsdb/mindsdb/edit/master/docs/databases/PostgreSQL.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mindsdb/mindsdb/edit/master/docs/tutorials/microsoft-sql-server.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="ai-tables-in-postgresql">AI Tables in PostgreSQL</h1>
-<p>Now, you can train machine learning models straight from the database by using MindsDB and <a href="https://www.postgresql.org/">PostgreSQL</a>.</p>
-<p><img alt="MindsDB-Postgres" src="/assets/databases/mdb-postgres.png" /></p>
+                <h1 id="automated-machine-learning-in-microsoft-sql-server">Automated Machine Learning in Microsoft SQL Server</h1>
+<p>Data is the main ingredient for machine learning. Nowadays most enterprise structured data lives inside a database, so moving the machine learning inside the database layer can bring great benefits. This is one of the main reasons we decided to build an integration with the most widely used database systems, so that any database user can create, train and query machine learning models with minimal knowledge of SQL.</p>
+<p>Using the MindsDB AI Tables feature, users can automate model training workflows and reduce deployment time and complexity by adding the predictive layer to the database.
+AI Tables allow database users to query predictive models in seconds as if they were data that existed on the table. Simply explained, AI Tables allow users to use machine learning models as if they were normal database tables. In plain SQL, that looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">&lt;</span><span class="n">predicted_variable</span><span class="o">&gt;</span> <span class="k">FROM</span> <span class="o">&lt;</span><span class="n">ML_model</span><span class="o">&gt;</span> <span class="k">WHERE</span> <span class="o">&lt;</span><span class="n">conditions</span><span class="o">&gt;</span>
+</code></pre></div>
+<p>MindsDB acts like a database and interacts with your SQL database. AI Tables accelerate development speed, reduce costs and eliminate the complexity of machine learning workflows.</p>
+<ul>
+<li>Train models from the data inside the SQL database</li>
+<li>Get predictions through simple SQL queries</li>
+<li>Get insights into model accuracy</li>
+<li>Move from idea to production in minutes</li>
+</ul>
+<p>In this tutorial, you will get step-by-step instructions on how to enable AI Tables in Microsoft SQL Server. Based on a medical insurance example, you will see how to train and query machine learning models by using only SQL statements.</p>
+<h2 id="how-to-install-mindsdb">How to install MindsDB</h2>
+<p>If you already have MindsDB installed, you can skip this section. MindsDB is a cross-platform tool and can be installed on the most widely used OSs: Windows, Linux and macOS. Also, there are few other options to get MindsDB, such as through Docker, installing from source code or using PyPi. To get started, check the following list, and use the option that works best for you:</p>
+<ul>
+<li><a href="/installation/windows">Windows</a></li>
+<li><a href="/installation/linux">Linux</a></li>
+<li><a href="/installation/macos">MacOS</a></li>
+<li><a href="/installation/docker">Docker</a></li>
+<li><a href="/installation/source">Source install</a></li>
+</ul>
+<h2 id="how-to-install-microsoft-sql-server">How to install Microsoft SQL Server</h2>
+<p>Head over to the official <a href="https://docs.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server?view=sql-server-ver15">SQL Server installation guide</a> on Microsoft docs for Windows. If you want to use the cloud version, check out <a href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">this documentation</a>.</p>
 <h3 id="prerequisite">Prerequisite</h3>
-<p>You will need MindsDB version &gt;= 2.3.0 and PostgreSQL installed:</p>
+<p>For this integration to work, you must make sure that the Microsoft SQL Server has <a href="https://docs.microsoft.com/en-us/sql/ado/guide/appendixes/microsoft-ole-db-provider-for-odbc?view=sql-server-ver15">MSDASQL</a> installed, which currently only  works on Windows machines. If not, you can download it <a href="https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15">here</a>.</p>
+<h2 id="example-dataset">Example dataset</h2>
+<p>In this tutorial, we will use the <a href="https://www.kaggle.com/mirichoi0218/insurance">Medical Cost Personal</a> dataset from Kaggle. The data contains medical information and costs billed by health insurance companies. There are 1338 observations and 7 variables in this dataset:</p>
 <ul>
-<li><a href="/Installing/">Install MindsDB</a></li>
-<li><a href="https://www.postgresql.org/download/">Install PostgreSQL</a></li>
-<li><a href="https://github.com/EnterpriseDB/mysql_fdw#mysql-foreign-data-wrapper-for-postgresql">Install PostgreSQL foreign data wrapper for MySQL</a></li>
+<li>age: age of the primary beneficiary</li>
+<li>sex: insurance contractor gender – female, male</li>
+<li>bmi: body mass index - an objective index of body weight (kg / m2) using the ratio of height to weight, ideally 18.5 to 24.9</li>
+<li>children: number of children covered by health insurance / number of dependents</li>
+<li>smoker: smoker?</li>
+<li>region: the beneficiary's residential area in the US – northeast, southeast, southwest, northwest</li>
+<li>charges: individual medical costs billed by the health insurance.</li>
 </ul>
-<h3 id="configuration">Configuration</h3>
-<div class="admonition info">
-<p class="admonition-title">Default configuration</p>
-<p>MindsDB will try to use the default configuration(hosts, ports, usernames) for each of the database integrations. If you want to extend that or you are using different parameters create a new config.json file. </p>
-</div>
-<p>The avaiable configuration options are:</p>
+<p>The end result that we will try to achieve is to accurately predict insurance costs per beneficiary.</p>
+<h2 id="import-dataset-to-microsoft-sql-server">Import dataset to Microsoft SQL Server</h2>
+<p>If you are following this tutorial with your own data, you can skip this section. The first thing we need to do before importing the dataset is to create a new table called <code>insurance</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">insurance</span> <span class="p">(</span>
+    <span class="n">age</span> <span class="nb">int</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">sex</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">COLLATE</span> <span class="n">SQL_Latin1_General_CP1_CI_AS</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">bmi</span> <span class="nb">numeric</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">children</span> <span class="nb">int</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">smoker</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">COLLATE</span> <span class="n">SQL_Latin1_General_CP1_CI_AS</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">region</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">COLLATE</span> <span class="n">SQL_Latin1_General_CP1_CI_AS</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">charges</span> <span class="nb">numeric</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="k">NULL</span>
+<span class="p">)</span> <span class="k">GO</span><span class="p">;</span>
+</code></pre></div>
+<p>To import the dataset there are a few options available. If you are using <a href="https://support.discountasp.net/kb/a1179/how-to-import-a-csv-file-into-a-database-using-sql-server-management-studio.aspx">SQL Management Studio</a> or any other database management GUI, use the import from CSV option. If you are following this tutorial using a SQL client, you can use the <code>BULK INSERT</code> statement:</p>
+<div class="highlight"><pre><span></span><code><span class="n">BULK</span> <span class="k">INSERT</span> <span class="n">insurance</span>
+<span class="k">FROM</span> <span class="s1">&#39;insurance.csv&#39;</span>
+<span class="k">WITH</span>
+<span class="p">(</span>
+   <span class="n">FORMAT</span> <span class="o">=</span> <span class="s1">&#39;CSV&#39;</span><span class="p">,</span>
+   <span class="n">FIELDQUOTE</span> <span class="o">=</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">,</span>
+   <span class="n">FIRSTROW</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+   <span class="n">FIELDTERMINATOR</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span>  <span class="c1">-- the insurance.csv delimiter</span>
+   <span class="n">ROWTERMINATOR</span> <span class="o">=</span> <span class="s1">&#39;\n&#39;</span><span class="p">,</span> 
+   <span class="n">TABLOCK</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Now, the data should be inside the <code>insurance</code> table. To make sure it was successfully imported, <code>SELECT</code> one row from the created table:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">TOP</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">insurance</span><span class="p">;</span>
+</code></pre></div>
+<p><img alt="SELECT FROM insurance" src="/assets/tutorials/aitables-mssql/select-db.png" /></p>
+<h2 id="connect-mindsdb-and-microsoft-sql-server">Connect MindsDB and Microsoft SQL Server</h2>
+<p>We have installed MindsDB and imported the data, so the next step is to create the integration.
+When you start MindsDB, it should automatically run the MindsDB Studio (Graphical User Interface) at the  <code>http://127.0.0.1:47334/</code> address in your browser. We can use the Studio to connect MindsDB and Microsoft SQL server:</p>
+<ol>
+<li>From the left navigation menu, select Database Integration.</li>
+<li>Click on the <code>ADD DATABASE</code> button.</li>
+<li>In the <code>Connect to Database</code> modal window:</li>
+<li>Select <code>Microsoft SQL Server</code> as the Supported Database.</li>
+<li>Add the Database name.</li>
+<li>Add the Host name.</li>
+<li>Add Port.</li>
+<li>Add SQL Server user.</li>
+<li>Add Password for SQL Server user.</li>
+<li>Click on <code>check connection</code> to test the connection.</li>
+<li>Click on <code>CONNECT</code>.</li>
+</ol>
+<p><img alt="Connect to MSSQL" src="/assets/data/mssql.gif" /></p>
+<p>The next step is to create a new datasource by selecting the data from the <code>insurance</code> table. Click on the <code>NEW DATASOURCE</code> button, and add the <code>SELECT</code> query in the <code>Query</code> input:</p>
+<div class="highlight"><pre><span></span><code>SELECT * FROM insurance;
+</code></pre></div>
+<p><img alt="Create MSSQL Datasource" src="/assets/data/mssql-ds.gif" /></p>
+<p>We have created a new datasource <code>InsuranceData</code>. What we did through the MindsDB Studio can also be done by extending the default configuration of the MindsDB Server. To learn more about how to do that, see the <a href="/datasources/mssql/#mssql-client">mssql-client</a> docs.</p>
+<h2 id="train-new-model">Train new model</h2>
+<p>The connection between the MindsDB and Microsoft SQL Server is done, so the next step is to train the model. Training a new model is done by inserting into the <code>mindsdb.predictors</code> table. The required parameters that the <code>INSERT</code> query should have are:</p>
 <ul>
-<li>api['http] -- This key is used for starting the MindsDB http server by providing:<ul>
-<li>host(default 127.0.0.1) - The mindsdb server address.</li>
-<li>port(default 47334) - The mindsdb server port.</li>
+<li>name (string) -- The name of the machine learning model that we will train.</li>
+<li>predict (string) -- The column (feature) that we want to get predictions for.</li>
+<li>select_data_query (string) -- The <code>SELECT</code> query that will select the data used for training.</li>
 </ul>
-</li>
-<li>api['mysql'] -- This key is used for database integrations that works through MySQL protocol. The required keys are:<ul>
-<li>user(default root).</li>
-<li>password(default empty).</li>
-<li>host(default 127.0.0.1).</li>
-<li>port(default 47335).</li>
-</ul>
-</li>
-<li>integrations['default_postgres'] -- This key specifies the integration type in this case <code>default_postgres</code>. The required keys are:<ul>
-<li>user(default postgres) - The Postgres user name.</li>
-<li>host(default 127.0.0.1) - Connect to the PostgreSQL server on the given host. </li>
-<li>password - The password of the Postgres account. </li>
-<li>type - Integration type(mariadb, postgresql, mysql, clickhouse, mongodb).</li>
-<li>port(default 5432) - The TCP/IP port number to use for the connection. </li>
-</ul>
-</li>
-<li>log['level'] -- The logging configuration(not required):<ul>
-<li>console - "INFO", "DEBUG", "ERROR".</li>
-<li>file - Location of the log file.</li>
-</ul>
-</li>
-<li>storage_dir -- The directory where mindsdb will store models and configuration.</li>
-</ul>
-<details class="success">
-    <summary> Configuration example</summary>  
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">&quot;api&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;http&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="s2">&quot;47334&quot;</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;mysql&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="s2">&quot;47335&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;root&quot;</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;config_version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.3&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;debug&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;integrations&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;default_postgres&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;database&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">5432</span><span class="p">,</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;postgres&quot;</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;log&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;level&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;console&quot;</span><span class="p">:</span> <span class="s2">&quot;DEBUG&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="s2">&quot;INFO&quot;</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;storage_dir&quot;</span><span class="p">:</span> <span class="s2">&quot;/storage&quot;</span>
-<span class="p">}</span>
+<p>In this example we will train new model called <code>insurance_model</code> that predicts the <code>charges</code> from the <code>insurance</code> table, so the model training query looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="k">exec</span> <span class="p">(</span><span class="s1">&#39;INSERT INTO mindsdb.predictors (name, predict, select_data_query)</span>
+<span class="s1">VALUES (&quot;insurance_model&quot;, &quot;charges&quot;, &quot;SELECT * FROM insurance&quot;)&#39;</span><span class="p">)</span>
+<span class="k">AT</span> <span class="n">mindsdb</span><span class="p">;</span>
 </code></pre></div>
-</details>
-
-<div class="admonition warning">
-<p class="admonition-title">Install PostgreSQL foreign data wrapper for MySQL</p>
-<p>The Foreign Data Wrapper (mysql_fwd) can be installed from the <a href="https://github.com/EnterpriseDB/mysql_fdw#mysql-foreign-data-wrapper-for-postgresql">EnterpriseDB repo</a>.</p>
-</div>
-<h3 id="start-mindsdb">Start MindsDB</h3>
-<p>To start mindsdb run following command:</p>
-<p><div class="highlight"><pre><span></span><code><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">mindsdb</span> <span class="o">--</span><span class="n">api</span><span class="o">=</span><span class="n">mysql</span> <span class="o">--</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">json</span>
+<p><img alt="Train model from mssql client" src="/assets/tutorials/aitables-mssql/train-model.png" /></p>
+<p>If you are wondering why we are using the <code>exec</code> command to wrap the <code>INSERT</code> statement, that's because it's one of the ways to query a linked server from Microsoft SQL Server. An alternate option is to use <a href="https://docs.microsoft.com/en-us/sql/t-sql/functions/openquery-transact-sql?view=sql-server-ver15">openquery</a>, which will execute the specified <code>INSERT</code> query on the server. In this example the query looks like this:</p>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span> <span class="n">openquery</span><span class="p">(</span><span class="n">mindsdb</span><span class="p">,</span><span class="s1">&#39;SELECT name, predict, select_data_query FROM mindsdb.predictors WHERE 1=0&#39;</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;insurance_model&#39;</span><span class="p">,</span><span class="s1">&#39;charges&#39;</span><span class="p">,</span><span class="s1">&#39;SELECT * FROM insurance&#39;</span><span class="p">);</span>
 </code></pre></div>
-The --api parameter specifies the type of API to use in this case mysql. 
-The --config specifies the location of the configuration file. </p>
-<h3 id="train-new-model">Train new model</h3>
-<p>To train a new model, insert a new record inside the mindsdb.predictors table as:</p>
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">predict</span><span class="p">,</span> <span class="n">select_data_query</span><span class="p">,</span> <span class="n">training_options</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;us_consumption&#39;</span><span class="p">,</span> <span class="s1">&#39;consumption&#39;</span><span class="p">,</span> <span class="s1">&#39;SELECT * FROM us_consumption&#39;</span><span class="p">,</span> <span class="s1">&#39;{&quot;timeseries_settings&quot;:{&quot;order_by&quot;: [&quot;t&quot;], &quot;window&quot;:20}}&#39;</span><span class="p">);</span>
+<p>Now, in the background, the training has started. MindsDB will do a black-box analysis and start a process of extracting, analyzing, and transforming the data. The time it takes to train a model differs depending on dataset size, the number of features, feature types, etc. To check if the model training has successfully finished, we can <code>SELECT</code> from the <code>mindsdb.predictors</code> table as:</p>
+<div class="highlight"><pre><span></span><code><span class="k">exec</span> <span class="p">(</span><span class="s1">&#39;SELECT * FROM mindsdb.predictors&#39;</span><span class="p">)</span> <span class="k">AT</span> <span class="n">mindsdb</span><span class="p">;</span>
 </code></pre></div>
+<p><img alt="Training model status" src="/assets/tutorials/aitables-mssql/model-status.png" /></p>
+<p>The query will return the status of the model as <code>complete</code>, or if the training is still running as <code>training</code>.</p>
+<h2 id="make-predictions-query-the-model">Make predictions (Query the model)</h2>
+<p>Once the model training finishes we can query that model. Querying the model can be done by executing the <code>SELECT</code> statement from the models <code>AI Table</code>. Let's try and query the <code>insurance_model</code> that we have created.
+The prediction that we will do is to get insurance for the beneficiary that is 30 years old, has 27.9 as a body mass index and has 1 child. All of these parameters should be added inside the <code>WHERE</code> clause.</p>
+<div class="highlight"><pre><span></span><code><span class="k">exec</span><span class="p">(</span><span class="s1">&#39;SELECT charges AS predicted,</span>
+<span class="s1">            charges_confidence AS confidence,</span>
+<span class="s1">            charges_explain AS info</span>
+<span class="s1">     FROM mindsdb.insurance_model</span>
+<span class="s1">     WHERE age=30 AND bmi=27.9 AND children=1&#39;</span><span class="p">)</span> <span class="k">AT</span> <span class="n">mindsdb</span><span class="p">;</span>
+</code></pre></div>
+<p><img alt="Query model" src="/assets/tutorials/aitables-mssql/query.png" /></p>
+<p>To get the insurance cost, confidence in that cost, and additional information from MindsDB, we did a <code>SELECT</code> for <code>charges</code>, <code>charges_confidence</code>, and <code>charges_explain</code>. The response from MindsDB should look like this:</p>
+<div class="highlight"><pre><span></span><code><span class="err">predic</span><span class="kc">te</span><span class="err">d</span>  <span class="err">|</span> <span class="mf">9421.233985124825</span>
+<span class="err">co</span><span class="kc">nf</span><span class="err">ide</span><span class="kc">n</span><span class="err">ce</span> <span class="err">|</span> <span class="mf">0.86</span>
+<span class="err">i</span><span class="kc">nf</span><span class="err">o</span>       <span class="err">|</span> <span class="p">{</span><span class="nt">&quot;predicted_value&quot;</span><span class="p">:</span> <span class="mf">9421.233985124825</span><span class="p">,</span>
+             <span class="nt">&quot;confidence&quot;</span><span class="p">:</span> <span class="mf">0.86</span><span class="p">,</span>
+             <span class="nt">&quot;prediction_quality&quot;</span><span class="p">:</span> <span class="s2">&quot;very confident&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;confidence_interval&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">6603.107461750912</span><span class="p">,</span> <span class="mf">12239.36050849874</span><span class="p">],</span>
+             <span class="nt">&quot;important_missing_information&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;smoker&quot;</span><span class="p">]</span>
+           <span class="p">}</span>
+</code></pre></div>
+<p>MindsDB thinks that for this beneficiary, the insurance cost should be 9,421, with 86% confidence for this prediction. The <code>charges</code> cost interval could vary from 6,603 to 12,239, depending on the beneficiary. As the important information for improving this prediction, MindsDB thinks that providing  information about <code>smoker</code> is very important.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>We have seen how easy it is to train and query models directly from a Microsoft SQL database. In short, the flow that we covered was:</p>
 <ul>
-<li>name (string) -- The name of the predictor.</li>
-<li>predict (string) --  The feature you want to predict, in this example consumption. To predict multiple featurs include a comma separated string e.g 'consumption,income'.</li>
-<li>select_data_query (string) -- The SELECT query that will ingest the data to train the model.</li>
-<li>training_options (JSON as comma separated string) -- optional value that contains additional training parameters. For a full list of the parameters check the <a href="/PredictorInterface/#learn">PredictorInterface</a>. If you are using timeseries data check the <a href="/tutorials/Timeseries/">Timeseries settings</a>.</li>
+<li>Connect to Microsoft SQL Server using MindsDB Studio integrations dashboard.</li>
+<li>Create a new datasource by <code>SELECT</code>ing from the table.</li>
+<li>Train new model by <code>INSERT</code>ing in mindsdb.predictors table.</li>
+<li>Get predictions by <code>SELECT</code>ing from the model.</li>
 </ul>
-<h3 id="query-the-model">Query the model</h3>
-<p>To query the model and get the predictions SELECT the target variable, confidence and explanation for that prediction.</p>
-<p><div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
-   <span class="n">consumption</span> <span class="k">AS</span> <span class="n">predicted</span><span class="p">,</span>
-   <span class="n">consumption_confidence</span> <span class="k">AS</span> <span class="n">confidence</span><span class="p">,</span>
-   <span class="n">consumption_explain</span> <span class="k">AS</span> <span class="n">info</span> 
-<span class="k">FROM</span>
-   <span class="n">mindsdb</span><span class="p">.</span><span class="n">us_consumption</span> 
-<span class="k">WHERE</span>
-   <span class="n">income</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">182497938</span> 
-   <span class="k">AND</span> <span class="n">production</span> <span class="o">=</span> <span class="mi">5</span><span class="p">.</span><span class="mi">854555956</span>  
-   <span class="k">AND</span> <span class="n">savings</span> <span class="o">=</span> <span class="mi">3</span><span class="p">.</span><span class="mi">183292657</span> 
-   <span class="k">AND</span> <span class="n">unemployment</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span> 
-</code></pre></div>
-You should get a similar response from MindsDB as:</p>
-<table>
-<thead>
-<tr>
-<th>consumption</th>
-<th>predicted</th>
-<th>info</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1.4979682087292199</td>
-<td>0.9475</td>
-<td>Check JSON bellow</td>
-</tr>
-</tbody>
-</table>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">&quot;predicted_value&quot;</span><span class="p">:</span> <span class="mf">1.4979682087292199</span><span class="p">,</span>
-    <span class="nt">&quot;confidence&quot;</span><span class="p">:</span> <span class="mf">0.9475</span><span class="p">,</span>
-    <span class="nt">&quot;prediction_quality&quot;</span><span class="p">:</span> <span class="s2">&quot;very confident&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;confidence_interval&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.025658879956537</span><span class="p">,</span> <span class="mf">1.9702775375019028</span><span class="p">],</span>
-    <span class="nt">&quot;important_missing_information&quot;</span><span class="p">:</span> <span class="p">[],</span>
-    <span class="nt">&quot;confidence_composition&quot;</span><span class="p">:</span> <span class="p">{},</span>
-    <span class="nt">&quot;extra_insights&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;if_missing&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="nt">&quot;income&quot;</span><span class="p">:</span> <span class="mf">0.6966906986877563</span>
-        <span class="p">},</span> <span class="p">{</span>
-            <span class="nt">&quot;production&quot;</span><span class="p">:</span> <span class="mf">2.5382917051924445</span>
-        <span class="p">},</span> <span class="p">{</span>
-            <span class="nt">&quot;savings&quot;</span><span class="p">:</span> <span class="mf">1.169812868271305</span>
-        <span class="p">},</span> <span class="p">{</span>
-            <span class="nt">&quot;unemployment&quot;</span><span class="p">:</span> <span class="mf">1.3</span>
-            <span class="mi">443338862946717</span>
-        <span class="p">}]</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="delete-the-model">Delete the model</h3>
-<p>To delete the predictor that you have previously created, you need to delete it from <code>mindsdb.predictors</code> table. The name should be equal to name added in the INSERT statment while creating the predictor, e.g:</p>
-<div class="highlight"><pre><span></span><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span> <span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;us_consumption&#39;</span>
-</code></pre></div>
-<h3 id="train-and-predict-multiple-features">Train and predict multiple features</h3>
-<p>You can train a model that will predict multiple features by adding a comma separated features values in the predict column. e.g to predict the <code>consumption</code> and a <code>income</code>:</p>
-<p><div class="highlight"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span>
-   <span class="n">mindsdb</span><span class="p">.</span><span class="n">predictors</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">predict</span><span class="p">,</span> <span class="n">select_data_query</span><span class="p">,</span> <span class="n">training_options</span><span class="p">)</span> 
-<span class="k">VALUES</span>
-   <span class="p">(</span><span class="s1">&#39;us_consumption&#39;</span><span class="p">,</span> <span class="s1">&#39;consumption, income&#39;</span><span class="p">,</span> <span class="s1">&#39;SELECT * FROM us_consumption&#39;</span><span class="p">,</span> <span class="ss">&quot;option,value&quot;</span><span class="err">}</span><span class="p">);</span>
-</code></pre></div>
-And query it using the <code>select_data_query</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
-   <span class="n">consumption</span> <span class="k">AS</span> <span class="n">predicted</span><span class="p">,</span>
-<span class="k">FROM</span>
-   <span class="n">mindsdb</span><span class="p">.</span><span class="n">used_cars_model</span> 
-<span class="k">WHERE</span>
-    <span class="n">select_data_query</span><span class="o">=</span><span class="s1">&#39;SELECT income FROM us_consumption&#39;</span><span class="p">;</span>
-</code></pre></div>
-<p>The requirements to query with <code>select_data_query</code> are:</p>
+<p>If you want to try AI Tables in a different database, check out the other tutorials:</p>
 <ul>
-<li>It must be a valid SQL statement</li>
-<li>It must return columns with names the same as predictor fields.</li>
+<li><a href="/tutorials/mysql">AI Tables in MySQL</a></li>
+<li><a href="/tutorials/mariadb">AI Tables in MariaDB</a></li>
+<li><a href="/tutorials/postgresql">AI Tables in PostgreSQL</a></li>
+<li><a href="/tutorials/clickhouse">AI Tables in ClickHouse</a></li>
 </ul>
-<p>To get additional information follow the <a href="/databases/tutorials/AiTablesInPostgreSQL/">AiTables in PostgreSQL tutorail</a>.</p>
                 
               
               
