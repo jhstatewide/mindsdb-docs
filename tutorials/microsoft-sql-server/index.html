@@ -1647,18 +1647,19 @@
                 
                 <h1 id="automated-machine-learning-in-microsoft-sql-server">Automated Machine Learning in Microsoft SQL Server</h1>
 <p>Data is the main ingredient for machine learning. Nowadays most enterprise structured data lives inside a database, so moving the machine learning inside the database layer can bring great benefits. This is one of the main reasons we decided to build an integration with the most widely used database systems, so that any database user can create, train and query machine learning models with minimal knowledge of SQL.</p>
+<p><img alt="MindsDB integration" src="/assets/tutorials/aitables-mssql/AI Tables.jpg" /></p>
 <p>Using the MindsDB AI Tables feature, users can automate model training workflows and reduce deployment time and complexity by adding the predictive layer to the database.
 AI Tables allow database users to query predictive models in seconds as if they were data that existed on the table. Simply explained, AI Tables allow users to use machine learning models as if they were normal database tables. In plain SQL, that looks like this:</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">&lt;</span><span class="n">predicted_variable</span><span class="o">&gt;</span> <span class="k">FROM</span> <span class="o">&lt;</span><span class="n">ML_model</span><span class="o">&gt;</span> <span class="k">WHERE</span> <span class="o">&lt;</span><span class="n">conditions</span><span class="o">&gt;</span>
 </code></pre></div>
-<p>MindsDB acts like a database and interacts with your SQL database. AI Tables accelerate development speed, reduce costs and eliminate the complexity of machine learning workflows.</p>
+<p>MindsDB acts like an AutoML platform and interacts with your SQL database through an ODBC driver. AI Tables accelerate development speed, reduce costs and eliminate the complexity of machine learning workflows.</p>
 <ul>
 <li>Train models from the data inside the SQL database</li>
 <li>Get predictions through simple SQL queries</li>
 <li>Get insights into model accuracy</li>
 <li>Move from idea to production in minutes</li>
 </ul>
-<p>In this tutorial, you will get step-by-step instructions on how to enable AI Tables in Microsoft SQL Server. Based on a medical insurance example, you will see how to train and query machine learning models by using only SQL statements.</p>
+<p>In this tutorial, you will get step-by-step instructions on how to enable AI Tables in Microsoft SQL Server. Based on a medical insurance example dataset, you will see how to train and query machine learning models by using only SQL statements.</p>
 <h2 id="how-to-install-mindsdb">How to install MindsDB</h2>
 <p>If you already have MindsDB installed, you can skip this section. MindsDB is a cross-platform tool and can be installed on the most widely used OSs: Windows, Linux and macOS. Also, there are few other options to get MindsDB, such as through Docker, installing from source code or using PyPi. To get started, check the following list, and use the option that works best for you:</p>
 <ul>
