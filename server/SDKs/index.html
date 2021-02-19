@@ -1616,12 +1616,12 @@
                   <h1>MindsDB SDK</h1>
                 
                 <div class="admonition info">
-<p class="admonition-title">MindsDB Server</p>
-<p>Note that to use MindsDB SDK, you will need to have MindsDB Server started so you can connect to it.</p>
+<p class="admonition-title">Work In Progress documentation <img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/72x72/26a0.png" title=":warning:" /> <img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/72x72/1f6a7.png" title=":construction:" /> <img alt="👷" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/72x72/1f477.png" title=":construction_worker:" /> </p>
+<p>Note that the documentation for MindsDB SDK's is under development. If you found missing feature or something isn't working please reach out to us on the <a href="https://github.com/mindsdb/mindsdb_python_sdk/issues/new/choose">Python SDK</a> or <a href="https://github.com/mindsdb/mindsdb_js_sdk/issues/new/choose">JS SDK</a> repositories.</p>
 </div>
 <div class="admonition info">
-<p class="admonition-title">Missing documentation <img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/72x72/26a0.png" title=":warning:" /> <img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/72x72/1f6a7.png" title=":construction:" /> <img alt="👷" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/72x72/1f477.png" title=":construction_worker:" /> </p>
-<p>Note that the documentation for MindsDB SDK's is under development. If you found missing feature or something isn't working please reach out to us on the <a href="https://github.com/mindsdb/mindsdb_python_sdk/issues/new/choose">Python SDK</a> or <a href="https://github.com/mindsdb/mindsdb_js_sdk/issues/new/choose">JS SDK</a> repositories.</p>
+<p class="admonition-title">MindsDB Server</p>
+<p>Note that to use MindsDB SDK, you will need to have MindsDB Server started so you can connect to it.</p>
 </div>
 <p>The MindsDB SDK's are providing all of the MindsDB's native functionalities through MindsDB HTTP Interface. Currently, MindsDB provides SDK's for Python and JavaScript.</p>
 <h2 id="installing-python-sdk">Installing Python SDK</h2>
@@ -1635,15 +1635,20 @@ python setup.py develop
 pip install -r requirements.txt
 </code></pre></div>
 <h2 id="connect-to-your-data">Connect to your data</h2>
-<p>DataSources make it very simple to connect MindsDB to your data. Datasource can be file(csv, tsv, json, xslx, xls), pandas dataframe or MindsDB datasource that is an enriched version of a pandas dataframe. MindsDB datasource could be MariaDB, Snowflake, S3, Sqlite3, Redshift, PostgreSQL, MsSQL, MongoDB, GCS, Clickhouse, AWS Athena,please check the full list of datasource implementation <a href="https://github.com/mindsdb/mindsdb_native/tree/stable/mindsdb_native/libs/data_sources">here</a>.</p>
+<p>DataSources make it very simple to connect MindsDB to your data. Datasource can be:</p>
+<ul>
+<li>File(csv, tsv, json, xslx, xls)</li>
+<li>Pandas dataframe </li>
+<li>MindsDB datasource that is an enriched version of a pandas dataframe. MindsDB datasource could be MariaDB, Snowflake, S3, Sqlite3, Redshift, PostgreSQL, MsSQL, MongoDB, GCS, Clickhouse, AWS Athena. For more info please check the full list of datasource implementation <a href="https://github.com/mindsdb/mindsdb_native/tree/stable/mindsdb_native/libs/data_sources">here</a>.</li>
+</ul>
 <h3 id="create-new-datasource-from-local-file">Create new datasource from local file</h3>
-<p>Let's load the local file as an pandas dataframe and create new datasource:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb_sdk</span> <span class="kn">import</span> <span class="n">SDK</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">mindsdb_sdk</span> <span class="o">=</span> <span class="n">SDK</span><span class="p">(</span><span class="s1">&#39;http://localhost:47334&#39;</span><span class="p">)</span> <span class="c1"># MindsDB Server URL</span>
-<span class="n">datasources</span> <span class="o">=</span> <span class="n">mindsdb_sdk</span><span class="o">.</span><span class="n">datasources</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/insurance.csv&#39;</span><span class="p">)</span>
-<span class="n">datasources</span><span class="p">[</span><span class="s1">&#39;health_insurance&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;df&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">}</span>
+<p>Before you train new model you need to create a datasource, so MindsDB can ingest and prepare the data. The following example use <a href="https://www.kaggle.com/mirichoi0218/insurance">Medical Cost dataset</a>. Let's load the local file as an pandas dataframe and create new datasource:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mindsdb_sdk</span> <span class="kn">import</span> <span class="n">SDK</span> <span class="c1"># import SDK</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># import pandas</span>
+<span class="n">mindsdb_sdk</span> <span class="o">=</span> <span class="n">SDK</span><span class="p">(</span><span class="s1">&#39;http://localhost:47334&#39;</span><span class="p">)</span> <span class="c1"># Connect to MindsDB Server URL</span>
+<span class="n">datasources</span> <span class="o">=</span> <span class="n">mindsdb_sdk</span><span class="o">.</span><span class="n">datasources</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/insurance.csv&#39;</span><span class="p">)</span> <span class="c1"># read the dataset</span>
+<span class="n">datasources</span><span class="p">[</span><span class="s1">&#39;health_insurance&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;df&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">}</span> <span class="c1"># create new datasource</span>
 </code></pre></div>
 <p>To check that the datasource was succesfully created, you can call the <code>list_info()</code> method from datasources:</p>
 <div class="highlight"><pre><span></span><code><span class="n">datasources</span><span class="o">.</span><span class="n">list_info</span><span class="p">()</span>
@@ -1652,7 +1657,7 @@ pip install -r requirements.txt
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="err">&#39;</span><span class="kc">na</span><span class="err">me&#39;</span><span class="p">:</span> <span class="err">&#39;heal</span><span class="kc">t</span><span class="err">h_i</span><span class="kc">nsuran</span><span class="err">ce&#39;</span><span class="p">,</span>
     <span class="err">&#39;source_</span><span class="kc">t</span><span class="err">ype&#39;</span><span class="p">:</span> <span class="err">&#39;</span><span class="kc">f</span><span class="err">ile&#39;</span><span class="p">,</span>
-    <span class="err">&#39;source&#39;</span><span class="p">:</span> <span class="err">&#39;/home/zora</span><span class="kc">n</span><span class="err">/MyProjec</span><span class="kc">ts</span><span class="err">/mi</span><span class="kc">n</span><span class="err">dsdb</span><span class="mf">-e</span><span class="err">xamples/mysql/mdb/lib/py</span><span class="kc">t</span><span class="err">ho</span><span class="kc">n</span><span class="mf">3.7</span><span class="err">/si</span><span class="kc">te</span><span class="mi">-</span><span class="err">packages/mi</span><span class="kc">n</span><span class="err">dsdb/var/da</span><span class="kc">tas</span><span class="err">ources/heal</span><span class="kc">t</span><span class="err">h_i</span><span class="kc">nsuran</span><span class="err">ce/</span><span class="kc">t</span><span class="err">mpgob</span><span class="mi">9</span><span class="err">a</span><span class="kc">n</span><span class="mf">1e</span><span class="err">&#39;</span><span class="p">,</span>
+    <span class="err">&#39;source&#39;</span><span class="p">:</span> <span class="err">&#39;/mi</span><span class="kc">n</span><span class="err">dsdb/var/da</span><span class="kc">tas</span><span class="err">ources/heal</span><span class="kc">t</span><span class="err">h_i</span><span class="kc">nsuran</span><span class="err">ce/&#39;</span><span class="p">,</span>
     <span class="err">&#39;missed_</span><span class="kc">f</span><span class="err">iles&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span><span class="p">,</span>
     <span class="err">&#39;crea</span><span class="kc">te</span><span class="err">d_a</span><span class="kc">t</span><span class="err">&#39;</span><span class="p">:</span> <span class="err">&#39;</span><span class="mi">2021-02-19</span><span class="err">T</span><span class="mi">14</span><span class="p">:</span><span class="mi">20</span><span class="p">:</span><span class="mf">57.860292</span><span class="err">&#39;</span><span class="p">,</span>
     <span class="err">&#39;upda</span><span class="kc">te</span><span class="err">d_a</span><span class="kc">t</span><span class="err">&#39;</span><span class="p">:</span> <span class="err">&#39;</span><span class="mi">2021-02-19</span><span class="err">T</span><span class="mi">14</span><span class="p">:</span><span class="mi">20</span><span class="p">:</span><span class="mf">57.908497</span><span class="err">&#39;</span><span class="p">,</span>
@@ -1662,43 +1667,14 @@ pip install -r requirements.txt
         <span class="err">&#39;</span><span class="kc">t</span><span class="err">ype&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span><span class="p">,</span>
         <span class="err">&#39;</span><span class="kc">f</span><span class="err">ile_</span><span class="kc">t</span><span class="err">ype&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span><span class="p">,</span>
         <span class="err">&#39;dic</span><span class="kc">t</span><span class="err">&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span>
-    <span class="p">},</span> <span class="p">{</span>
-        <span class="err">&#39;</span><span class="kc">na</span><span class="err">me&#39;</span><span class="p">:</span> <span class="err">&#39;sex&#39;</span><span class="p">,</span>
-        <span class="err">&#39;</span><span class="kc">t</span><span class="err">ype&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span><span class="p">,</span>
-        <span class="err">&#39;</span><span class="kc">f</span><span class="err">ile_</span><span class="kc">t</span><span class="err">ype&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span><span class="p">,</span>
-        <span class="err">&#39;dic</span><span class="kc">t</span><span class="err">&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span>
-    <span class="p">},</span> <span class="p">{</span>
-        <span class="err">&#39;</span><span class="kc">na</span><span class="err">me&#39;</span><span class="p">:</span> <span class="err">&#39;bmi&#39;</span><span class="p">,</span>
-        <span class="err">&#39;</span><span class="kc">t</span><span class="err">ype&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span><span class="p">,</span>
-        <span class="err">&#39;</span><span class="kc">f</span><span class="err">ile_</span><span class="kc">t</span><span class="err">ype&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span><span class="p">,</span>
-        <span class="err">&#39;dic</span><span class="kc">t</span><span class="err">&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span>
-    <span class="p">},</span> <span class="p">{</span>
-        <span class="err">&#39;</span><span class="kc">na</span><span class="err">me&#39;</span><span class="p">:</span> <span class="err">&#39;childre</span><span class="kc">n</span><span class="err">&#39;</span><span class="p">,</span>
-        <span class="err">&#39;</span><span class="kc">t</span><span class="err">ype&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span><span class="p">,</span>
-        <span class="err">&#39;</span><span class="kc">f</span><span class="err">ile_</span><span class="kc">t</span><span class="err">ype&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span><span class="p">,</span>
-        <span class="err">&#39;dic</span><span class="kc">t</span><span class="err">&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span>
-    <span class="p">},</span> <span class="p">{</span>
-        <span class="err">&#39;</span><span class="kc">na</span><span class="err">me&#39;</span><span class="p">:</span> <span class="err">&#39;smoker&#39;</span><span class="p">,</span>
-        <span class="err">&#39;</span><span class="kc">t</span><span class="err">ype&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span><span class="p">,</span>
-        <span class="err">&#39;</span><span class="kc">f</span><span class="err">ile_</span><span class="kc">t</span><span class="err">ype&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span><span class="p">,</span>
-        <span class="err">&#39;dic</span><span class="kc">t</span><span class="err">&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span>
-    <span class="p">},</span> <span class="p">{</span>
-        <span class="err">&#39;</span><span class="kc">na</span><span class="err">me&#39;</span><span class="p">:</span> <span class="err">&#39;regio</span><span class="kc">n</span><span class="err">&#39;</span><span class="p">,</span>
-        <span class="err">&#39;</span><span class="kc">t</span><span class="err">ype&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span><span class="p">,</span>
-        <span class="err">&#39;</span><span class="kc">f</span><span class="err">ile_</span><span class="kc">t</span><span class="err">ype&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span><span class="p">,</span>
-        <span class="err">&#39;dic</span><span class="kc">t</span><span class="err">&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span>
-    <span class="p">},</span> <span class="p">{</span>
-        <span class="err">&#39;</span><span class="kc">na</span><span class="err">me&#39;</span><span class="p">:</span> <span class="err">&#39;charges&#39;</span><span class="p">,</span>
-        <span class="err">&#39;</span><span class="kc">t</span><span class="err">ype&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span><span class="p">,</span>
-        <span class="err">&#39;</span><span class="kc">f</span><span class="err">ile_</span><span class="kc">t</span><span class="err">ype&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span><span class="p">,</span>
-        <span class="err">&#39;dic</span><span class="kc">t</span><span class="err">&#39;</span><span class="p">:</span> <span class="err">No</span><span class="kc">ne</span>
-    <span class="p">}</span>
+    <span class="p">}</span> <span class="err">...</span> <span class="err">o</span><span class="kc">t</span><span class="err">her</span> <span class="err">colum</span><span class="kc">ns</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="train-new-model">Train new model</h3>
-<p>The <code>learn</code> method is used to make the predictor learn from some data. The arguments sent are <code>model_name</code>, <code>target_variable</code>, <code>datasource</code>.</p>
+<p>The <code>learn</code> method is used to make the predictor learn from the data. The required arguments to <code>learn</code> from data are <code>model_name</code>, <code>target_variable</code>, <code>datasource</code>.
+The following example train new model called <code>insurance_model</code> that predicts the <code>charges</code> from <code>health_insurance</code> datasource.</p>
 <div class="highlight"><pre><span></span><code><span class="n">model</span> <span class="o">=</span> <span class="n">mindsdb_sdk</span><span class="o">.</span><span class="n">predictors</span>
-<span class="n">model</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="s1">&#39;new_model&#39;</span><span class="p">,</span>  <span class="s1">&#39;charges&#39;</span><span class="p">,</span> <span class="s1">&#39;health_insurance&#39;</span><span class="p">,)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="s1">&#39;insurance_model&#39;</span><span class="p">,</span>  <span class="s1">&#39;charges&#39;</span><span class="p">,</span> <span class="s1">&#39;health_insurance&#39;</span><span class="p">,)</span>
 </code></pre></div>
 <h3 id="query-the-model">Query the model</h3>
 <p>To get the predictons from the model use the <code>predict</code> method. This method is used to make predictions and it can take <code>when_data</code> argument. This can be file, dataframe or url or if you want to make the single predicton as in the following example use a dictionary.</p>
