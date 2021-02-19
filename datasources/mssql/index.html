@@ -1583,6 +1583,12 @@
 <li>Using <a href="#mindsdb-studio">MindsDB Studio</a>.</li>
 <li>Using <a href="#mssql-client">mssql client</a>.</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Install MindsDB</p>
+<p>If you want to use Microsoft SQL Server integration, you will need to install MindsDB with pip or from source. The reason for this is that you will need to install additonal requirements:
+<div class="highlight"><pre><span></span><code>pip3 install &#39;pymssql &gt;= 2.1.4&#39; --upgrade
+</code></pre></div></p>
+</div>
 <h2 id="prerequisite">Prerequisite</h2>
 <p>To connect to your Microsoft SQL Server from MindsDB, you will need to install Microsoft OLEDB Provider driver.</p>
 <div class="admonition tip">
